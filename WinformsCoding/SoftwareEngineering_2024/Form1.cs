@@ -51,10 +51,8 @@ namespace SoftwareEngineering_2024
             SignUpForm signUpForm = new SignUpForm();
 
             this.Hide();
-
+            signUpForm.Size = this.Size;
             signUpForm.ShowDialog();
-
-            this.Show();
         }
     }
 }
