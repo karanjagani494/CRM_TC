@@ -40,12 +40,12 @@
             LoginBt = new Button();
             PasswordTb = new MaskedTextBox();
             EmailTb = new MaskedTextBox();
-            pictureBox1 = new PictureBox();
+            TCLogo = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
             SuspendLayout();
             // 
             // WelcomeBackLogin
@@ -89,7 +89,6 @@
             IgLink.Size = new Size(43, 43);
             IgLink.TabIndex = 9;
             IgLink.TabStop = false;
-            IgLink.Click += Ig_Click;
             // 
             // GmapLink
             // 
@@ -101,7 +100,6 @@
             GmapLink.Size = new Size(43, 43);
             GmapLink.TabIndex = 8;
             GmapLink.TabStop = false;
-            GmapLink.Click += Gmaps_Click;
             // 
             // FbLink
             // 
@@ -113,7 +111,6 @@
             FbLink.Size = new Size(43, 43);
             FbLink.TabIndex = 7;
             FbLink.TabStop = false;
-            FbLink.Click += Fb_Click;
             // 
             // AccountCreateLink
             // 
@@ -169,16 +166,16 @@
             EmailTb.Size = new Size(563, 27);
             EmailTb.TabIndex = 1;
             // 
-            // pictureBox1
+            // TCLogo
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(111, 100);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(558, 556);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            TCLogo.BackColor = Color.Transparent;
+            TCLogo.BackgroundImage = (Image)resources.GetObject("TCLogo.BackgroundImage");
+            TCLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            TCLogo.Location = new Point(111, 100);
+            TCLogo.Name = "TCLogo";
+            TCLogo.Size = new Size(558, 556);
+            TCLogo.TabIndex = 0;
+            TCLogo.TabStop = false;
             // 
             // LoginForm
             // 
@@ -187,7 +184,7 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1768, 763);
-            Controls.Add(pictureBox1);
+            Controls.Add(TCLogo);
             Controls.Add(panel1);
             DoubleBuffered = true;
             Name = "LoginForm";
@@ -197,7 +194,7 @@
             ((System.ComponentModel.ISupportInitialize)IgLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TCLogo).EndInit();
             ResumeLayout(false);
         }
 
@@ -205,7 +202,7 @@
 
         private Label WelcomeBackLogin;
         private Panel panel1;
-        private PictureBox pictureBox1;
+        private PictureBox TCLogo;
         private Label PasswordLb;
         private Label EmailLb;
         private Button LoginBt;

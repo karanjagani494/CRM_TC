@@ -10,33 +10,21 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class SignUpForm : Form
+    public partial class TagsForm : Form
     {
-        public SignUpForm()
+        public TagsForm()
         {
             InitializeComponent();
             FbLink.Click += Opener.OpenFacebook;
             GmapLink.Click += Opener.OpenGoogleMaps;
             IgLink.Click += Opener.OpenInstagram;
-            LogInLink.Click += LogInLink_LinkClicked;
+            LogInLink.Click += LogInLink_Click; 
         }
 
-
-        private void LogInLink_LinkClicked(object sender, EventArgs e)
+        private void LogInLink_Click(object? sender, EventArgs e)
         {
             Opener.OpenDialog(typeof(LoginForm), "loginForm", this);
-
-        }
-
-        private void ProceedIntBt_Click(object sender, EventArgs e)
-        {
-            Opener.OpenDialog(typeof(InterestDptForm), "interestDpt", this);
-
-        }
-
-        private void TCLogo_Click(object sender, EventArgs e)
-        {
-
+            throw new NotImplementedException();
         }
     }
 }
