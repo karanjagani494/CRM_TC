@@ -1,6 +1,6 @@
 ﻿namespace SoftwareEngineering_2024
 {
-    partial class InterestDptForm
+    partial class MembershipForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,106 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterestDptForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MembershipForm));
+            TCLogo = new PictureBox();
             panel1 = new Panel();
-            SharingCb = new CheckBox();
-            HelpingCb = new CheckBox();
-            WorkingCb = new CheckBox();
-            HappeningCb = new CheckBox();
-            LearningCb = new CheckBox();
+            CommCb = new CheckBox();
+            WorkspaceFtCb = new CheckBox();
+            CommKeysCb = new CheckBox();
+            WorkspacePtCb = new CheckBox();
             IgLink = new PictureBox();
             GmapLink = new PictureBox();
             FbLink = new PictureBox();
             LogInLink = new LinkLabel();
-            ProceedTagBt = new Button();
+            ProceedIntBt = new Button();
             WelcomeSignUp = new Label();
-            TCLogo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
             SuspendLayout();
+            // 
+            // TCLogo
+            // 
+            TCLogo.BackColor = Color.Transparent;
+            TCLogo.BackgroundImage = (Image)resources.GetObject("TCLogo.BackgroundImage");
+            TCLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            TCLogo.Location = new Point(100, 98);
+            TCLogo.Name = "TCLogo";
+            TCLogo.Size = new Size(558, 556);
+            TCLogo.TabIndex = 3;
+            TCLogo.TabStop = false;
             // 
             // panel1
             // 
             panel1.BackColor = Color.RosyBrown;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(SharingCb);
-            panel1.Controls.Add(HelpingCb);
-            panel1.Controls.Add(WorkingCb);
-            panel1.Controls.Add(HappeningCb);
-            panel1.Controls.Add(LearningCb);
+            panel1.Controls.Add(CommCb);
+            panel1.Controls.Add(WorkspaceFtCb);
+            panel1.Controls.Add(CommKeysCb);
+            panel1.Controls.Add(WorkspacePtCb);
             panel1.Controls.Add(IgLink);
             panel1.Controls.Add(GmapLink);
             panel1.Controls.Add(FbLink);
             panel1.Controls.Add(LogInLink);
-            panel1.Controls.Add(ProceedTagBt);
+            panel1.Controls.Add(ProceedIntBt);
             panel1.Controls.Add(WelcomeSignUp);
-            panel1.Location = new Point(936, 96);
+            panel1.Location = new Point(891, 98);
             panel1.Name = "panel1";
             panel1.Size = new Size(791, 556);
-            panel1.TabIndex = 4;
+            panel1.TabIndex = 5;
             // 
-            // SharingCb
+            // CommCb
             // 
-            SharingCb.AllowDrop = true;
-            SharingCb.BackColor = Color.IndianRed;
-            SharingCb.FlatStyle = FlatStyle.Popup;
-            SharingCb.Location = new Point(474, 253);
-            SharingCb.Name = "SharingCb";
-            SharingCb.Size = new Size(126, 87);
-            SharingCb.TabIndex = 14;
-            SharingCb.Text = "Sharing";
-            SharingCb.UseVisualStyleBackColor = false;
+            CommCb.AllowDrop = true;
+            CommCb.BackColor = Color.IndianRed;
+            CommCb.FlatStyle = FlatStyle.Popup;
+            CommCb.Location = new Point(407, 117);
+            CommCb.Name = "CommCb";
+            CommCb.Size = new Size(172, 228);
+            CommCb.TabIndex = 14;
+            CommCb.Text = "Community Membership\r\n£18.50/month\r\nAccess discounted events, creative workshops, and a City Centre base for work, socializing, and inspiration\r\n.";
+            CommCb.UseVisualStyleBackColor = false;
             // 
-            // HelpingCb
+            // WorkspaceFtCb
             // 
-            HelpingCb.AllowDrop = true;
-            HelpingCb.BackColor = Color.IndianRed;
-            HelpingCb.FlatStyle = FlatStyle.Popup;
-            HelpingCb.Location = new Point(557, 123);
-            HelpingCb.Name = "HelpingCb";
-            HelpingCb.Size = new Size(126, 81);
-            HelpingCb.TabIndex = 13;
-            HelpingCb.Text = "Helping";
-            HelpingCb.UseVisualStyleBackColor = false;
+            WorkspaceFtCb.AllowDrop = true;
+            WorkspaceFtCb.BackColor = Color.IndianRed;
+            WorkspaceFtCb.FlatStyle = FlatStyle.Popup;
+            WorkspaceFtCb.Location = new Point(223, 117);
+            WorkspaceFtCb.Name = "WorkspaceFtCb";
+            WorkspaceFtCb.Size = new Size(178, 228);
+            WorkspaceFtCb.TabIndex = 12;
+            WorkspaceFtCb.Text = "Full Time Workspace Membership\nFrom £100/month + £100 joining fee\nGain Full 24/7 access to a dedicated workspace, storage, and a network of like-minded collaborators.";
+            WorkspaceFtCb.TextAlign = ContentAlignment.MiddleCenter;
+            WorkspaceFtCb.UseVisualStyleBackColor = false;
             // 
-            // WorkingCb
+            // CommKeysCb
             // 
-            WorkingCb.AllowDrop = true;
-            WorkingCb.BackColor = Color.IndianRed;
-            WorkingCb.FlatStyle = FlatStyle.Popup;
-            WorkingCb.Location = new Point(237, 253);
-            WorkingCb.Name = "WorkingCb";
-            WorkingCb.Size = new Size(126, 87);
-            WorkingCb.TabIndex = 12;
-            WorkingCb.Text = "Working";
-            WorkingCb.UseVisualStyleBackColor = false;
+            CommKeysCb.AllowDrop = true;
+            CommKeysCb.BackColor = Color.IndianRed;
+            CommKeysCb.FlatStyle = FlatStyle.Popup;
+            CommKeysCb.Location = new Point(585, 117);
+            CommKeysCb.Name = "CommKeysCb";
+            CommKeysCb.Size = new Size(180, 228);
+            CommKeysCb.TabIndex = 11;
+            CommKeysCb.Text = "Community Membership\r\n£28.50/month\r\nAccess discounted events, creative workshops, and a City Centre base for work, socializing, and inspiration.WIth Key access to Spaces\r\n \r\n\r\n\r\n";
+            CommKeysCb.TextAlign = ContentAlignment.MiddleCenter;
+            CommKeysCb.UseVisualStyleBackColor = false;
             // 
-            // HappeningCb
+            // WorkspacePtCb
             // 
-            HappeningCb.AllowDrop = true;
-            HappeningCb.BackColor = Color.IndianRed;
-            HappeningCb.FlatStyle = FlatStyle.Popup;
-            HappeningCb.Location = new Point(348, 117);
-            HappeningCb.Name = "HappeningCb";
-            HappeningCb.Size = new Size(126, 87);
-            HappeningCb.TabIndex = 11;
-            HappeningCb.Text = "Happening";
-            HappeningCb.UseVisualStyleBackColor = false;
-            // 
-            // LearningCb
-            // 
-            LearningCb.AllowDrop = true;
-            LearningCb.BackColor = Color.IndianRed;
-            LearningCb.FlatStyle = FlatStyle.Popup;
-            LearningCb.Location = new Point(124, 120);
-            LearningCb.Name = "LearningCb";
-            LearningCb.Size = new Size(126, 87);
-            LearningCb.TabIndex = 10;
-            LearningCb.Text = "Learning";
-            LearningCb.UseVisualStyleBackColor = false;
+            WorkspacePtCb.AllowDrop = true;
+            WorkspacePtCb.BackColor = Color.IndianRed;
+            WorkspacePtCb.FlatStyle = FlatStyle.Popup;
+            WorkspacePtCb.Location = new Point(26, 120);
+            WorkspacePtCb.Name = "WorkspacePtCb";
+            WorkspacePtCb.Size = new Size(191, 225);
+            WorkspacePtCb.TabIndex = 10;
+            WorkspacePtCb.Text = "Part Time Workspace Membership\nFrom £70/month + £100 joining fee\nGain Partial 24/7 access to a dedicated workspace, storage, and a network of like-minded collaborators.";
+            WorkspacePtCb.TextAlign = ContentAlignment.MiddleCenter;
+            WorkspacePtCb.UseVisualStyleBackColor = false;
             // 
             // IgLink
             // 
@@ -173,15 +173,15 @@
             LogInLink.TabStop = true;
             LogInLink.Text = "Already a Member, Log In";
             // 
-            // ProceedTagBt
+            // ProceedIntBt
             // 
-            ProceedTagBt.BackColor = Color.IndianRed;
-            ProceedTagBt.Location = new Point(303, 372);
-            ProceedTagBt.Name = "ProceedTagBt";
-            ProceedTagBt.Size = new Size(197, 57);
-            ProceedTagBt.TabIndex = 3;
-            ProceedTagBt.Text = "Proceed";
-            ProceedTagBt.UseVisualStyleBackColor = false;
+            ProceedIntBt.BackColor = Color.IndianRed;
+            ProceedIntBt.Location = new Point(303, 372);
+            ProceedIntBt.Name = "ProceedIntBt";
+            ProceedIntBt.Size = new Size(197, 57);
+            ProceedIntBt.TabIndex = 3;
+            ProceedIntBt.Text = "Proceed";
+            ProceedIntBt.UseVisualStyleBackColor = false;
             // 
             // WelcomeSignUp
             // 
@@ -195,52 +195,41 @@
             WelcomeSignUp.Text = "Welcome to Together Culture";
             WelcomeSignUp.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // TCLogo
-            // 
-            TCLogo.BackColor = Color.Transparent;
-            TCLogo.BackgroundImage = (Image)resources.GetObject("TCLogo.BackgroundImage");
-            TCLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            TCLogo.Location = new Point(79, 96);
-            TCLogo.Name = "TCLogo";
-            TCLogo.Size = new Size(558, 556);
-            TCLogo.TabIndex = 3;
-            TCLogo.TabStop = false;
-            // 
-            // InterestDptForm
+            // MembershipForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1806, 748);
+            ClientSize = new Size(1772, 748);
             Controls.Add(panel1);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
-            Name = "InterestDptForm";
-            Text = "InterestDpt";
+            Name = "MembershipForm";
+            Text = "MembershipForm";
+            Load += MembershipForm_Load;
+            ((System.ComponentModel.ISupportInitialize)TCLogo).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).EndInit();
-            ((System.ComponentModel.ISupportInitialize)TCLogo).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private PictureBox TCLogo;
         private Panel panel1;
+        private CheckBox CommCb;
+        private CheckBox WorkspaceFtCb;
+        private CheckBox CommKeysCb;
+        private CheckBox WorkspacePtCb;
         private PictureBox IgLink;
         private PictureBox GmapLink;
         private PictureBox FbLink;
         private LinkLabel LogInLink;
-        private Button ProceedTagBt;
+        private Button ProceedIntBt;
         private Label WelcomeSignUp;
-        private PictureBox TCLogo;
-        private CheckBox SharingCb;
-        private CheckBox HelpingCb;
-        private CheckBox WorkingCb;
-        private CheckBox HappeningCb;
-        private CheckBox LearningCb;
     }
 }

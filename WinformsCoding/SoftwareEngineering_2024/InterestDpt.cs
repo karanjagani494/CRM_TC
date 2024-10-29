@@ -19,7 +19,7 @@ namespace SoftwareEngineering_2024
             GmapLink.Click += Opener.OpenGoogleMaps;
             IgLink.Click += Opener.OpenInstagram;
             LogInLink.Click += LogInLink_Click;
-            ProceedIntBt.Click += ProceedIntBt_Click;
+            ProceedTagBt.Click += ProceedIntBt_Click;
            
 
         }

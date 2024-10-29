@@ -18,7 +18,14 @@ namespace SoftwareEngineering_2024
             FbLink.Click += Opener.OpenFacebook;
             GmapLink.Click += Opener.OpenGoogleMaps;
             IgLink.Click += Opener.OpenInstagram;
-            LogInLink.Click += LogInLink_Click; 
+            LogInLink.Click += LogInLink_Click;
+            ProceedMembBt.Click += ProceedMembBt_Click;
+        }
+
+        private void ProceedMembBt_Click(object? sender, EventArgs e)
+        {
+            Opener.OpenDialog(typeof(MembershipForm), "membershipForm", this);
+            throw new NotImplementedException();
         }
 
         private void LogInLink_Click(object? sender, EventArgs e)
