@@ -52,5 +52,4 @@ namespace SoftwareEngineering_2024
             newForm.ShowDialog(); // Show the new form as a dialog
         }
     }
-
 }
