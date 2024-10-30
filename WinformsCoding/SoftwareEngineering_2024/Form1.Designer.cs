@@ -74,7 +74,7 @@
             panel1.Controls.Add(PasswordTb);
             panel1.Controls.Add(EmailTb);
             panel1.Controls.Add(WelcomeBackLogin);
-            panel1.Location = new Point(892, 100);
+            panel1.Location = new Point(876, 109);
             panel1.Name = "panel1";
             panel1.Size = new Size(791, 556);
             panel1.TabIndex = 1;

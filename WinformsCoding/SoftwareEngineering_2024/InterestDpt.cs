@@ -19,25 +19,24 @@ namespace SoftwareEngineering_2024
             GmapLink.Click += Opener.OpenGoogleMaps;
             IgLink.Click += Opener.OpenInstagram;
             LogInLink.Click += LogInLink_Click;
-            ProceedIntBt.Click += ProceedIntBt_Click;
-           
+            ProceedTagBt.Click += ProceedIntBt_Click;
+
 
         }
 
         private void ProceedIntBt_Click(object? sender, EventArgs e)
         {
-            Opener.OpenDialog(typeof(TagsForm), "tagForm", this);
-            throw new NotImplementedException();
+            Opener.OpenForm(this, typeof(TagsForm));
         }
 
-        private void LogInLink_Click(object? sender, EventArgs e)
+        private void LogInLink_Click(object sender, EventArgs e)
         {
-            Opener.OpenDialog(typeof(LoginForm), "loginForm", this);
-            throw new NotImplementedException();
+            Opener.OpenForm(this, typeof(LoginForm));
         }
 
-
-
-        
+        private void PreviousPageBt_Click(object sender, EventArgs e)
+        {
+            Opener.GoBack(this);
+        }
     }
 }

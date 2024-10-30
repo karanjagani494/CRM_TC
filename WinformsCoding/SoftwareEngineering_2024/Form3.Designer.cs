@@ -62,6 +62,7 @@ namespace SoftwareEngineering_2024
             PasswordSuTb = new MaskedTextBox();
             EmailSuTb = new MaskedTextBox();
             WelcomeSignUp = new Label();
+            PreviousPageBt = new Button();
             ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
@@ -380,6 +381,18 @@ namespace SoftwareEngineering_2024
             WelcomeSignUp.Text = "Welcome to Together Culture";
             WelcomeSignUp.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // PreviousPageBt
+            // 
+            PreviousPageBt.BackColor = Color.IndianRed;
+            PreviousPageBt.ForeColor = Color.Black;
+            PreviousPageBt.Location = new Point(1589, 12);
+            PreviousPageBt.Name = "PreviousPageBt";
+            PreviousPageBt.Size = new Size(128, 29);
+            PreviousPageBt.TabIndex = 11;
+            PreviousPageBt.Text = "<- Previous Page";
+            PreviousPageBt.UseVisualStyleBackColor = false;
+            PreviousPageBt.Click += PreviousPageBt_Click;
+            // 
             // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -387,6 +400,7 @@ namespace SoftwareEngineering_2024
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1812, 777);
+            Controls.Add(PreviousPageBt);
             Controls.Add(panel1);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
@@ -450,5 +464,6 @@ namespace SoftwareEngineering_2024
         private MaskedTextBox CountryTb;
         private Label PhoneNoLb;
         private MaskedTextBox PhoneNoTb;
+        private Button PreviousPageBt;
     }
 }
