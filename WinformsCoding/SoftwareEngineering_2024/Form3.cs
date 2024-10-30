@@ -24,17 +24,25 @@ namespace SoftwareEngineering_2024
 
         private void LogInLink_LinkClicked(object sender, EventArgs e)
         {
-            Opener.OpenDialog(typeof(LoginForm), "loginForm", this);
-
+            Opener.OpenForm(this, typeof(LoginForm));
         }
 
         private void ProceedIntBt_Click(object sender, EventArgs e)
         {
-            Opener.OpenDialog(typeof(InterestDptForm), "interestDpt", this);
-
+            Opener.OpenForm(this, typeof(InterestDptForm));
         }
 
         private void TCLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Opener.GoBack(this);
+        }
+
+        private void PreviousPageBt_Click(object sender, EventArgs e)
         {
 
         }

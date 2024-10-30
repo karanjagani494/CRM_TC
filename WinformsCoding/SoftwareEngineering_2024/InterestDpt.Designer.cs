@@ -42,6 +42,7 @@
             ProceedTagBt = new Button();
             WelcomeSignUp = new Label();
             TCLogo = new PictureBox();
+            PreviousPageBt = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).BeginInit();
@@ -206,6 +207,18 @@
             TCLogo.TabIndex = 3;
             TCLogo.TabStop = false;
             // 
+            // PreviousPageBt
+            // 
+            PreviousPageBt.BackColor = Color.IndianRed;
+            PreviousPageBt.ForeColor = Color.Black;
+            PreviousPageBt.Location = new Point(1599, 12);
+            PreviousPageBt.Name = "PreviousPageBt";
+            PreviousPageBt.Size = new Size(128, 29);
+            PreviousPageBt.TabIndex = 12;
+            PreviousPageBt.Text = "<- Previous Page";
+            PreviousPageBt.UseVisualStyleBackColor = false;
+            PreviousPageBt.Click += PreviousPageBt_Click;
+            // 
             // InterestDptForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -213,6 +226,7 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1806, 748);
+            Controls.Add(PreviousPageBt);
             Controls.Add(panel1);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
@@ -242,5 +256,6 @@
         private CheckBox WorkingCb;
         private CheckBox HappeningCb;
         private CheckBox LearningCb;
+        private Button PreviousPageBt;
     }
 }

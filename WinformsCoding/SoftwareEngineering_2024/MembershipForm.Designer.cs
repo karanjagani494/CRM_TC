@@ -41,6 +41,7 @@
             LogInLink = new LinkLabel();
             ProceedIntBt = new Button();
             WelcomeSignUp = new Label();
+            PreviousPageBt = new Button();
             ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
@@ -195,6 +196,18 @@
             WelcomeSignUp.Text = "Welcome to Together Culture";
             WelcomeSignUp.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // PreviousPageBt
+            // 
+            PreviousPageBt.BackColor = Color.IndianRed;
+            PreviousPageBt.ForeColor = Color.Black;
+            PreviousPageBt.Location = new Point(1554, 12);
+            PreviousPageBt.Name = "PreviousPageBt";
+            PreviousPageBt.Size = new Size(128, 29);
+            PreviousPageBt.TabIndex = 12;
+            PreviousPageBt.Text = "<- Previous Page";
+            PreviousPageBt.UseVisualStyleBackColor = false;
+            PreviousPageBt.Click += PreviousPageBt_Click;
+            // 
             // MembershipForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -202,6 +215,7 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1772, 748);
+            Controls.Add(PreviousPageBt);
             Controls.Add(panel1);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
@@ -231,5 +245,6 @@
         private LinkLabel LogInLink;
         private Button ProceedIntBt;
         private Label WelcomeSignUp;
+        private Button PreviousPageBt;
     }
 }

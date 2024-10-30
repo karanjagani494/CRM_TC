@@ -18,7 +18,7 @@ namespace SoftwareEngineering_2024
 
         private void SignUpLinkClicked(object sender, EventArgs e)
         {
-            Opener.OpenDialog(typeof(SignUpForm), "signUpForm", this);
+            Opener.OpenForm(this, typeof(SignUpForm));
         }
     }
 }

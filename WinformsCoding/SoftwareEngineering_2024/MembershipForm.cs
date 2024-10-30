@@ -26,10 +26,9 @@ namespace SoftwareEngineering_2024
 
         }
 
-        private void LogInLink_Click(object? sender, EventArgs e)
+        private void LogInLink_Click(object sender, EventArgs e)
         {
-            Opener.OpenDialog(typeof(LoginForm), "loginForm", this);
-            throw new NotImplementedException();
+            Opener.OpenForm(this, typeof(LoginForm));
         }
 
         private void MembershipForm_Load(object sender, EventArgs e)
@@ -52,6 +51,11 @@ namespace SoftwareEngineering_2024
             }
 
 
+        }
+
+        private void PreviousPageBt_Click(object sender, EventArgs e)
+        {
+            Opener.GoBack(this);
         }
     }
 }
