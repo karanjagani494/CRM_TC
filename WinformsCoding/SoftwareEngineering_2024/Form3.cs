@@ -32,18 +32,9 @@ namespace SoftwareEngineering_2024
             Opener.OpenForm(this, typeof(InterestDptForm));
         }
 
-        private void TCLogo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Opener.GoBack(this);
-        }
-
         private void PreviousPageBt_Click(object sender, EventArgs e)
         {
+            Opener.GoBack(this);
 
         }
     }

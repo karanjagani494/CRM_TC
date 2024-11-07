@@ -324,7 +324,6 @@ namespace SoftwareEngineering_2024
             LogInLink.TabIndex = 6;
             LogInLink.TabStop = true;
             LogInLink.Text = "Already a Member, Log In";
-            LogInLink.LinkClicked += LogInLink_LinkClicked;
             // 
             // PasswordSuLb
             // 
