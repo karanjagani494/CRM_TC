@@ -10,12 +10,9 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class Payment : Form
-
-
+    public partial class ThankYouForm : Form
     {
-        private Panel _checkboxPanel;
-        public Payment()
+        public ThankYouForm()
         {
             InitializeComponent();
             FbLink.Click += Opener.OpenFacebook;
@@ -23,24 +20,9 @@ namespace SoftwareEngineering_2024
             IgLink.Click += Opener.OpenInstagram;
         }
 
-        private void ProceedTqBt_Click(object sender, EventArgs e)
+        private void ThankyouLoginBt_Click(object sender, EventArgs e)
         {
-            Opener.OpenForm(this, typeof(ThankYouForm));
-
+            Opener.OpenForm(this, typeof(LoginForm));
         }
-
-        private void PreviousPageBt_Click(object sender, EventArgs e)
-        {
-            Opener.GoBack(this);
-        }
-
-
-        
-       
-
-
-
-
-
-}
+    }
 }

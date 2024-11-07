@@ -122,7 +122,6 @@
             AccountCreateLink.TabIndex = 6;
             AccountCreateLink.TabStop = true;
             AccountCreateLink.Text = "Not a Member, Sign Up!";
-            AccountCreateLink.LinkClicked += SignUpLinkClicked;
             // 
             // PasswordLb
             // 
@@ -151,6 +150,7 @@
             LoginBt.TabIndex = 3;
             LoginBt.Text = "Login";
             LoginBt.UseVisualStyleBackColor = false;
+            LoginBt.Click += LoginBt_Click;
             // 
             // PasswordTb
             // 

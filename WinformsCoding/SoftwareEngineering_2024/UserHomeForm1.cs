@@ -10,31 +10,30 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class SignUpForm : Form
+    public partial class UserHomeForm1 : Form
     {
-        public SignUpForm()
+        public UserHomeForm1()
         {
             InitializeComponent();
             FbLink.Click += Opener.OpenFacebook;
             GmapLink.Click += Opener.OpenGoogleMaps;
             IgLink.Click += Opener.OpenInstagram;
-            LogInLink.Click += LogInLink_LinkClicked;
+            HomeBt.Click += FormOpener.OpenUserHomeForm;
+            MembershipsBt.Click += FormOpener.OpenUserMembershipForm;
         }
 
-
-        private void LogInLink_LinkClicked(object sender, EventArgs e)
+        private void Websitelb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Opener.OpenForm(this, typeof(LoginForm));
+            Opener.OpenLink("https://www.togetherculture.com");
         }
 
-        private void ProceedIntBt_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Opener.OpenForm(this, typeof(InterestDptForm));
+
         }
 
-        private void PreviousPageBt_Click(object sender, EventArgs e)
+        private void UserHomeForm1_Load(object sender, EventArgs e)
         {
-            Opener.GoBack(this);
 
         }
     }

@@ -31,7 +31,7 @@ namespace SoftwareEngineering_2024
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpForm));
             TCLogo = new PictureBox();
-            panel1 = new Panel();
+            RegisterPanel = new Panel();
             PhoneNoLb = new Label();
             PhoneNoTb = new MaskedTextBox();
             CountryLb = new Label();
@@ -62,9 +62,8 @@ namespace SoftwareEngineering_2024
             PasswordSuTb = new MaskedTextBox();
             EmailSuTb = new MaskedTextBox();
             WelcomeSignUp = new Label();
-            PreviousPageBt = new Button();
             ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
-            panel1.SuspendLayout();
+            RegisterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).BeginInit();
@@ -80,46 +79,45 @@ namespace SoftwareEngineering_2024
             TCLogo.Size = new Size(558, 556);
             TCLogo.TabIndex = 1;
             TCLogo.TabStop = false;
-            TCLogo.Click += TCLogo_Click;
             // 
-            // panel1
+            // RegisterPanel
             // 
-            panel1.BackColor = Color.RosyBrown;
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(PhoneNoLb);
-            panel1.Controls.Add(PhoneNoTb);
-            panel1.Controls.Add(CountryLb);
-            panel1.Controls.Add(CountryTb);
-            panel1.Controls.Add(RetypePasswordLb);
-            panel1.Controls.Add(maskedTextBox3);
-            panel1.Controls.Add(StateLb);
-            panel1.Controls.Add(StateTb);
-            panel1.Controls.Add(CityLb);
-            panel1.Controls.Add(CityTb);
-            panel1.Controls.Add(CityCodeLb);
-            panel1.Controls.Add(CityCodeTb);
-            panel1.Controls.Add(StreetLb);
-            panel1.Controls.Add(FlatNoLb);
-            panel1.Controls.Add(StreetTb);
-            panel1.Controls.Add(FlatnoTb);
-            panel1.Controls.Add(LnameLb);
-            panel1.Controls.Add(FnameLb);
-            panel1.Controls.Add(LastNameTb);
-            panel1.Controls.Add(FirstNameTb);
-            panel1.Controls.Add(IgLink);
-            panel1.Controls.Add(GmapLink);
-            panel1.Controls.Add(FbLink);
-            panel1.Controls.Add(LogInLink);
-            panel1.Controls.Add(PasswordSuLb);
-            panel1.Controls.Add(EmailSuLb);
-            panel1.Controls.Add(ProceedIntBt);
-            panel1.Controls.Add(PasswordSuTb);
-            panel1.Controls.Add(EmailSuTb);
-            panel1.Controls.Add(WelcomeSignUp);
-            panel1.Location = new Point(926, 125);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(791, 556);
-            panel1.TabIndex = 2;
+            RegisterPanel.BackColor = Color.RosyBrown;
+            RegisterPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            RegisterPanel.Controls.Add(PhoneNoLb);
+            RegisterPanel.Controls.Add(PhoneNoTb);
+            RegisterPanel.Controls.Add(CountryLb);
+            RegisterPanel.Controls.Add(CountryTb);
+            RegisterPanel.Controls.Add(RetypePasswordLb);
+            RegisterPanel.Controls.Add(maskedTextBox3);
+            RegisterPanel.Controls.Add(StateLb);
+            RegisterPanel.Controls.Add(StateTb);
+            RegisterPanel.Controls.Add(CityLb);
+            RegisterPanel.Controls.Add(CityTb);
+            RegisterPanel.Controls.Add(CityCodeLb);
+            RegisterPanel.Controls.Add(CityCodeTb);
+            RegisterPanel.Controls.Add(StreetLb);
+            RegisterPanel.Controls.Add(FlatNoLb);
+            RegisterPanel.Controls.Add(StreetTb);
+            RegisterPanel.Controls.Add(FlatnoTb);
+            RegisterPanel.Controls.Add(LnameLb);
+            RegisterPanel.Controls.Add(FnameLb);
+            RegisterPanel.Controls.Add(LastNameTb);
+            RegisterPanel.Controls.Add(FirstNameTb);
+            RegisterPanel.Controls.Add(IgLink);
+            RegisterPanel.Controls.Add(GmapLink);
+            RegisterPanel.Controls.Add(FbLink);
+            RegisterPanel.Controls.Add(LogInLink);
+            RegisterPanel.Controls.Add(PasswordSuLb);
+            RegisterPanel.Controls.Add(EmailSuLb);
+            RegisterPanel.Controls.Add(ProceedIntBt);
+            RegisterPanel.Controls.Add(PasswordSuTb);
+            RegisterPanel.Controls.Add(EmailSuTb);
+            RegisterPanel.Controls.Add(WelcomeSignUp);
+            RegisterPanel.Location = new Point(926, 125);
+            RegisterPanel.Name = "RegisterPanel";
+            RegisterPanel.Size = new Size(791, 556);
+            RegisterPanel.TabIndex = 2;
             // 
             // PhoneNoLb
             // 
@@ -380,18 +378,6 @@ namespace SoftwareEngineering_2024
             WelcomeSignUp.Text = "Welcome to Together Culture";
             WelcomeSignUp.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // PreviousPageBt
-            // 
-            PreviousPageBt.BackColor = Color.IndianRed;
-            PreviousPageBt.ForeColor = Color.Black;
-            PreviousPageBt.Location = new Point(1589, 12);
-            PreviousPageBt.Name = "PreviousPageBt";
-            PreviousPageBt.Size = new Size(128, 29);
-            PreviousPageBt.TabIndex = 11;
-            PreviousPageBt.Text = "<- Previous Page";
-            PreviousPageBt.UseVisualStyleBackColor = false;
-            PreviousPageBt.Click += PreviousPageBt_Click;
-            // 
             // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -399,15 +385,14 @@ namespace SoftwareEngineering_2024
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1812, 777);
-            Controls.Add(PreviousPageBt);
-            Controls.Add(panel1);
+            Controls.Add(RegisterPanel);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
             Name = "SignUpForm";
             Text = "TC_Dashboard";
             ((System.ComponentModel.ISupportInitialize)TCLogo).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            RegisterPanel.ResumeLayout(false);
+            RegisterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).EndInit();
@@ -432,7 +417,7 @@ namespace SoftwareEngineering_2024
         #endregion
 
         private PictureBox TCLogo;
-        private Panel panel1;
+        private Panel RegisterPanel;
         private PictureBox IgLink;
         private PictureBox GmapLink;
         private PictureBox FbLink;
@@ -463,6 +448,5 @@ namespace SoftwareEngineering_2024
         private MaskedTextBox CountryTb;
         private Label PhoneNoLb;
         private MaskedTextBox PhoneNoTb;
-        private Button PreviousPageBt;
     }
 }
