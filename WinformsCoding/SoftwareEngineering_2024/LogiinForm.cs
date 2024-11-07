@@ -20,5 +20,15 @@ namespace SoftwareEngineering_2024
         {
             Opener.OpenForm(this, typeof(SignUpForm));
         }
+
+        private void LoginBt_Click(object sender, EventArgs e)
+        {
+            Opener.OpenForm(this, typeof(UserHomeForm1));
+        }
+
+        private void SignUpLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

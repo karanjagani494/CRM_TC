@@ -31,17 +31,13 @@ namespace SoftwareEngineering_2024
             Opener.OpenForm(this, typeof(LoginForm));
         }
 
-        private void MembershipForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void MembershipOption_CheckedChanged(object sender, EventArgs e)
         {
             if (sender is CheckBox checkedBox && checkedBox.Checked)
             {
                 // Uncheck all other checkboxes except the one that was just checked
-                foreach (Control control in panel1.Controls)
+                foreach (Control control in MembershipPanel.Controls)
                 {
                     if (control is CheckBox checkBox && checkBox != checkedBox)
                     {
@@ -57,5 +53,16 @@ namespace SoftwareEngineering_2024
         {
             Opener.GoBack(this);
         }
+
+        private void ProceedIntBt_Click(object sender, EventArgs e)
+        {
+            if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
+            {
+                Opener.OpenForm(this, typeof(Payment));
+            }
+
+        }
+
+        
     }
 }

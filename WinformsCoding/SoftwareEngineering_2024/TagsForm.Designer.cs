@@ -312,6 +312,7 @@
             // 
             // GmapLink
             // 
+            GmapLink.BackColor = Color.RosyBrown;
             GmapLink.BackgroundImage = Properties.Resources.Gmaps;
             GmapLink.BackgroundImageLayout = ImageLayout.Stretch;
             GmapLink.Cursor = Cursors.Hand;
