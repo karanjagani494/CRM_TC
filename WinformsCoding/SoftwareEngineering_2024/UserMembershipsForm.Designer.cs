@@ -41,7 +41,7 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            button1 = new Button();
+            textBox1 = new TextBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -188,15 +188,15 @@
             label4.TabIndex = 20;
             label4.Text = "label4";
             // 
-            // button1
+            // textBox1
             // 
-            button1.Location = new Point(1249, 224);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 21;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            textBox1.Location = new Point(323, 368);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(445, 68);
+            textBox1.TabIndex = 21;
+            textBox1.Text = "Part Time Workspace Membership\nFrom £70/month + £100 joining fee\nGain Partial 24/7 access to a dedicated workspace, storage, and a network of like-minded collaborators.";
             // 
             // UserMembershipsForm
             // 
@@ -205,7 +205,7 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1816, 697);
-            Controls.Add(button1);
+            Controls.Add(textBox1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -236,6 +236,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button button1;
+        private TextBox textBox1;
     }
 }

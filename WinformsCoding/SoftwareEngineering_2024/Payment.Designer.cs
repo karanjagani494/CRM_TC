@@ -58,6 +58,7 @@
             ProceedTqBt = new Button();
             ExDateTb = new MaskedTextBox();
             WelcomeSignUp = new Label();
+            MembershipLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
@@ -84,7 +85,7 @@
             TCLogo.BackgroundImageLayout = ImageLayout.Stretch;
             TCLogo.Location = new Point(76, 76);
             TCLogo.Name = "TCLogo";
-            TCLogo.Size = new Size(589, 556);
+            TCLogo.Size = new Size(476, 556);
             TCLogo.TabIndex = 12;
             TCLogo.TabStop = false;
             // 
@@ -351,6 +352,15 @@
             WelcomeSignUp.Text = "Welcome to Together Culture";
             WelcomeSignUp.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // MembershipLabel
+            // 
+            MembershipLabel.AutoSize = true;
+            MembershipLabel.Location = new Point(650, 76);
+            MembershipLabel.Name = "MembershipLabel";
+            MembershipLabel.Size = new Size(92, 20);
+            MembershipLabel.TabIndex = 15;
+            MembershipLabel.Text = "Membership";
+            // 
             // Payment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -358,6 +368,7 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1777, 720);
+            Controls.Add(MembershipLabel);
             Controls.Add(panel1);
             Controls.Add(PreviousPageBt);
             Controls.Add(TCLogo);
@@ -371,6 +382,7 @@
             ((System.ComponentModel.ISupportInitialize)GmapLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -404,5 +416,6 @@
         private Button ProceedTqBt;
         private MaskedTextBox ExDateTb;
         private Label WelcomeSignUp;
+        private Label MembershipLabel;
     }
 }
