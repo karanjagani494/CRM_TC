@@ -19,9 +19,7 @@ namespace SoftwareEngineering_2024
             WorkspaceFtCb.CheckedChanged += MembershipOption_CheckedChanged;
             CommKeysCb.CheckedChanged += MembershipOption_CheckedChanged;
             WorkspacePtCb.CheckedChanged += MembershipOption_CheckedChanged;
-            FbLink.Click += Opener.OpenFacebook;
-            GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;
+            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
             LogInLink.Click += LogInLink_Click;
 
         }
@@ -32,7 +30,7 @@ namespace SoftwareEngineering_2024
         }
 
 
-        private void MembershipOption_CheckedChanged(object sender, EventArgs e)
+        public void MembershipOption_CheckedChanged(object sender, EventArgs e)
         {
             if (sender is CheckBox checkedBox && checkedBox.Checked)
             {

@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UserCommunityMemTb.Text" xml:space="preserve">
-    <value>£18.50 / month
-Join our burgeoning community of open-minded and curious people and make 5 Ftizroy Street your home away from home. 
-Membership provides free or discounted tickets to all events, collaborative and creative skills development workshops, participation in the annual  Citizens’ Studio, and a voice in decision about new social enterprises developed in Together Culture’s incubator. Plus, you’ll have a City Centre base that you can call home, have a (free) coffee with your friends, host your next bookclub, do some work, be inspired, or just be</value>
-  </data>
-  <data name="UserWorkSpTb.Text" xml:space="preserve">
-    <value>From £70 / month + £100 joining fee
-Find a supportive and collaborative network of like-minded change makers. 
-Enjoy all the perks of Community Membership, plus Part time 24/7 access to Together Culture Fitzroy including a dedicated workspace, storage space, and cohort of Workspace Members with which to build collaborative relationships.</value>
-  </data>
-  <data name="UserWorkSpFullTb.Text" xml:space="preserve">
-    <value>From £100 / month + £100 joining fee
-Find a supportive and collaborative network of like-minded change makers. 
-Enjoy all the perks of Community Membership, plus 24/7 access to Together Culture Fitzroy including a dedicated workspace, storage space, and cohort of Workspace Members with which to build collaborative relationships.</value>
-  </data>
-  <data name="UserCommKeysTb.Text" xml:space="preserve">
-    <value>£28.50 / month
-Join our burgeoning community of open-minded and curious people and make 5 Ftizroy Street your home away from home. 
-Membership provides free or discounted tickets to all events, collaborative and creative skills development workshops, participation in the annual  Citizens’ Studio, and a voice in decision about new social enterprises developed in Together Culture’s incubator. Plus, you’ll have a City Centre base that you can call home, have a (free) coffee with your friends, host your next bookclub, do some work, be inspired, or just be. Additional access to keys to the Space rooms.
-</value>
-  </data>
 </root>

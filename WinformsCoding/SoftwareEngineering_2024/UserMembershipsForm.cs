@@ -15,14 +15,10 @@ namespace SoftwareEngineering_2024
         public UserMembershipsForm()
         {
             InitializeComponent();
-            HomeBt.Click += FormOpener.OpenUserHomeForm;
-            MembershipsBt.Click += FormOpener.OpenUserMembershipForm;
-
+            FormOpener.OpenUserDashboardPages(HomeBt, MembershipsBt, EventsBt, MyBookingsBt, SpaceBt, QueryBt);
 
         }
 
-       
-
-
+      
     }
 }

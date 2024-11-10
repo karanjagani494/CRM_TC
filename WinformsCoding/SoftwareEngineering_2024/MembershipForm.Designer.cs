@@ -122,7 +122,7 @@
             WorkspacePtCb.AllowDrop = true;
             WorkspacePtCb.BackColor = Color.IndianRed;
             WorkspacePtCb.FlatStyle = FlatStyle.Popup;
-            WorkspacePtCb.Location = new Point(26, 120);
+            WorkspacePtCb.Location = new Point(26, 117);
             WorkspacePtCb.Name = "WorkspacePtCb";
             WorkspacePtCb.Size = new Size(191, 225);
             WorkspacePtCb.TabIndex = 10;

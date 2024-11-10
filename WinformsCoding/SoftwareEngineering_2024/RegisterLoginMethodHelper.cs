@@ -54,24 +54,14 @@ namespace SoftwareEngineering_2024
         }
 
         // Specific methods for opening social media links
-        public static void OpenFacebook(object sender, EventArgs e)
+
+        public static void OpenSocialMediaLinks(PictureBox fbBox, PictureBox gmapBox, PictureBox igBox)
         {
-            OpenLink("https://www.facebook.com/p/Together-Culture-CIC-100092890960501/");
+            // Set event handlers for the respective PictureBoxes
+            fbBox.Click += (sender, e) => OpenLink("https://www.facebook.com/p/Together-Culture-CIC-100092890960501/");
+            gmapBox.Click += (sender, e) => OpenLink("https://maps.app.goo.gl/W6YYduRmSFShLCPu6");
+            igBox.Click += (sender, e) => OpenLink("https://www.instagram.com/togetherculture.cambridge/");
         }
-
-        public static void OpenGoogleMaps(object sender, EventArgs e)
-        {
-            OpenLink("https://maps.app.goo.gl/W6YYduRmSFShLCPu6");
-        }
-
-        public static void OpenInstagram(object sender, EventArgs e)
-        {
-            OpenLink("https://www.instagram.com/togetherculture.cambridge/");
-        }
-
-
-
-
         public static bool AreTextBoxesFilledAndCheckboxesChecked(Control parent)
         {
             bool isAnyCheckboxChecked = false; // Track if at least one checkbox is checked

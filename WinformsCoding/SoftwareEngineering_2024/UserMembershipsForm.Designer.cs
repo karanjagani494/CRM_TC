@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserMembershipsForm));
             panel2 = new Panel();
             QueryBt = new Button();
             SpaceBt = new Button();
@@ -37,11 +38,14 @@
             HomeBt = new Button();
             panel1 = new Panel();
             UserHomeLb = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
+            UserCommMemLb = new Label();
+            UserCommMemKeysLb = new Label();
+            UserWorkSpMemPartLb = new Label();
+            UserWorkSpMemFullLb = new Label();
+            UserCommunityMemTb = new TextBox();
+            UserWorkSpTb = new TextBox();
+            UserWorkSpFullTb = new TextBox();
+            UserCommKeysTb = new TextBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -142,61 +146,107 @@
             // 
             UserHomeLb.Anchor = AnchorStyles.Top;
             UserHomeLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UserHomeLb.Location = new Point(972, 9);
+            UserHomeLb.Location = new Point(889, 9);
             UserHomeLb.Name = "UserHomeLb";
-            UserHomeLb.Size = new Size(99, 25);
+            UserHomeLb.Size = new Size(235, 25);
             UserHomeLb.TabIndex = 3;
-            UserHomeLb.Text = "Home";
+            UserHomeLb.Text = "Memberships";
             // 
-            // label1
+            // UserCommMemLb
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
-            label1.Location = new Point(323, 106);
-            label1.Name = "label1";
-            label1.Size = new Size(97, 27);
-            label1.TabIndex = 4;
-            label1.Text = "label1";
+            UserCommMemLb.Anchor = AnchorStyles.None;
+            UserCommMemLb.AutoSize = true;
+            UserCommMemLb.BackColor = Color.RosyBrown;
+            UserCommMemLb.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
+            UserCommMemLb.Location = new Point(240, 57);
+            UserCommMemLb.Name = "UserCommMemLb";
+            UserCommMemLb.Size = new Size(317, 27);
+            UserCommMemLb.TabIndex = 4;
+            UserCommMemLb.Text = "Community Membership";
             // 
-            // label2
+            // UserCommMemKeysLb
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
-            label2.Location = new Point(323, 223);
-            label2.Name = "label2";
-            label2.Size = new Size(97, 27);
-            label2.TabIndex = 18;
-            label2.Text = "label2";
+            UserCommMemKeysLb.Anchor = AnchorStyles.None;
+            UserCommMemKeysLb.AutoSize = true;
+            UserCommMemKeysLb.BackColor = Color.RosyBrown;
+            UserCommMemKeysLb.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
+            UserCommMemKeysLb.Location = new Point(240, 225);
+            UserCommMemKeysLb.Name = "UserCommMemKeysLb";
+            UserCommMemKeysLb.Size = new Size(406, 27);
+            UserCommMemKeysLb.TabIndex = 18;
+            UserCommMemKeysLb.Text = "Community Membership + Keys";
             // 
-            // label3
+            // UserWorkSpMemPartLb
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
-            label3.Location = new Point(323, 338);
-            label3.Name = "label3";
-            label3.Size = new Size(97, 27);
-            label3.TabIndex = 19;
-            label3.Text = "label3";
+            UserWorkSpMemPartLb.Anchor = AnchorStyles.None;
+            UserWorkSpMemPartLb.AutoSize = true;
+            UserWorkSpMemPartLb.BackColor = Color.RosyBrown;
+            UserWorkSpMemPartLb.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
+            UserWorkSpMemPartLb.Location = new Point(240, 394);
+            UserWorkSpMemPartLb.Name = "UserWorkSpMemPartLb";
+            UserWorkSpMemPartLb.Size = new Size(397, 27);
+            UserWorkSpMemPartLb.TabIndex = 19;
+            UserWorkSpMemPartLb.Text = "Part-time Workspace Member";
             // 
-            // label4
+            // UserWorkSpMemFullLb
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
-            label4.Location = new Point(323, 461);
-            label4.Name = "label4";
-            label4.Size = new Size(97, 27);
-            label4.TabIndex = 20;
-            label4.Text = "label4";
+            UserWorkSpMemFullLb.Anchor = AnchorStyles.None;
+            UserWorkSpMemFullLb.AutoSize = true;
+            UserWorkSpMemFullLb.BackColor = Color.RosyBrown;
+            UserWorkSpMemFullLb.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
+            UserWorkSpMemFullLb.Location = new Point(240, 528);
+            UserWorkSpMemFullLb.Name = "UserWorkSpMemFullLb";
+            UserWorkSpMemFullLb.Size = new Size(463, 27);
+            UserWorkSpMemFullLb.TabIndex = 20;
+            UserWorkSpMemFullLb.Text = "Full - time Workspace Membership";
             // 
-            // textBox1
+            // UserCommunityMemTb
             // 
-            textBox1.Location = new Point(323, 368);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(445, 68);
-            textBox1.TabIndex = 21;
-            textBox1.Text = "Part Time Workspace Membership\nFrom £70/month + £100 joining fee\nGain Partial 24/7 access to a dedicated workspace, storage, and a network of like-minded collaborators.";
+            UserCommunityMemTb.Anchor = AnchorStyles.None;
+            UserCommunityMemTb.BackColor = Color.RosyBrown;
+            UserCommunityMemTb.Location = new Point(240, 87);
+            UserCommunityMemTb.Multiline = true;
+            UserCommunityMemTb.Name = "UserCommunityMemTb";
+            UserCommunityMemTb.ReadOnly = true;
+            UserCommunityMemTb.Size = new Size(956, 112);
+            UserCommunityMemTb.TabIndex = 21;
+            UserCommunityMemTb.Text = resources.GetString("UserCommunityMemTb.Text");
+            // 
+            // UserWorkSpTb
+            // 
+            UserWorkSpTb.Anchor = AnchorStyles.None;
+            UserWorkSpTb.BackColor = Color.RosyBrown;
+            UserWorkSpTb.Location = new Point(240, 424);
+            UserWorkSpTb.Multiline = true;
+            UserWorkSpTb.Name = "UserWorkSpTb";
+            UserWorkSpTb.ReadOnly = true;
+            UserWorkSpTb.Size = new Size(956, 87);
+            UserWorkSpTb.TabIndex = 23;
+            UserWorkSpTb.Text = resources.GetString("UserWorkSpTb.Text");
+            // 
+            // UserWorkSpFullTb
+            // 
+            UserWorkSpFullTb.Anchor = AnchorStyles.None;
+            UserWorkSpFullTb.BackColor = Color.RosyBrown;
+            UserWorkSpFullTb.Location = new Point(240, 558);
+            UserWorkSpFullTb.Multiline = true;
+            UserWorkSpFullTb.Name = "UserWorkSpFullTb";
+            UserWorkSpFullTb.ReadOnly = true;
+            UserWorkSpFullTb.Size = new Size(956, 91);
+            UserWorkSpFullTb.TabIndex = 24;
+            UserWorkSpFullTb.Text = resources.GetString("UserWorkSpFullTb.Text");
+            // 
+            // UserCommKeysTb
+            // 
+            UserCommKeysTb.Anchor = AnchorStyles.None;
+            UserCommKeysTb.BackColor = Color.RosyBrown;
+            UserCommKeysTb.Location = new Point(240, 255);
+            UserCommKeysTb.Multiline = true;
+            UserCommKeysTb.Name = "UserCommKeysTb";
+            UserCommKeysTb.ReadOnly = true;
+            UserCommKeysTb.Size = new Size(956, 125);
+            UserCommKeysTb.TabIndex = 25;
+            UserCommKeysTb.Text = resources.GetString("UserCommKeysTb.Text");
             // 
             // UserMembershipsForm
             // 
@@ -205,11 +255,14 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1816, 697);
-            Controls.Add(textBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(UserCommKeysTb);
+            Controls.Add(UserWorkSpFullTb);
+            Controls.Add(UserWorkSpTb);
+            Controls.Add(UserCommunityMemTb);
+            Controls.Add(UserWorkSpMemFullLb);
+            Controls.Add(UserWorkSpMemPartLb);
+            Controls.Add(UserCommMemKeysLb);
+            Controls.Add(UserCommMemLb);
             Controls.Add(panel2);
             Controls.Add(panel1);
             DoubleBuffered = true;
@@ -232,10 +285,13 @@
         private Button HomeBt;
         private Panel panel1;
         private Label UserHomeLb;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox1;
+        private Label UserCommMemLb;
+        private Label UserCommMemKeysLb;
+        private Label UserWorkSpMemPartLb;
+        private Label UserWorkSpMemFullLb;
+        private TextBox UserCommunityMemTb;
+        private TextBox UserWorkSpTb;
+        private TextBox UserWorkSpFullTb;
+        private TextBox UserCommKeysTb;
     }
 }
