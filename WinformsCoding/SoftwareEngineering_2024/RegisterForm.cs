@@ -46,10 +46,7 @@ namespace SoftwareEngineering_2024
             {
                 Opener.OpenForm(this, typeof(InterestDptForm));
 
-                
-
-        
-
+               
                 string Email = email.Text;
                 string Password = password.Text;
                 string Firstname = firstName.Text;
