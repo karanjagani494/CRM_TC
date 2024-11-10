@@ -7,68 +7,95 @@ using MySql.Data.MySqlClient;
 
 namespace SoftwareEngineering_2024
 {
-   
-        public class db_connect
+
+    public class db_connect
+    {
+        private MySqlConnection connection;
+
+        // Constructor
+        public db_connect()
         {
-            private MySqlConnection connection;
+            InitializeConnection();
+        }
 
-            // Constructor
-            public db_connect()
-            {
-                InitializeConnection();
-            }
+        // Initialize database connection
+        private void InitializeConnection()
+        {
+              string connectionString = "server=localhost;port=3307;database=crm;user=root;password=;";
 
-            // Initialize database connection
-            private void InitializeConnection()
-            {
-                string connectionString = "server=127.0.0.1:3306;user=root;password=Shau@410;database=test;";
-                connection = new MySqlConnection(connectionString);
-            }
+        connection = new MySqlConnection(connectionString);
+        }
 
-            // Open the connection
-            public bool OpenConnection()
+        // Open the connection
+        public bool OpenConnection()
+        {
+            try
             {
-                try
+                if (connection.State == System.Data.ConnectionState.Closed)
                 {
-                    if (connection.State == System.Data.ConnectionState.Closed)
-                    {
-                        connection.Open();
-                    }
-                    return true;
+                    connection.Open();
                 }
-                catch (MySqlException ex)
-                {
-                    // Handle connection errors
-                    Console.WriteLine("MySQL Connection Error: " + ex.Message);
-                    return false;
-                }
+                return true;
             }
-
-            // Close the connection
-            public bool CloseConnection()
+            catch (MySqlException ex)
             {
-                try
-                {
-                    if (connection.State == System.Data.ConnectionState.Open)
-                    {
-                        connection.Close();
-                    }
-                    return true;
-                }
-                catch (MySqlException ex)
-                {
-                    // Handle disconnection errors
-                    Console.WriteLine("MySQL Disconnection Error: " + ex.Message);
-                    return false;
-                }
-            }
-
-            // Get the connection instance
-            public MySqlConnection GetConnection()
-            {
-                return connection;
+                // Handle connection errors
+                Console.WriteLine("MySQL Connection Error: " + ex.Message);
+                return false;
             }
         }
+
+        // Close the connection
+        public bool CloseConnection()
+        {
+            try
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                // Handle disconnection errors
+                Console.WriteLine("MySQL Disconnection Error: " + ex.Message);
+                return false;
+            }
+        }
+
+        // Test the connection by running a simple query
+        public bool TestConnection()
+        {
+            try
+            {
+                if (OpenConnection())
+                {
+                    Console.WriteLine("Database connection is successful.");
+                    CloseConnection();
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Failed to connect to the database.");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Database connection error: " + ex.Message);
+                return false;
+            }
+        }
+
+
+        // Get the connection instance
+        public MySqlConnection GetConnection()
+        {
+            return connection;
+        }
     }
+
+}
 
 
