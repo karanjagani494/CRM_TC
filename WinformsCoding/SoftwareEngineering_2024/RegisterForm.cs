@@ -18,9 +18,10 @@ namespace SoftwareEngineering_2024
         public SignUpForm()
         {
             InitializeComponent();
-            FbLink.Click += Opener.OpenFacebook;
+            /*FbLink.Click += Opener.OpenFacebook;
             GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;
+            IgLink.Click += Opener.OpenInstagram;*/
+            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
             LogInLink.Click += LogInLink_LinkClicked;
             userDAL = new userDAL();
 

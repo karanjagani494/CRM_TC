@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class ThankYouForm : Form
+    public partial class UserWorkspacesForm : Form
     {
-        public ThankYouForm()
+        public UserWorkspacesForm()
         {
             InitializeComponent();
-            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-
-        }
-
-        private void ThankyouLoginBt_Click(object sender, EventArgs e)
-        {
-            Opener.OpenForm(this, typeof(LoginForm));
         }
     }
 }

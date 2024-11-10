@@ -3,17 +3,13 @@
     public partial class Payment : Form
     {
 
-        public Payment(string selectedMembership)
+        public Payment()
         {
             InitializeComponent();
-            FbLink.Click += Opener.OpenFacebook;
-            GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;
-
-            // Display the selected membership to the user
+            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
         }
 
-       
+
 
         private void ProceedTqBt_Click(object sender, EventArgs e)
         {

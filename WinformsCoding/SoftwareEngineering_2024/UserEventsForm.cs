@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class ThankYouForm : Form
+    public partial class UserEventsForm : Form
     {
-        public ThankYouForm()
+        public UserEventsForm()
         {
             InitializeComponent();
-            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-
+            FormOpener.OpenUserDashboardPages(HomeBt, MembershipsBt, EventsBt, MyBookingsBt, SpaceBt, QueryBt);
         }
 
-        private void ThankyouLoginBt_Click(object sender, EventArgs e)
+        private void ViewEventsLinkBt_Click(object sender, EventArgs e)
         {
-            Opener.OpenForm(this, typeof(LoginForm));
+            Opener.OpenLink("https://www.togetherculture.com/events");
         }
     }
 }

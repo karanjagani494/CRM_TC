@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Tls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +9,19 @@ namespace SoftwareEngineering_2024
 {
     public static class FormOpener
     {
-        public static void OpenUserHomeForm(object sender, EventArgs e)
+        public static void OpenUserDashboardPages(Button Home, Button Membership, Button Events, Button Bookings, Button Workspaces, Button Queries) 
         {
-            OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserHomeForm1));
+            Home.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserHomeForm1));
+            Membership.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserMembershipsForm));
+            Events.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserEventsForm));
+            Bookings.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserBookingsForm));
+            Workspaces.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserWorkspacesForm));
+            Queries.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserQueriesFeedbackForm));
         }
-
-        public static void OpenUserMembershipForm(object sender, EventArgs e)
-        {
-            OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserMembershipsForm));
-        }
+       
 
 
-        // You can add more methods for each form type
+  
         private static void OpenUserForm(Form currentForm, Type newFormType)
         {
             Form newForm = (Form)Activator.CreateInstance(newFormType)!;

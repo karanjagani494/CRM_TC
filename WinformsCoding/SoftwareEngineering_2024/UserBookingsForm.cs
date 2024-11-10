@@ -10,18 +10,12 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class ThankYouForm : Form
+    public partial class UserBookingsForm : Form
     {
-        public ThankYouForm()
+        public UserBookingsForm()
         {
             InitializeComponent();
-            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-
-        }
-
-        private void ThankyouLoginBt_Click(object sender, EventArgs e)
-        {
-            Opener.OpenForm(this, typeof(LoginForm));
+            FormOpener.OpenUserDashboardPages(HomeBt, MembershipsBt, EventsBt, MyBookingsBt, SpaceBt, QueryBt);
         }
     }
 }

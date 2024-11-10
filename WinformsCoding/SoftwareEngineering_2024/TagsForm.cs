@@ -15,9 +15,7 @@ namespace SoftwareEngineering_2024
         public TagsForm()
         {
             InitializeComponent();
-            FbLink.Click += Opener.OpenFacebook;
-            GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;
+            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
             LogInLink.Click += LogInLink_Click;
             ProceedMembBt.Click += ProceedMembBt_Click;
         }

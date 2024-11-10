@@ -154,7 +154,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1785, 49);
             panel1.TabIndex = 14;
-            panel1.Paint += panel1_Paint;
             // 
             // UserHomeLb
             // 
@@ -172,7 +171,7 @@
             UsefulLinksUserLb.AutoSize = true;
             UsefulLinksUserLb.BackColor = Color.LightCoral;
             UsefulLinksUserLb.Font = new Font("Stencil", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UsefulLinksUserLb.Location = new Point(340, 239);
+            UsefulLinksUserLb.Location = new Point(291, 425);
             UsefulLinksUserLb.Name = "UsefulLinksUserLb";
             UsefulLinksUserLb.Size = new Size(167, 27);
             UsefulLinksUserLb.TabIndex = 17;
@@ -183,10 +182,10 @@
             Websitelb.Anchor = AnchorStyles.Bottom;
             Websitelb.AutoSize = true;
             Websitelb.BackColor = Color.Transparent;
-            Websitelb.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Websitelb.Location = new Point(441, 411);
+            Websitelb.Font = new Font("Segoe UI Historic", 40.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Websitelb.Location = new Point(349, 502);
             Websitelb.Name = "Websitelb";
-            Websitelb.Size = new Size(246, 81);
+            Websitelb.Size = new Size(277, 89);
             Websitelb.TabIndex = 21;
             Websitelb.TabStop = true;
             Websitelb.Text = "Website";
@@ -199,9 +198,9 @@
             IgLink.BackgroundImage = (Image)resources.GetObject("IgLink.BackgroundImage");
             IgLink.BackgroundImageLayout = ImageLayout.Stretch;
             IgLink.Cursor = Cursors.Hand;
-            IgLink.Location = new Point(1478, 380);
+            IgLink.Location = new Point(1560, 502);
             IgLink.Name = "IgLink";
-            IgLink.Size = new Size(145, 154);
+            IgLink.Size = new Size(80, 81);
             IgLink.TabIndex = 20;
             IgLink.TabStop = false;
             // 
@@ -212,9 +211,9 @@
             GmapLink.BackgroundImage = Properties.Resources.Gmaps;
             GmapLink.BackgroundImageLayout = ImageLayout.Stretch;
             GmapLink.Cursor = Cursors.Hand;
-            GmapLink.Location = new Point(909, 380);
+            GmapLink.Location = new Point(815, 502);
             GmapLink.Name = "GmapLink";
-            GmapLink.Size = new Size(145, 154);
+            GmapLink.Size = new Size(80, 81);
             GmapLink.TabIndex = 19;
             GmapLink.TabStop = false;
             // 
@@ -225,9 +224,9 @@
             FbLink.BackgroundImage = Properties.Resources.fb;
             FbLink.BackgroundImageLayout = ImageLayout.Stretch;
             FbLink.Cursor = Cursors.Hand;
-            FbLink.Location = new Point(1212, 380);
+            FbLink.Location = new Point(1192, 502);
             FbLink.Name = "FbLink";
-            FbLink.Size = new Size(145, 154);
+            FbLink.Size = new Size(80, 81);
             FbLink.TabIndex = 18;
             FbLink.TabStop = false;
             // 
@@ -249,7 +248,6 @@
             DoubleBuffered = true;
             Name = "UserHomeForm1";
             Text = "UserHomeForm1";
-            Load += UserHomeForm1_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)IgLink).EndInit();
