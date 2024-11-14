@@ -15,16 +15,14 @@ namespace SoftwareEngineering_2024
         public InterestDptForm()
         {
             InitializeComponent();
-            FbLink.Click += Opener.OpenFacebook;
-            GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;
+            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
             LogInLink.Click += LogInLink_Click;
-            ProceedTagBt.Click += ProceedIntBt_Click;
+            ProceedTagBt.Click += ProceedTagBt_Click;
 
 
         }
 
-        private void ProceedIntBt_Click(object? sender, EventArgs e)
+        private void ProceedTagBt_Click(object? sender, EventArgs e)
         {
             Opener.OpenForm(this, typeof(TagsForm));
         }

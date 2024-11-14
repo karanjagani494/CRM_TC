@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MembershipForm));
             TCLogo = new PictureBox();
-            panel1 = new Panel();
+            MembershipPanel = new Panel();
             CommCb = new CheckBox();
             WorkspaceFtCb = new CheckBox();
             CommKeysCb = new CheckBox();
@@ -43,7 +43,7 @@
             WelcomeSignUp = new Label();
             PreviousPageBt = new Button();
             ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
-            panel1.SuspendLayout();
+            MembershipPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).BeginInit();
@@ -60,24 +60,24 @@
             TCLogo.TabIndex = 3;
             TCLogo.TabStop = false;
             // 
-            // panel1
+            // MembershipPanel
             // 
-            panel1.BackColor = Color.RosyBrown;
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(CommCb);
-            panel1.Controls.Add(WorkspaceFtCb);
-            panel1.Controls.Add(CommKeysCb);
-            panel1.Controls.Add(WorkspacePtCb);
-            panel1.Controls.Add(IgLink);
-            panel1.Controls.Add(GmapLink);
-            panel1.Controls.Add(FbLink);
-            panel1.Controls.Add(LogInLink);
-            panel1.Controls.Add(ProceedIntBt);
-            panel1.Controls.Add(WelcomeSignUp);
-            panel1.Location = new Point(891, 98);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(791, 556);
-            panel1.TabIndex = 5;
+            MembershipPanel.BackColor = Color.RosyBrown;
+            MembershipPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            MembershipPanel.Controls.Add(CommCb);
+            MembershipPanel.Controls.Add(WorkspaceFtCb);
+            MembershipPanel.Controls.Add(CommKeysCb);
+            MembershipPanel.Controls.Add(WorkspacePtCb);
+            MembershipPanel.Controls.Add(IgLink);
+            MembershipPanel.Controls.Add(GmapLink);
+            MembershipPanel.Controls.Add(FbLink);
+            MembershipPanel.Controls.Add(LogInLink);
+            MembershipPanel.Controls.Add(ProceedIntBt);
+            MembershipPanel.Controls.Add(WelcomeSignUp);
+            MembershipPanel.Location = new Point(891, 98);
+            MembershipPanel.Name = "MembershipPanel";
+            MembershipPanel.Size = new Size(791, 556);
+            MembershipPanel.TabIndex = 5;
             // 
             // CommCb
             // 
@@ -122,7 +122,7 @@
             WorkspacePtCb.AllowDrop = true;
             WorkspacePtCb.BackColor = Color.IndianRed;
             WorkspacePtCb.FlatStyle = FlatStyle.Popup;
-            WorkspacePtCb.Location = new Point(26, 120);
+            WorkspacePtCb.Location = new Point(26, 117);
             WorkspacePtCb.Name = "WorkspacePtCb";
             WorkspacePtCb.Size = new Size(191, 225);
             WorkspacePtCb.TabIndex = 10;
@@ -183,6 +183,7 @@
             ProceedIntBt.TabIndex = 3;
             ProceedIntBt.Text = "Proceed";
             ProceedIntBt.UseVisualStyleBackColor = false;
+            ProceedIntBt.Click += ProceedIntBt_Click;
             // 
             // WelcomeSignUp
             // 
@@ -216,15 +217,14 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1772, 748);
             Controls.Add(PreviousPageBt);
-            Controls.Add(panel1);
+            Controls.Add(MembershipPanel);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
             Name = "MembershipForm";
             Text = "MembershipForm";
-            Load += MembershipForm_Load;
             ((System.ComponentModel.ISupportInitialize)TCLogo).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            MembershipPanel.ResumeLayout(false);
+            MembershipPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).EndInit();
@@ -234,7 +234,7 @@
         #endregion
 
         private PictureBox TCLogo;
-        private Panel panel1;
+        private Panel MembershipPanel;
         private CheckBox CommCb;
         private CheckBox WorkspaceFtCb;
         private CheckBox CommKeysCb;

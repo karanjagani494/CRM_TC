@@ -31,28 +31,26 @@ namespace SoftwareEngineering_2024
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpForm));
             TCLogo = new PictureBox();
-            panel1 = new Panel();
-            email_text = new TextBox();
+            RegisterPanel = new Panel();
             PhoneNoLb = new Label();
-            PhoneNoTb = new MaskedTextBox();
+            phoneNumber = new MaskedTextBox();
             CountryLb = new Label();
-            CountryTb = new MaskedTextBox();
+            country = new MaskedTextBox();
             RetypePasswordLb = new Label();
             maskedTextBox3 = new MaskedTextBox();
             StateLb = new Label();
-            StateTb = new MaskedTextBox();
+            state = new MaskedTextBox();
             CityLb = new Label();
-            CityTb = new MaskedTextBox();
+            city = new MaskedTextBox();
             CityCodeLb = new Label();
-            CityCodeTb = new MaskedTextBox();
+            cityCode = new MaskedTextBox();
             StreetLb = new Label();
             FlatNoLb = new Label();
-            StreetTb = new MaskedTextBox();
-            FlatnoTb = new MaskedTextBox();
+            street = new MaskedTextBox();
+            houseNumber = new MaskedTextBox();
             LnameLb = new Label();
             FnameLb = new Label();
-            LastNameTb = new MaskedTextBox();
-            username_text = new MaskedTextBox();
+            lastName = new MaskedTextBox();
             IgLink = new PictureBox();
             GmapLink = new PictureBox();
             FbLink = new PictureBox();
@@ -60,11 +58,12 @@ namespace SoftwareEngineering_2024
             PasswordSuLb = new Label();
             EmailSuLb = new Label();
             ProceedIntBt = new Button();
-            password_text = new MaskedTextBox();
+            password = new MaskedTextBox();
             WelcomeSignUp = new Label();
-            PreviousPageBt = new Button();
+            firstName = new TextBox();
+            email = new TextBox();
             ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
-            panel1.SuspendLayout();
+            RegisterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).BeginInit();
@@ -81,55 +80,46 @@ namespace SoftwareEngineering_2024
             TCLogo.Size = new Size(488, 417);
             TCLogo.TabIndex = 1;
             TCLogo.TabStop = false;
-            TCLogo.Click += TCLogo_Click;
             // 
-            // panel1
+            // RegisterPanel
             // 
-            panel1.BackColor = Color.RosyBrown;
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(email_text);
-            panel1.Controls.Add(PhoneNoLb);
-            panel1.Controls.Add(PhoneNoTb);
-            panel1.Controls.Add(CountryLb);
-            panel1.Controls.Add(CountryTb);
-            panel1.Controls.Add(RetypePasswordLb);
-            panel1.Controls.Add(maskedTextBox3);
-            panel1.Controls.Add(StateLb);
-            panel1.Controls.Add(StateTb);
-            panel1.Controls.Add(CityLb);
-            panel1.Controls.Add(CityTb);
-            panel1.Controls.Add(CityCodeLb);
-            panel1.Controls.Add(CityCodeTb);
-            panel1.Controls.Add(StreetLb);
-            panel1.Controls.Add(FlatNoLb);
-            panel1.Controls.Add(StreetTb);
-            panel1.Controls.Add(FlatnoTb);
-            panel1.Controls.Add(LnameLb);
-            panel1.Controls.Add(FnameLb);
-            panel1.Controls.Add(LastNameTb);
-            panel1.Controls.Add(username_text);
-            panel1.Controls.Add(IgLink);
-            panel1.Controls.Add(GmapLink);
-            panel1.Controls.Add(FbLink);
-            panel1.Controls.Add(LogInLink);
-            panel1.Controls.Add(PasswordSuLb);
-            panel1.Controls.Add(EmailSuLb);
-            panel1.Controls.Add(ProceedIntBt);
-            panel1.Controls.Add(password_text);
-            panel1.Controls.Add(WelcomeSignUp);
-            panel1.Location = new Point(724, 94);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(692, 417);
-            panel1.TabIndex = 2;
-            // 
-            // email_text
-            // 
-            email_text.Location = new Point(4, 243);
-            email_text.Name = "email_text";
-            email_text.Size = new Size(220, 23);
-            email_text.TabIndex = 30;
-            email_text.TextChanged += email_text_TextChanged;
+            RegisterPanel.BackColor = Color.RosyBrown;
+            RegisterPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            RegisterPanel.Controls.Add(email);
+            RegisterPanel.Controls.Add(firstName);
+            RegisterPanel.Controls.Add(PhoneNoLb);
+            RegisterPanel.Controls.Add(phoneNumber);
+            RegisterPanel.Controls.Add(CountryLb);
+            RegisterPanel.Controls.Add(country);
+            RegisterPanel.Controls.Add(RetypePasswordLb);
+            RegisterPanel.Controls.Add(maskedTextBox3);
+            RegisterPanel.Controls.Add(StateLb);
+            RegisterPanel.Controls.Add(state);
+            RegisterPanel.Controls.Add(CityLb);
+            RegisterPanel.Controls.Add(city);
+            RegisterPanel.Controls.Add(CityCodeLb);
+            RegisterPanel.Controls.Add(cityCode);
+            RegisterPanel.Controls.Add(StreetLb);
+            RegisterPanel.Controls.Add(FlatNoLb);
+            RegisterPanel.Controls.Add(street);
+            RegisterPanel.Controls.Add(houseNumber);
+            RegisterPanel.Controls.Add(LnameLb);
+            RegisterPanel.Controls.Add(FnameLb);
+            RegisterPanel.Controls.Add(lastName);
+            RegisterPanel.Controls.Add(IgLink);
+            RegisterPanel.Controls.Add(GmapLink);
+            RegisterPanel.Controls.Add(FbLink);
+            RegisterPanel.Controls.Add(LogInLink);
+            RegisterPanel.Controls.Add(PasswordSuLb);
+            RegisterPanel.Controls.Add(EmailSuLb);
+            RegisterPanel.Controls.Add(ProceedIntBt);
+            RegisterPanel.Controls.Add(password);
+            RegisterPanel.Controls.Add(WelcomeSignUp);
+            RegisterPanel.Location = new Point(609, 94);
+            RegisterPanel.Margin = new Padding(3, 2, 3, 2);
+            RegisterPanel.Name = "RegisterPanel";
+            RegisterPanel.Size = new Size(692, 417);
+            RegisterPanel.TabIndex = 2;
             // 
             // PhoneNoLb
             // 
@@ -140,13 +130,14 @@ namespace SoftwareEngineering_2024
             PhoneNoLb.TabIndex = 29;
             PhoneNoLb.Text = "Phone Number{Add Country Code, ex: +44 788..}";
             // 
-            // PhoneNoTb
+            // phoneNumber
             // 
-            PhoneNoTb.Location = new Point(443, 103);
-            PhoneNoTb.Margin = new Padding(3, 2, 3, 2);
-            PhoneNoTb.Name = "PhoneNoTb";
-            PhoneNoTb.Size = new Size(247, 23);
-            PhoneNoTb.TabIndex = 28;
+            phoneNumber.Location = new Point(443, 103);
+            phoneNumber.Margin = new Padding(3, 2, 3, 2);
+            phoneNumber.Name = "phoneNumber";
+            phoneNumber.Size = new Size(247, 23);
+            phoneNumber.TabIndex = 28;
+            phoneNumber.MaskInputRejected += phoneNumber_MaskInputRejected;
             // 
             // CountryLb
             // 
@@ -157,13 +148,13 @@ namespace SoftwareEngineering_2024
             CountryLb.TabIndex = 27;
             CountryLb.Text = "Country";
             // 
-            // CountryTb
+            // country
             // 
-            CountryTb.Location = new Point(4, 196);
-            CountryTb.Margin = new Padding(3, 2, 3, 2);
-            CountryTb.Name = "CountryTb";
-            CountryTb.Size = new Size(224, 23);
-            CountryTb.TabIndex = 26;
+            country.Location = new Point(4, 196);
+            country.Margin = new Padding(3, 2, 3, 2);
+            country.Name = "country";
+            country.Size = new Size(224, 23);
+            country.TabIndex = 26;
             // 
             // RetypePasswordLb
             // 
@@ -181,6 +172,7 @@ namespace SoftwareEngineering_2024
             maskedTextBox3.Name = "maskedTextBox3";
             maskedTextBox3.Size = new Size(236, 23);
             maskedTextBox3.TabIndex = 24;
+            maskedTextBox3.MaskInputRejected += maskedTextBox3_MaskInputRejected;
             // 
             // StateLb
             // 
@@ -191,13 +183,13 @@ namespace SoftwareEngineering_2024
             StateLb.TabIndex = 23;
             StateLb.Text = "State/County";
             // 
-            // StateTb
+            // state
             // 
-            StateTb.Location = new Point(450, 147);
-            StateTb.Margin = new Padding(3, 2, 3, 2);
-            StateTb.Name = "StateTb";
-            StateTb.Size = new Size(236, 23);
-            StateTb.TabIndex = 22;
+            state.Location = new Point(450, 147);
+            state.Margin = new Padding(3, 2, 3, 2);
+            state.Name = "state";
+            state.Size = new Size(236, 23);
+            state.TabIndex = 22;
             // 
             // CityLb
             // 
@@ -208,13 +200,13 @@ namespace SoftwareEngineering_2024
             CityLb.TabIndex = 21;
             CityLb.Text = "City";
             // 
-            // CityTb
+            // city
             // 
-            CityTb.Location = new Point(233, 147);
-            CityTb.Margin = new Padding(3, 2, 3, 2);
-            CityTb.Name = "CityTb";
-            CityTb.Size = new Size(212, 23);
-            CityTb.TabIndex = 20;
+            city.Location = new Point(233, 147);
+            city.Margin = new Padding(3, 2, 3, 2);
+            city.Name = "city";
+            city.Size = new Size(212, 23);
+            city.TabIndex = 20;
             // 
             // CityCodeLb
             // 
@@ -225,13 +217,13 @@ namespace SoftwareEngineering_2024
             CityCodeLb.TabIndex = 19;
             CityCodeLb.Text = "City Code";
             // 
-            // CityCodeTb
+            // cityCode
             // 
-            CityCodeTb.Location = new Point(450, 196);
-            CityCodeTb.Margin = new Padding(3, 2, 3, 2);
-            CityCodeTb.Name = "CityCodeTb";
-            CityCodeTb.Size = new Size(236, 23);
-            CityCodeTb.TabIndex = 18;
+            cityCode.Location = new Point(450, 196);
+            cityCode.Margin = new Padding(3, 2, 3, 2);
+            cityCode.Name = "cityCode";
+            cityCode.Size = new Size(236, 23);
+            cityCode.TabIndex = 18;
             // 
             // StreetLb
             // 
@@ -251,21 +243,21 @@ namespace SoftwareEngineering_2024
             FlatNoLb.TabIndex = 16;
             FlatNoLb.Text = "Flat/House Number";
             // 
-            // StreetTb
+            // street
             // 
-            StreetTb.Location = new Point(233, 196);
-            StreetTb.Margin = new Padding(3, 2, 3, 2);
-            StreetTb.Name = "StreetTb";
-            StreetTb.Size = new Size(212, 23);
-            StreetTb.TabIndex = 15;
+            street.Location = new Point(233, 196);
+            street.Margin = new Padding(3, 2, 3, 2);
+            street.Name = "street";
+            street.Size = new Size(212, 23);
+            street.TabIndex = 15;
             // 
-            // FlatnoTb
+            // houseNumber
             // 
-            FlatnoTb.Location = new Point(4, 147);
-            FlatnoTb.Margin = new Padding(3, 2, 3, 2);
-            FlatnoTb.Name = "FlatnoTb";
-            FlatnoTb.Size = new Size(224, 23);
-            FlatnoTb.TabIndex = 14;
+            houseNumber.Location = new Point(4, 147);
+            houseNumber.Margin = new Padding(3, 2, 3, 2);
+            houseNumber.Name = "houseNumber";
+            houseNumber.Size = new Size(224, 23);
+            houseNumber.TabIndex = 14;
             // 
             // LnameLb
             // 
@@ -281,25 +273,17 @@ namespace SoftwareEngineering_2024
             FnameLb.AutoSize = true;
             FnameLb.Location = new Point(0, 86);
             FnameLb.Name = "FnameLb";
-            FnameLb.Size = new Size(59, 15);
+            FnameLb.Size = new Size(64, 15);
             FnameLb.TabIndex = 12;
-            FnameLb.Text = "username";
+            FnameLb.Text = "First Name";
             // 
-            // LastNameTb
+            // lastName
             // 
-            LastNameTb.Location = new Point(226, 103);
-            LastNameTb.Margin = new Padding(3, 2, 3, 2);
-            LastNameTb.Name = "LastNameTb";
-            LastNameTb.Size = new Size(212, 23);
-            LastNameTb.TabIndex = 11;
-            // 
-            // username_text
-            // 
-            username_text.Location = new Point(0, 103);
-            username_text.Margin = new Padding(3, 2, 3, 2);
-            username_text.Name = "username_text";
-            username_text.Size = new Size(224, 23);
-            username_text.TabIndex = 10;
+            lastName.Location = new Point(226, 103);
+            lastName.Margin = new Padding(3, 2, 3, 2);
+            lastName.Name = "lastName";
+            lastName.Size = new Size(212, 23);
+            lastName.TabIndex = 11;
             // 
             // IgLink
             // 
@@ -347,7 +331,6 @@ namespace SoftwareEngineering_2024
             LogInLink.TabIndex = 6;
             LogInLink.TabStop = true;
             LogInLink.Text = "Already a Member, Log In";
-            LogInLink.LinkClicked += LogInLink_LinkClicked;
             // 
             // PasswordSuLb
             // 
@@ -379,13 +362,13 @@ namespace SoftwareEngineering_2024
             ProceedIntBt.UseVisualStyleBackColor = false;
             ProceedIntBt.Click += ProceedIntBt_Click;
             // 
-            // password_text
+            // password
             // 
-            password_text.Location = new Point(233, 242);
-            password_text.Margin = new Padding(3, 2, 3, 2);
-            password_text.Name = "password_text";
-            password_text.Size = new Size(212, 23);
-            password_text.TabIndex = 2;
+            password.Location = new Point(233, 242);
+            password.Margin = new Padding(3, 2, 3, 2);
+            password.Name = "password";
+            password.Size = new Size(212, 23);
+            password.TabIndex = 2;
             // 
             // WelcomeSignUp
             // 
@@ -399,18 +382,19 @@ namespace SoftwareEngineering_2024
             WelcomeSignUp.Text = "Welcome to Together Culture";
             WelcomeSignUp.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // PreviousPageBt
+            // firstName
             // 
-            PreviousPageBt.BackColor = Color.IndianRed;
-            PreviousPageBt.ForeColor = Color.Black;
-            PreviousPageBt.Location = new Point(1390, 9);
-            PreviousPageBt.Margin = new Padding(3, 2, 3, 2);
-            PreviousPageBt.Name = "PreviousPageBt";
-            PreviousPageBt.Size = new Size(112, 22);
-            PreviousPageBt.TabIndex = 11;
-            PreviousPageBt.Text = "<- Previous Page";
-            PreviousPageBt.UseVisualStyleBackColor = false;
-            PreviousPageBt.Click += PreviousPageBt_Click;
+            firstName.Location = new Point(6, 103);
+            firstName.Name = "firstName";
+            firstName.Size = new Size(204, 23);
+            firstName.TabIndex = 30;
+            // 
+            // email
+            // 
+            email.Location = new Point(4, 242);
+            email.Name = "email";
+            email.Size = new Size(223, 23);
+            email.TabIndex = 31;
             // 
             // SignUpForm
             // 
@@ -419,16 +403,15 @@ namespace SoftwareEngineering_2024
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1500, 583);
-            Controls.Add(PreviousPageBt);
-            Controls.Add(panel1);
+            Controls.Add(RegisterPanel);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "SignUpForm";
             Text = "TC_Dashboard";
             ((System.ComponentModel.ISupportInitialize)TCLogo).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            RegisterPanel.ResumeLayout(false);
+            RegisterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).EndInit();
@@ -453,7 +436,7 @@ namespace SoftwareEngineering_2024
         #endregion
 
         private PictureBox TCLogo;
-        private Panel panel1;
+        private Panel RegisterPanel;
         private PictureBox IgLink;
         private PictureBox GmapLink;
         private PictureBox FbLink;
@@ -461,29 +444,28 @@ namespace SoftwareEngineering_2024
         private Label PasswordSuLb;
         private Label EmailSuLb;
         private Button ProceedIntBt;
-        private MaskedTextBox password_text;
+        private MaskedTextBox password;
         private Label WelcomeSignUp;
         private Label CityCodeLb;
         private Label FnameLb;
-        private MaskedTextBox LastNameTb;
-        private MaskedTextBox username_text;
+        private MaskedTextBox lastName;
         private Label LnameLb;
         private Label StreetLb;
         private Label FlatNoLb;
-        private MaskedTextBox StreetTb;
-        private MaskedTextBox FlatnoTb;
-        private MaskedTextBox CityCodeTb;
+        private MaskedTextBox street;
+        private MaskedTextBox houseNumber;
+        private MaskedTextBox cityCode;
         private Label StateLb;
-        private MaskedTextBox StateTb;
+        private MaskedTextBox state;
         private Label CityLb;
-        private MaskedTextBox CityTb;
+        private MaskedTextBox city;
         private Label RetypePasswordLb;
         private MaskedTextBox maskedTextBox3;
         private Label CountryLb;
-        private MaskedTextBox CountryTb;
+        private MaskedTextBox country;
         private Label PhoneNoLb;
-        private MaskedTextBox PhoneNoTb;
-        private Button PreviousPageBt;
-        private TextBox email_text;
+        private MaskedTextBox phoneNumber;
+        private TextBox firstName;
+        private TextBox email;
     }
 }
