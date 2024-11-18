@@ -21,7 +21,7 @@ namespace SoftwareEngineering_2024
         // Initialize database connection
         private void InitializeConnection()
         {
-              string connectionString = "server=localhost;port=3307;database=crm;user=root;password=;";
+              string connectionString = "server=localhost;port=3307;database=karan_crm;user=root;password=;";
 
         connection = new MySqlConnection(connectionString);
         }

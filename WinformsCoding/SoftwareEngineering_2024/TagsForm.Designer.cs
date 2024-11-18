@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TagsForm));
             TCLogo = new PictureBox();
             panel1 = new Panel();
-            MusicCb = new CheckBox();
-            FashionCb = new CheckBox();
-            EducationCb = new CheckBox();
-            GamingCb = new CheckBox();
-            BusinessCb = new CheckBox();
-            NatureCb = new CheckBox();
-            LawCb = new CheckBox();
-            PoliticsCb = new CheckBox();
-            EmploymentCb = new CheckBox();
-            SpaceCb = new CheckBox();
-            HealthcareCb = new CheckBox();
-            TechCb = new CheckBox();
+            Music_cb = new CheckBox();
+            Fashion_cb = new CheckBox();
+            Education_cb = new CheckBox();
+            Gaming_cb = new CheckBox();
+            Business_cb = new CheckBox();
+            Nature_cb = new CheckBox();
+            Law_cb = new CheckBox();
+            Politics_cb = new CheckBox();
+            Employment_cb = new CheckBox();
+            Space_cb = new CheckBox();
+            Healthcare_cb = new CheckBox();
+            Tech_cb = new CheckBox();
             IgLink = new PictureBox();
             GmapLink = new PictureBox();
             FbLink = new PictureBox();
@@ -62,9 +62,10 @@
             TCLogo.BackColor = Color.Transparent;
             TCLogo.BackgroundImage = (Image)resources.GetObject("TCLogo.BackgroundImage");
             TCLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            TCLogo.Location = new Point(87, 101);
+            TCLogo.Location = new Point(76, 76);
+            TCLogo.Margin = new Padding(3, 2, 3, 2);
             TCLogo.Name = "TCLogo";
-            TCLogo.Size = new Size(558, 556);
+            TCLogo.Size = new Size(488, 417);
             TCLogo.TabIndex = 2;
             TCLogo.TabStop = false;
             // 
@@ -72,241 +73,256 @@
             // 
             panel1.BackColor = Color.RosyBrown;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(MusicCb);
-            panel1.Controls.Add(FashionCb);
-            panel1.Controls.Add(EducationCb);
-            panel1.Controls.Add(GamingCb);
-            panel1.Controls.Add(BusinessCb);
-            panel1.Controls.Add(NatureCb);
-            panel1.Controls.Add(LawCb);
-            panel1.Controls.Add(PoliticsCb);
-            panel1.Controls.Add(EmploymentCb);
-            panel1.Controls.Add(SpaceCb);
-            panel1.Controls.Add(HealthcareCb);
-            panel1.Controls.Add(TechCb);
+            panel1.Controls.Add(Music_cb);
+            panel1.Controls.Add(Fashion_cb);
+            panel1.Controls.Add(Education_cb);
+            panel1.Controls.Add(Gaming_cb);
+            panel1.Controls.Add(Business_cb);
+            panel1.Controls.Add(Nature_cb);
+            panel1.Controls.Add(Law_cb);
+            panel1.Controls.Add(Politics_cb);
+            panel1.Controls.Add(Employment_cb);
+            panel1.Controls.Add(Space_cb);
+            panel1.Controls.Add(Healthcare_cb);
+            panel1.Controls.Add(Tech_cb);
             panel1.Controls.Add(IgLink);
             panel1.Controls.Add(GmapLink);
             panel1.Controls.Add(FbLink);
             panel1.Controls.Add(LogInLink);
             panel1.Controls.Add(ProceedMembBt);
             panel1.Controls.Add(WelcomeSignUp);
-            panel1.Location = new Point(905, 101);
+            panel1.Location = new Point(792, 76);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(791, 556);
+            panel1.Size = new Size(692, 417);
             panel1.TabIndex = 5;
             // 
-            // MusicCb
+            // Music_cb
             // 
-            MusicCb.AllowDrop = true;
-            MusicCb.BackColor = Color.IndianRed;
-            MusicCb.BackgroundImage = Properties.Resources.Music;
-            MusicCb.BackgroundImageLayout = ImageLayout.Stretch;
-            MusicCb.FlatStyle = FlatStyle.Popup;
-            MusicCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            MusicCb.ForeColor = Color.Black;
-            MusicCb.Location = new Point(664, 235);
-            MusicCb.Name = "MusicCb";
-            MusicCb.Size = new Size(117, 87);
-            MusicCb.TabIndex = 21;
-            MusicCb.Text = "Music";
-            MusicCb.TextAlign = ContentAlignment.MiddleCenter;
-            MusicCb.UseVisualStyleBackColor = false;
+            Music_cb.AllowDrop = true;
+            Music_cb.BackColor = Color.IndianRed;
+            Music_cb.BackgroundImage = Properties.Resources.Music;
+            Music_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Music_cb.FlatStyle = FlatStyle.Popup;
+            Music_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Music_cb.ForeColor = Color.Black;
+            Music_cb.Location = new Point(581, 176);
+            Music_cb.Margin = new Padding(3, 2, 3, 2);
+            Music_cb.Name = "Music_cb";
+            Music_cb.Size = new Size(102, 65);
+            Music_cb.TabIndex = 21;
+            Music_cb.Text = "Music";
+            Music_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Music_cb.UseVisualStyleBackColor = false;
             // 
-            // FashionCb
+            // Fashion_cb
             // 
-            FashionCb.AllowDrop = true;
-            FashionCb.BackColor = Color.IndianRed;
-            FashionCb.BackgroundImage = Properties.Resources.Fashion;
-            FashionCb.BackgroundImageLayout = ImageLayout.Stretch;
-            FashionCb.FlatStyle = FlatStyle.Popup;
-            FashionCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            FashionCb.ForeColor = Color.Transparent;
-            FashionCb.Location = new Point(538, 235);
-            FashionCb.Name = "FashionCb";
-            FashionCb.Size = new Size(110, 87);
-            FashionCb.TabIndex = 20;
-            FashionCb.Text = "Fashion";
-            FashionCb.TextAlign = ContentAlignment.MiddleCenter;
-            FashionCb.UseVisualStyleBackColor = false;
+            Fashion_cb.AllowDrop = true;
+            Fashion_cb.BackColor = Color.IndianRed;
+            Fashion_cb.BackgroundImage = Properties.Resources.Fashion;
+            Fashion_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Fashion_cb.FlatStyle = FlatStyle.Popup;
+            Fashion_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Fashion_cb.ForeColor = Color.Transparent;
+            Fashion_cb.Location = new Point(471, 176);
+            Fashion_cb.Margin = new Padding(3, 2, 3, 2);
+            Fashion_cb.Name = "Fashion_cb";
+            Fashion_cb.Size = new Size(96, 65);
+            Fashion_cb.TabIndex = 20;
+            Fashion_cb.Text = "Fashion";
+            Fashion_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Fashion_cb.UseVisualStyleBackColor = false;
             // 
-            // EducationCb
+            // Education_cb
             // 
-            EducationCb.AllowDrop = true;
-            EducationCb.BackColor = Color.IndianRed;
-            EducationCb.BackgroundImage = Properties.Resources.Education;
-            EducationCb.BackgroundImageLayout = ImageLayout.Stretch;
-            EducationCb.FlatStyle = FlatStyle.Popup;
-            EducationCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            EducationCb.ForeColor = SystemColors.MenuText;
-            EducationCb.Location = new Point(272, 235);
-            EducationCb.Name = "EducationCb";
-            EducationCb.Size = new Size(113, 87);
-            EducationCb.TabIndex = 19;
-            EducationCb.Text = "Education";
-            EducationCb.TextAlign = ContentAlignment.MiddleCenter;
-            EducationCb.UseVisualStyleBackColor = false;
+            Education_cb.AllowDrop = true;
+            Education_cb.BackColor = Color.IndianRed;
+            Education_cb.BackgroundImage = Properties.Resources.Education;
+            Education_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Education_cb.FlatStyle = FlatStyle.Popup;
+            Education_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Education_cb.ForeColor = SystemColors.MenuText;
+            Education_cb.Location = new Point(238, 176);
+            Education_cb.Margin = new Padding(3, 2, 3, 2);
+            Education_cb.Name = "Education_cb";
+            Education_cb.Size = new Size(99, 65);
+            Education_cb.TabIndex = 19;
+            Education_cb.Text = "Education";
+            Education_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Education_cb.UseVisualStyleBackColor = false;
             // 
-            // GamingCb
+            // Gaming_cb
             // 
-            GamingCb.AllowDrop = true;
-            GamingCb.BackColor = Color.IndianRed;
-            GamingCb.BackgroundImage = Properties.Resources.Gaming;
-            GamingCb.BackgroundImageLayout = ImageLayout.Stretch;
-            GamingCb.FlatStyle = FlatStyle.Popup;
-            GamingCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            GamingCb.ForeColor = Color.Transparent;
-            GamingCb.Location = new Point(406, 235);
-            GamingCb.Name = "GamingCb";
-            GamingCb.Size = new Size(114, 87);
-            GamingCb.TabIndex = 18;
-            GamingCb.Text = "Gaming";
-            GamingCb.TextAlign = ContentAlignment.MiddleCenter;
-            GamingCb.UseVisualStyleBackColor = false;
+            Gaming_cb.AllowDrop = true;
+            Gaming_cb.BackColor = Color.IndianRed;
+            Gaming_cb.BackgroundImage = Properties.Resources.Gaming;
+            Gaming_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Gaming_cb.FlatStyle = FlatStyle.Popup;
+            Gaming_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Gaming_cb.ForeColor = Color.Transparent;
+            Gaming_cb.Location = new Point(355, 176);
+            Gaming_cb.Margin = new Padding(3, 2, 3, 2);
+            Gaming_cb.Name = "Gaming_cb";
+            Gaming_cb.Size = new Size(100, 65);
+            Gaming_cb.TabIndex = 18;
+            Gaming_cb.Text = "Gaming";
+            Gaming_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Gaming_cb.UseVisualStyleBackColor = false;
             // 
-            // BusinessCb
+            // Business_cb
             // 
-            BusinessCb.AllowDrop = true;
-            BusinessCb.BackColor = Color.IndianRed;
-            BusinessCb.BackgroundImage = Properties.Resources.Business;
-            BusinessCb.BackgroundImageLayout = ImageLayout.Stretch;
-            BusinessCb.FlatStyle = FlatStyle.Popup;
-            BusinessCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            BusinessCb.ForeColor = Color.Black;
-            BusinessCb.Location = new Point(142, 235);
-            BusinessCb.Name = "BusinessCb";
-            BusinessCb.Size = new Size(114, 87);
-            BusinessCb.TabIndex = 17;
-            BusinessCb.Text = "Business";
-            BusinessCb.TextAlign = ContentAlignment.MiddleCenter;
-            BusinessCb.UseVisualStyleBackColor = false;
+            Business_cb.AllowDrop = true;
+            Business_cb.BackColor = Color.IndianRed;
+            Business_cb.BackgroundImage = Properties.Resources.Business;
+            Business_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Business_cb.FlatStyle = FlatStyle.Popup;
+            Business_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Business_cb.ForeColor = Color.Black;
+            Business_cb.Location = new Point(124, 176);
+            Business_cb.Margin = new Padding(3, 2, 3, 2);
+            Business_cb.Name = "Business_cb";
+            Business_cb.Size = new Size(100, 65);
+            Business_cb.TabIndex = 17;
+            Business_cb.Text = "Business";
+            Business_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Business_cb.UseVisualStyleBackColor = false;
             // 
-            // NatureCb
+            // Nature_cb
             // 
-            NatureCb.AllowDrop = true;
-            NatureCb.BackColor = Color.IndianRed;
-            NatureCb.BackgroundImage = Properties.Resources.Nature;
-            NatureCb.BackgroundImageLayout = ImageLayout.Stretch;
-            NatureCb.FlatStyle = FlatStyle.Popup;
-            NatureCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            NatureCb.ForeColor = Color.Transparent;
-            NatureCb.Location = new Point(10, 235);
-            NatureCb.Name = "NatureCb";
-            NatureCb.Size = new Size(110, 87);
-            NatureCb.TabIndex = 16;
-            NatureCb.Text = "Nature";
-            NatureCb.TextAlign = ContentAlignment.MiddleCenter;
-            NatureCb.UseVisualStyleBackColor = false;
+            Nature_cb.AllowDrop = true;
+            Nature_cb.BackColor = Color.IndianRed;
+            Nature_cb.BackgroundImage = Properties.Resources.Nature;
+            Nature_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Nature_cb.FlatStyle = FlatStyle.Popup;
+            Nature_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Nature_cb.ForeColor = Color.Transparent;
+            Nature_cb.Location = new Point(9, 176);
+            Nature_cb.Margin = new Padding(3, 2, 3, 2);
+            Nature_cb.Name = "Nature_cb";
+            Nature_cb.Size = new Size(96, 65);
+            Nature_cb.TabIndex = 16;
+            Nature_cb.Text = "Nature";
+            Nature_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Nature_cb.UseVisualStyleBackColor = false;
             // 
-            // LawCb
+            // Law_cb
             // 
-            LawCb.AllowDrop = true;
-            LawCb.BackColor = Color.IndianRed;
-            LawCb.BackgroundImage = Properties.Resources.Law;
-            LawCb.BackgroundImageLayout = ImageLayout.Stretch;
-            LawCb.FlatStyle = FlatStyle.Popup;
-            LawCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            LawCb.ForeColor = Color.Black;
-            LawCb.Location = new Point(671, 98);
-            LawCb.Name = "LawCb";
-            LawCb.Size = new Size(110, 87);
-            LawCb.TabIndex = 15;
-            LawCb.Text = "Law";
-            LawCb.TextAlign = ContentAlignment.MiddleCenter;
-            LawCb.UseVisualStyleBackColor = false;
+            Law_cb.AllowDrop = true;
+            Law_cb.BackColor = Color.IndianRed;
+            Law_cb.BackgroundImage = Properties.Resources.Law;
+            Law_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Law_cb.FlatStyle = FlatStyle.Popup;
+            Law_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Law_cb.ForeColor = Color.Black;
+            Law_cb.Location = new Point(587, 74);
+            Law_cb.Margin = new Padding(3, 2, 3, 2);
+            Law_cb.Name = "Law_cb";
+            Law_cb.Size = new Size(96, 65);
+            Law_cb.TabIndex = 15;
+            Law_cb.Text = "Law";
+            Law_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Law_cb.UseVisualStyleBackColor = false;
             // 
-            // PoliticsCb
+            // Politics_cb
             // 
-            PoliticsCb.AllowDrop = true;
-            PoliticsCb.BackColor = Color.IndianRed;
-            PoliticsCb.BackgroundImage = Properties.Resources.Politics;
-            PoliticsCb.BackgroundImageLayout = ImageLayout.Stretch;
-            PoliticsCb.FlatStyle = FlatStyle.Popup;
-            PoliticsCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PoliticsCb.ForeColor = Color.FromArgb(64, 0, 64);
-            PoliticsCb.Location = new Point(545, 98);
-            PoliticsCb.Name = "PoliticsCb";
-            PoliticsCb.Size = new Size(110, 87);
-            PoliticsCb.TabIndex = 14;
-            PoliticsCb.Text = "Politics";
-            PoliticsCb.TextAlign = ContentAlignment.MiddleCenter;
-            PoliticsCb.UseVisualStyleBackColor = false;
+            Politics_cb.AllowDrop = true;
+            Politics_cb.BackColor = Color.IndianRed;
+            Politics_cb.BackgroundImage = Properties.Resources.Politics;
+            Politics_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Politics_cb.FlatStyle = FlatStyle.Popup;
+            Politics_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Politics_cb.ForeColor = Color.FromArgb(64, 0, 64);
+            Politics_cb.Location = new Point(477, 74);
+            Politics_cb.Margin = new Padding(3, 2, 3, 2);
+            Politics_cb.Name = "Politics_cb";
+            Politics_cb.Size = new Size(96, 65);
+            Politics_cb.TabIndex = 14;
+            Politics_cb.Text = "Politics";
+            Politics_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Politics_cb.UseVisualStyleBackColor = false;
             // 
-            // EmploymentCb
+            // Employment_cb
             // 
-            EmploymentCb.AllowDrop = true;
-            EmploymentCb.BackColor = Color.IndianRed;
-            EmploymentCb.BackgroundImage = Properties.Resources.Emplyment;
-            EmploymentCb.BackgroundImageLayout = ImageLayout.Stretch;
-            EmploymentCb.FlatStyle = FlatStyle.Flat;
-            EmploymentCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            EmploymentCb.ForeColor = Color.Black;
-            EmploymentCb.Location = new Point(281, 98);
-            EmploymentCb.Name = "EmploymentCb";
-            EmploymentCb.Size = new Size(113, 87);
-            EmploymentCb.TabIndex = 13;
-            EmploymentCb.Text = "Employment";
-            EmploymentCb.TextAlign = ContentAlignment.MiddleCenter;
-            EmploymentCb.UseVisualStyleBackColor = false;
+            Employment_cb.AllowDrop = true;
+            Employment_cb.BackColor = Color.IndianRed;
+            Employment_cb.BackgroundImage = Properties.Resources.Emplyment;
+            Employment_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Employment_cb.FlatStyle = FlatStyle.Flat;
+            Employment_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Employment_cb.ForeColor = Color.Black;
+            Employment_cb.Location = new Point(246, 74);
+            Employment_cb.Margin = new Padding(3, 2, 3, 2);
+            Employment_cb.Name = "Employment_cb";
+            Employment_cb.Size = new Size(99, 65);
+            Employment_cb.TabIndex = 13;
+            Employment_cb.Text = "Employment";
+            Employment_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Employment_cb.UseVisualStyleBackColor = false;
+            Employment_cb.CheckedChanged += EmploymentCb_CheckedChanged;
             // 
-            // SpaceCb
+            // Space_cb
             // 
-            SpaceCb.AllowDrop = true;
-            SpaceCb.BackColor = Color.IndianRed;
-            SpaceCb.BackgroundImage = Properties.Resources.Space;
-            SpaceCb.BackgroundImageLayout = ImageLayout.Stretch;
-            SpaceCb.FlatStyle = FlatStyle.Popup;
-            SpaceCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            SpaceCb.ForeColor = Color.Transparent;
-            SpaceCb.Location = new Point(413, 98);
-            SpaceCb.Name = "SpaceCb";
-            SpaceCb.Size = new Size(114, 87);
-            SpaceCb.TabIndex = 12;
-            SpaceCb.Text = "Space";
-            SpaceCb.TextAlign = ContentAlignment.MiddleCenter;
-            SpaceCb.UseVisualStyleBackColor = false;
+            Space_cb.AllowDrop = true;
+            Space_cb.BackColor = Color.IndianRed;
+            Space_cb.BackgroundImage = Properties.Resources.Space;
+            Space_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Space_cb.FlatStyle = FlatStyle.Popup;
+            Space_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Space_cb.ForeColor = Color.Transparent;
+            Space_cb.Location = new Point(361, 74);
+            Space_cb.Margin = new Padding(3, 2, 3, 2);
+            Space_cb.Name = "Space_cb";
+            Space_cb.Size = new Size(100, 65);
+            Space_cb.TabIndex = 12;
+            Space_cb.Text = "Space";
+            Space_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Space_cb.UseVisualStyleBackColor = false;
             // 
-            // HealthcareCb
+            // Healthcare_cb
             // 
-            HealthcareCb.AllowDrop = true;
-            HealthcareCb.BackColor = Color.IndianRed;
-            HealthcareCb.BackgroundImage = Properties.Resources.Healthcare;
-            HealthcareCb.BackgroundImageLayout = ImageLayout.Stretch;
-            HealthcareCb.FlatStyle = FlatStyle.Popup;
-            HealthcareCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            HealthcareCb.ForeColor = Color.FromArgb(64, 0, 64);
-            HealthcareCb.Location = new Point(149, 98);
-            HealthcareCb.Name = "HealthcareCb";
-            HealthcareCb.Size = new Size(114, 87);
-            HealthcareCb.TabIndex = 11;
-            HealthcareCb.Text = "Healthcare";
-            HealthcareCb.TextAlign = ContentAlignment.MiddleCenter;
-            HealthcareCb.UseVisualStyleBackColor = false;
+            Healthcare_cb.AllowDrop = true;
+            Healthcare_cb.BackColor = Color.IndianRed;
+            Healthcare_cb.BackgroundImage = Properties.Resources.Healthcare;
+            Healthcare_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Healthcare_cb.FlatStyle = FlatStyle.Popup;
+            Healthcare_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Healthcare_cb.ForeColor = Color.FromArgb(64, 0, 64);
+            Healthcare_cb.Location = new Point(130, 74);
+            Healthcare_cb.Margin = new Padding(3, 2, 3, 2);
+            Healthcare_cb.Name = "Healthcare_cb";
+            Healthcare_cb.Size = new Size(100, 65);
+            Healthcare_cb.TabIndex = 11;
+            Healthcare_cb.Text = "Healthcare";
+            Healthcare_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Healthcare_cb.UseVisualStyleBackColor = false;
             // 
-            // TechCb
+            // Tech_cb
             // 
-            TechCb.AllowDrop = true;
-            TechCb.BackColor = Color.IndianRed;
-            TechCb.BackgroundImage = (Image)resources.GetObject("TechCb.BackgroundImage");
-            TechCb.BackgroundImageLayout = ImageLayout.Stretch;
-            TechCb.FlatStyle = FlatStyle.Popup;
-            TechCb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            TechCb.ForeColor = Color.Transparent;
-            TechCb.Location = new Point(17, 98);
-            TechCb.Name = "TechCb";
-            TechCb.Size = new Size(110, 87);
-            TechCb.TabIndex = 10;
-            TechCb.Text = "Tech";
-            TechCb.TextAlign = ContentAlignment.MiddleCenter;
-            TechCb.UseVisualStyleBackColor = false;
+            Tech_cb.AllowDrop = true;
+            Tech_cb.BackColor = Color.IndianRed;
+            Tech_cb.BackgroundImage = (Image)resources.GetObject("Tech_cb.BackgroundImage");
+            Tech_cb.BackgroundImageLayout = ImageLayout.Stretch;
+            Tech_cb.FlatStyle = FlatStyle.Popup;
+            Tech_cb.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            Tech_cb.ForeColor = Color.Transparent;
+            Tech_cb.Location = new Point(15, 74);
+            Tech_cb.Margin = new Padding(3, 2, 3, 2);
+            Tech_cb.Name = "Tech_cb";
+            Tech_cb.Size = new Size(96, 65);
+            Tech_cb.TabIndex = 10;
+            Tech_cb.Text = "Tech";
+            Tech_cb.TextAlign = ContentAlignment.MiddleCenter;
+            Tech_cb.UseVisualStyleBackColor = false;
             // 
             // IgLink
             // 
             IgLink.BackgroundImage = (Image)resources.GetObject("IgLink.BackgroundImage");
             IgLink.BackgroundImageLayout = ImageLayout.Stretch;
             IgLink.Cursor = Cursors.Hand;
-            IgLink.Location = new Point(557, 445);
+            IgLink.Location = new Point(487, 334);
+            IgLink.Margin = new Padding(3, 2, 3, 2);
             IgLink.Name = "IgLink";
-            IgLink.Size = new Size(43, 43);
+            IgLink.Size = new Size(38, 32);
             IgLink.TabIndex = 9;
             IgLink.TabStop = false;
             // 
@@ -316,9 +332,10 @@
             GmapLink.BackgroundImage = Properties.Resources.Gmaps;
             GmapLink.BackgroundImageLayout = ImageLayout.Stretch;
             GmapLink.Cursor = Cursors.Hand;
-            GmapLink.Location = new Point(385, 445);
+            GmapLink.Location = new Point(337, 334);
+            GmapLink.Margin = new Padding(3, 2, 3, 2);
             GmapLink.Name = "GmapLink";
-            GmapLink.Size = new Size(43, 43);
+            GmapLink.Size = new Size(38, 32);
             GmapLink.TabIndex = 8;
             GmapLink.TabStop = false;
             // 
@@ -327,9 +344,10 @@
             FbLink.BackgroundImage = Properties.Resources.fb;
             FbLink.BackgroundImageLayout = ImageLayout.Stretch;
             FbLink.Cursor = Cursors.Hand;
-            FbLink.Location = new Point(220, 445);
+            FbLink.Location = new Point(192, 334);
+            FbLink.Margin = new Padding(3, 2, 3, 2);
             FbLink.Name = "FbLink";
-            FbLink.Size = new Size(43, 43);
+            FbLink.Size = new Size(38, 32);
             FbLink.TabIndex = 7;
             FbLink.TabStop = false;
             // 
@@ -337,9 +355,9 @@
             // 
             LogInLink.AutoSize = true;
             LogInLink.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LogInLink.Location = new Point(304, 512);
+            LogInLink.Location = new Point(266, 384);
             LogInLink.Name = "LogInLink";
-            LogInLink.Size = new Size(207, 23);
+            LogInLink.Size = new Size(168, 19);
             LogInLink.TabIndex = 6;
             LogInLink.TabStop = true;
             LogInLink.Text = "Already a Member, Log In";
@@ -347,9 +365,10 @@
             // ProceedMembBt
             // 
             ProceedMembBt.BackColor = Color.IndianRed;
-            ProceedMembBt.Location = new Point(303, 372);
+            ProceedMembBt.Location = new Point(265, 279);
+            ProceedMembBt.Margin = new Padding(3, 2, 3, 2);
             ProceedMembBt.Name = "ProceedMembBt";
-            ProceedMembBt.Size = new Size(197, 57);
+            ProceedMembBt.Size = new Size(172, 43);
             ProceedMembBt.TabIndex = 3;
             ProceedMembBt.Text = "Proceed";
             ProceedMembBt.UseVisualStyleBackColor = false;
@@ -359,9 +378,9 @@
             WelcomeSignUp.AutoSize = true;
             WelcomeSignUp.BackColor = Color.RosyBrown;
             WelcomeSignUp.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            WelcomeSignUp.Location = new Point(237, 29);
+            WelcomeSignUp.Location = new Point(207, 22);
             WelcomeSignUp.Name = "WelcomeSignUp";
-            WelcomeSignUp.Size = new Size(358, 32);
+            WelcomeSignUp.Size = new Size(289, 25);
             WelcomeSignUp.TabIndex = 0;
             WelcomeSignUp.Text = "Welcome to Together Culture";
             WelcomeSignUp.TextAlign = ContentAlignment.MiddleRight;
@@ -370,9 +389,10 @@
             // 
             PreviousPageBt.BackColor = Color.IndianRed;
             PreviousPageBt.ForeColor = Color.Black;
-            PreviousPageBt.Location = new Point(1558, 12);
+            PreviousPageBt.Location = new Point(1363, 9);
+            PreviousPageBt.Margin = new Padding(3, 2, 3, 2);
             PreviousPageBt.Name = "PreviousPageBt";
-            PreviousPageBt.Size = new Size(128, 29);
+            PreviousPageBt.Size = new Size(112, 22);
             PreviousPageBt.TabIndex = 12;
             PreviousPageBt.Text = "<- Previous Page";
             PreviousPageBt.UseVisualStyleBackColor = false;
@@ -380,15 +400,16 @@
             // 
             // TagsForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1783, 747);
+            ClientSize = new Size(1500, 560);
             Controls.Add(PreviousPageBt);
             Controls.Add(panel1);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "TagsForm";
             Text = "TC_Dashboard";
             ((System.ComponentModel.ISupportInitialize)TCLogo).EndInit();
@@ -404,18 +425,18 @@
 
         private PictureBox TCLogo;
         private Panel panel1;
-        private CheckBox MusicCb;
-        private CheckBox FashionCb;
-        private CheckBox EducationCb;
-        private CheckBox GamingCb;
-        private CheckBox BusinessCb;
-        private CheckBox NatureCb;
-        private CheckBox LawCb;
-        private CheckBox PoliticsCb;
-        private CheckBox EmploymentCb;
-        private CheckBox SpaceCb;
-        private CheckBox HealthcareCb;
-        private CheckBox TechCb;
+        private CheckBox Music_cb;
+        private CheckBox Fashion_cb;
+        private CheckBox Education_cb;
+        private CheckBox Gaming_cb;
+        private CheckBox Business_cb;
+        private CheckBox Nature_cb;
+        private CheckBox Law_cb;
+        private CheckBox Politics_cb;
+        private CheckBox Employment_cb;
+        private CheckBox Space_cb;
+        private CheckBox Healthcare_cb;
+        private CheckBox Tech_cb;
         private PictureBox IgLink;
         private PictureBox GmapLink;
         private PictureBox FbLink;

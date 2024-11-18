@@ -13,15 +13,9 @@ namespace SoftwareEngineering_2024
         public LoginForm()
         {
             InitializeComponent();
-<<<<<<< HEAD
-            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-=======
 
-            // Attach events to link labels
-            FbLink.Click += Opener.OpenFacebook;
-            GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;
->>>>>>> ed5919cbbbb322d554e0967e4a9c5ff1d857dadb
+            Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
+
             AccountCreateLink.Click += SignUpLinkClicked;
         }
 
