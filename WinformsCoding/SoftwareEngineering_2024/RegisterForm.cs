@@ -22,6 +22,7 @@ namespace SoftwareEngineering_2024
             GmapLink.Click += Opener.OpenGoogleMaps;
             IgLink.Click += Opener.OpenInstagram;*/
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
+            phoneNumber.KeyPress += phoneNumber_KeyPress;
             LogInLink.Click += LogInLink_LinkClicked;
             userDAL = new userDAL();
 
@@ -31,9 +32,6 @@ namespace SoftwareEngineering_2024
         private void LogInLink_LinkClicked(object sender, EventArgs e)
         {
             Opener.OpenForm(this, typeof(LoginForm));
-
-           
-
 
 }
 
@@ -84,6 +82,16 @@ namespace SoftwareEngineering_2024
 
             }
             
+        }
+
+        private void phoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys (e.g., backspace) and digits
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Reject the input if it is not a digit or control key
+                e.Handled = true;
+            }
         }
 
 

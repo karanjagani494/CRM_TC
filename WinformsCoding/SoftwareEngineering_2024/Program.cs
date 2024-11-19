@@ -12,6 +12,7 @@ namespace SoftwareEngineering_2024
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new LoginForm());
+            
         }
     }
 }

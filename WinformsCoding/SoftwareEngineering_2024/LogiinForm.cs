@@ -13,21 +13,13 @@ namespace SoftwareEngineering_2024
         public LoginForm()
         {
             InitializeComponent();
-<<<<<<< HEAD
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-=======
-
-            // Attach events to link labels
-            FbLink.Click += Opener.OpenFacebook;
-            GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;
->>>>>>> ed5919cbbbb322d554e0967e4a9c5ff1d857dadb
             AccountCreateLink.Click += SignUpLinkClicked;
         }
 
         private void SignUpLinkClicked(object sender, EventArgs e)
         {
-            Opener.OpenForm(this, typeof(SignUpForm));
+            FormOpener.OpenUserForm(this, typeof(SignUpForm));
         }
 
         private void LoginBt_Click(object sender, EventArgs e)
@@ -61,9 +53,10 @@ namespace SoftwareEngineering_2024
             }
         }
 
-        private void SignUpLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void AdminLoginLb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // You might not need this method if it's redundant
+            FormOpener.OpenUserForm(this, typeof(Admin_log_in));
         }
     }
 }

@@ -44,6 +44,7 @@
             IgLink = new PictureBox();
             GmapLink = new PictureBox();
             FbLink = new PictureBox();
+            UserHomeTb = new TextBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
@@ -230,6 +231,17 @@
             FbLink.TabIndex = 18;
             FbLink.TabStop = false;
             // 
+            // UserHomeTb
+            // 
+            UserHomeTb.BackColor = Color.RosyBrown;
+            UserHomeTb.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserHomeTb.Location = new Point(237, 158);
+            UserHomeTb.Multiline = true;
+            UserHomeTb.Name = "UserHomeTb";
+            UserHomeTb.Size = new Size(1486, 227);
+            UserHomeTb.TabIndex = 22;
+            UserHomeTb.Text = resources.GetString("UserHomeTb.Text");
+            // 
             // UserHomeForm1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -237,6 +249,7 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_1036481;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1785, 689);
+            Controls.Add(UserHomeTb);
             Controls.Add(WelcomeUserLb);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -274,5 +287,6 @@
         private PictureBox IgLink;
         private PictureBox GmapLink;
         private PictureBox FbLink;
+        private TextBox UserHomeTb;
     }
 }
