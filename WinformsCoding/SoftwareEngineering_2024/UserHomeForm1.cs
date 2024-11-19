@@ -23,5 +23,7 @@ namespace SoftwareEngineering_2024
         {
             Opener.OpenLink("https://www.togetherculture.com");
         }
+
+        
     }
 }

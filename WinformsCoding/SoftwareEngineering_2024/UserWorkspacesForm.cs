@@ -15,6 +15,8 @@ namespace SoftwareEngineering_2024
         public UserWorkspacesForm()
         {
             InitializeComponent();
+            FormOpener.OpenUserDashboardPages(HomeBt, MembershipsBt, EventsBt, MyBookingsBt, SpaceBt, QueryBt);
+
         }
     }
 }

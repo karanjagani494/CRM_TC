@@ -15,6 +15,35 @@ namespace SoftwareEngineering_2024
         public UserQueriesFeedbackForm()
         {
             InitializeComponent();
+            FormOpener.OpenUserDashboardPages(HomeBt, MembershipsBt, EventsBt, MyBookingsBt, SpaceBt, QueryBt);
+
+        }
+
+        private void UserQueriesFeedbackForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void QuerySubmitBt_Click(object sender, EventArgs e)
+        {
+            bool IsQueryTypeSelected = QueryTypeCb.SelectedItem != null;
+            bool IsTextSubmitted = !string.IsNullOrWhiteSpace(QueryTb.Text);
+
+            if (!IsQueryTypeSelected || !IsTextSubmitted)
+            {
+                MessageBox.Show("Query Not Submitted\n No Query Type Selected or no text written", "Submission Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                QueryTb.Clear();
+                QueryTypeCb.SelectedIndex = 0;
+                MessageBox.Show("Query Submitted", "Submission Done", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+            
         }
     }
 }

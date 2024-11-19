@@ -3125,4 +3125,11 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <data name="UserHomeTb.Text" xml:space="preserve">
+    <value>Welcome to Your Dashboard!
+
+Your dashboard is your central hub for managing your interactions with our system. Here, you can view your memberships, track upcoming events, and stay updated with the latest announcements. With an intuitive design and easy navigation, your dashboard ensures that everything you need is just a click away.
+
+Whether you're checking the status of a workspace, providing feedback, this page serves as your one-stop destination. Start by selecting a feature from the menu . We're here to keep things simple, efficient, and tailored just for you!</value>
+  </data>
 </root>

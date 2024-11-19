@@ -21,7 +21,7 @@ namespace SoftwareEngineering_2024
 
         private void SignUpLinkClicked(object sender, EventArgs e)
         {
-            Opener.OpenForm(this, typeof(SignUpForm));
+            FormOpener.OpenUserForm(this, typeof(SignUpForm));
         }
 
         private void LoginBt_Click(object sender, EventArgs e)
@@ -55,9 +55,10 @@ namespace SoftwareEngineering_2024
             }
         }
 
-        private void SignUpLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void AdminLoginLb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // You might not need this method if it's redundant
+            FormOpener.OpenUserForm(this, typeof(Admin_log_in));
         }
     }
 }
