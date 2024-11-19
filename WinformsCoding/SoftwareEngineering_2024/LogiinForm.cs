@@ -13,7 +13,9 @@ namespace SoftwareEngineering_2024
         public LoginForm()
         {
             InitializeComponent();
+
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
+
             AccountCreateLink.Click += SignUpLinkClicked;
         }
 
