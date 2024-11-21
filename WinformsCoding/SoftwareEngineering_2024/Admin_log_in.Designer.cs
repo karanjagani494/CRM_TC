@@ -1,14 +1,14 @@
 ﻿namespace SoftwareEngineering_2024
 {
-    partial class LoginForm
+    partial class Admin_log_in
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,22 +23,20 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_log_in));
             WelcomeBackLogin = new Label();
             panel1 = new Panel();
-            AdminLoginLb = new LinkLabel();
             IgLink = new PictureBox();
             GmapLink = new PictureBox();
             FbLink = new PictureBox();
-            AccountCreateLink = new LinkLabel();
-            PasswordLb = new Label();
-            EmailLb = new Label();
-            LoginBt = new Button();
+            AdminPasswordLb = new Label();
+            AdminEmailLb = new Label();
+            AdminLoginBt = new Button();
             password_txt = new MaskedTextBox();
             email_txt = new MaskedTextBox();
             TCLogo = new PictureBox();
@@ -56,42 +54,28 @@
             WelcomeBackLogin.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             WelcomeBackLogin.Location = new Point(304, 33);
             WelcomeBackLogin.Name = "WelcomeBackLogin";
-            WelcomeBackLogin.Size = new Size(197, 32);
+            WelcomeBackLogin.Size = new Size(216, 32);
             WelcomeBackLogin.TabIndex = 0;
-            WelcomeBackLogin.Text = "Welcome Back!";
+            WelcomeBackLogin.Text = "Welcome Admin!";
             WelcomeBackLogin.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel1
             // 
             panel1.BackColor = Color.RosyBrown;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(AdminLoginLb);
             panel1.Controls.Add(IgLink);
             panel1.Controls.Add(GmapLink);
             panel1.Controls.Add(FbLink);
-            panel1.Controls.Add(AccountCreateLink);
-            panel1.Controls.Add(PasswordLb);
-            panel1.Controls.Add(EmailLb);
-            panel1.Controls.Add(LoginBt);
+            panel1.Controls.Add(AdminPasswordLb);
+            panel1.Controls.Add(AdminEmailLb);
+            panel1.Controls.Add(AdminLoginBt);
             panel1.Controls.Add(password_txt);
             panel1.Controls.Add(email_txt);
             panel1.Controls.Add(WelcomeBackLogin);
-            panel1.Location = new Point(875, 109);
+            panel1.Location = new Point(942, 62);
             panel1.Name = "panel1";
-            panel1.Size = new Size(791, 556);
-            panel1.TabIndex = 1;
-            // 
-            // AdminLoginLb
-            // 
-            AdminLoginLb.AutoSize = true;
-            AdminLoginLb.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminLoginLb.Location = new Point(353, 524);
-            AdminLoginLb.Name = "AdminLoginLb";
-            AdminLoginLb.Size = new Size(107, 23);
-            AdminLoginLb.TabIndex = 10;
-            AdminLoginLb.TabStop = true;
-            AdminLoginLb.Text = "Admin Login";
-            AdminLoginLb.LinkClicked += AdminLoginLb_LinkClicked;
+            panel1.Size = new Size(773, 513);
+            panel1.TabIndex = 3;
             // 
             // IgLink
             // 
@@ -126,46 +110,35 @@
             FbLink.TabIndex = 7;
             FbLink.TabStop = false;
             // 
-            // AccountCreateLink
+            // AdminPasswordLb
             // 
-            AccountCreateLink.AutoSize = true;
-            AccountCreateLink.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AccountCreateLink.Location = new Point(314, 476);
-            AccountCreateLink.Name = "AccountCreateLink";
-            AccountCreateLink.Size = new Size(196, 23);
-            AccountCreateLink.TabIndex = 6;
-            AccountCreateLink.TabStop = true;
-            AccountCreateLink.Text = "Not a Member, Sign Up!";
+            AdminPasswordLb.AutoSize = true;
+            AdminPasswordLb.Location = new Point(112, 219);
+            AdminPasswordLb.Name = "AdminPasswordLb";
+            AdminPasswordLb.Size = new Size(118, 20);
+            AdminPasswordLb.TabIndex = 5;
+            AdminPasswordLb.Text = "Admin Password";
             // 
-            // PasswordLb
+            // AdminEmailLb
             // 
-            PasswordLb.AutoSize = true;
-            PasswordLb.Location = new Point(112, 219);
-            PasswordLb.Name = "PasswordLb";
-            PasswordLb.Size = new Size(70, 20);
-            PasswordLb.TabIndex = 5;
-            PasswordLb.Text = "Password";
+            AdminEmailLb.AutoSize = true;
+            AdminEmailLb.Location = new Point(112, 131);
+            AdminEmailLb.Name = "AdminEmailLb";
+            AdminEmailLb.Size = new Size(100, 20);
+            AdminEmailLb.TabIndex = 4;
+            AdminEmailLb.Text = "Admin E-Mail";
             // 
-            // EmailLb
+            // AdminLoginBt
             // 
-            EmailLb.AutoSize = true;
-            EmailLb.Location = new Point(112, 131);
-            EmailLb.Name = "EmailLb";
-            EmailLb.Size = new Size(52, 20);
-            EmailLb.TabIndex = 4;
-            EmailLb.Text = "E-Mail";
-            // 
-            // LoginBt
-            // 
-            LoginBt.BackColor = Color.IndianRed;
-            LoginBt.Location = new Point(304, 324);
-            LoginBt.Name = "LoginBt";
-            LoginBt.Size = new Size(197, 57);
-            LoginBt.TabIndex = 3;
-            LoginBt.Text = "Login";
-            LoginBt.TextImageRelation = TextImageRelation.TextAboveImage;
-            LoginBt.UseVisualStyleBackColor = false;
-            LoginBt.Click += LoginBt_Click;
+            AdminLoginBt.BackColor = Color.IndianRed;
+            AdminLoginBt.Location = new Point(304, 324);
+            AdminLoginBt.Name = "AdminLoginBt";
+            AdminLoginBt.Size = new Size(197, 57);
+            AdminLoginBt.TabIndex = 3;
+            AdminLoginBt.Text = "Login";
+            AdminLoginBt.TextImageRelation = TextImageRelation.TextAboveImage;
+            AdminLoginBt.UseVisualStyleBackColor = false;
+            AdminLoginBt.Click += AdminLoginBt_Click;
             // 
             // password_txt
             // 
@@ -186,24 +159,24 @@
             TCLogo.BackColor = Color.Transparent;
             TCLogo.BackgroundImage = (Image)resources.GetObject("TCLogo.BackgroundImage");
             TCLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            TCLogo.Location = new Point(111, 100);
+            TCLogo.Location = new Point(64, 62);
             TCLogo.Name = "TCLogo";
-            TCLogo.Size = new Size(558, 556);
-            TCLogo.TabIndex = 0;
+            TCLogo.Size = new Size(558, 513);
+            TCLogo.TabIndex = 2;
             TCLogo.TabStop = false;
             // 
-            // LoginForm
+            // Admin_log_in
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1811, 763);
-            Controls.Add(TCLogo);
+            ClientSize = new Size(1841, 637);
             Controls.Add(panel1);
+            Controls.Add(TCLogo);
             DoubleBuffered = true;
-            Name = "LoginForm";
-            Text = "TC_Dashboard";
+            Name = "Admin_log_in";
+            Text = "Admin_log_in";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).EndInit();
@@ -217,16 +190,14 @@
 
         private Label WelcomeBackLogin;
         private Panel panel1;
-        private PictureBox TCLogo;
-        private Label PasswordLb;
-        private Label EmailLb;
-        private Button LoginBt;
-        private MaskedTextBox password_txt;
-        private MaskedTextBox email_txt;
-        private LinkLabel AccountCreateLink;
         private PictureBox IgLink;
         private PictureBox GmapLink;
         private PictureBox FbLink;
-        private LinkLabel AdminLoginLb;
+        private Label AdminPasswordLb;
+        private Label AdminEmailLb;
+        private Button AdminLoginBt;
+        private MaskedTextBox password_txt;
+        private MaskedTextBox email_txt;
+        private PictureBox TCLogo;
     }
 }

@@ -10,17 +10,12 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class UserBookingsForm : Form
+    public partial class AdminEngagementForm : Form
     {
-        public UserBookingsForm()
+        public AdminEngagementForm()
         {
             InitializeComponent();
-            FormOpener.OpenUserDashboardPages(HomeBt, MembershipsBt, EventsBt, MyBookingsBt, SpaceBt, QueryBt);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt);
         }
     }
 }

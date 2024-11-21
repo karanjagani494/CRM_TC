@@ -117,10 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="PastBookingDg.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TodayBookingDg.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="AdminHomeTb.Text" xml:space="preserve">
+    <value>The Admin Dashboard is your command center for efficiently managing the system and overseeing all operations. From tracking memberships and handling user queries to monitoring events and workspace availability, this page equips you with the tools needed to keep everything running smoothly. With analytics and real-time data, you can make informed decisions and stay ahead of the curve.
+
+Take control of user management, review feedback, and manage resources seamlessly through intuitive interfaces and organized workflows. Whether it’s updating system settings, resolving queries, or generating reports, the Admin Dashboard empowers you to ensure a seamless experience for all users. Dive into the features and keep the system thriving with your expertise!</value>
+  </data>
 </root>

@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SoftwareEngineering_2024
 {
     public partial class InterestDptForm : Form
     {
+
+
+        private userDAL userDAL = new userDAL();
+
         public InterestDptForm()
         {
             InitializeComponent();
@@ -25,7 +32,46 @@ namespace SoftwareEngineering_2024
         private void ProceedTagBt_Click(object? sender, EventArgs e)
         {
             Opener.OpenForm(this, typeof(TagsForm));
+
+            List<string> INTEREST = GetSelectedInterest(); // Ensure you are calling the correct method
+
+            if (INTEREST != null && INTEREST.Count > 0) // Check if the list is not null and contains items
+            {
+                try
+                {
+                    // Use the UserDAL instance to save the interests to the database
+                    bool Registered = userDAL.SaveInterestToDatabase(INTEREST);
+                    MessageBox.Show("Interests saved successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select at least one interest.");
+            }
         }
+
+
+
+
+        private List<string> GetSelectedInterest()
+        {
+            List<string> INTEREST = new List<string>();
+
+            // Check each radio button and add the corresponding interest to the list if it's checked
+            if (Learning.Checked) INTEREST.Add("Learning");
+            if (Happening.Checked) INTEREST.Add("Happening");
+            if (Helping.Checked) INTEREST.Add("Helping");
+            if (Working.Checked) INTEREST.Add("Working");
+            if (Sharing.Checked) INTEREST.Add("Sharing");
+
+            return INTEREST;
+        }
+
+
 
         private void LogInLink_Click(object sender, EventArgs e)
         {

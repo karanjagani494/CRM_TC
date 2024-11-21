@@ -14,7 +14,7 @@ namespace SoftwareEngineering_2024
 {
     public partial class SignUpForm : Form
     {
-        private userDAL userDAL;
+        private userDAL userDAL = new userDAL();
         public SignUpForm()
         {
             InitializeComponent();
@@ -22,6 +22,7 @@ namespace SoftwareEngineering_2024
             GmapLink.Click += Opener.OpenGoogleMaps;
             IgLink.Click += Opener.OpenInstagram;*/
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
+            phoneNumber.KeyPress += phoneNumber_KeyPress;
             LogInLink.Click += LogInLink_LinkClicked;
             userDAL = new userDAL();
 
@@ -31,15 +32,15 @@ namespace SoftwareEngineering_2024
         private void LogInLink_LinkClicked(object sender, EventArgs e)
         {
             Opener.OpenForm(this, typeof(LoginForm));
+        }
 
-           
 
 
-}
+
 
         private void ProceedIntBt_Click(object sender, EventArgs e)
         {
-            
+
             userDAL.TestDatabaseConnection();
 
             // Check if all required textboxes are filled
@@ -47,11 +48,16 @@ namespace SoftwareEngineering_2024
             {
                 Opener.OpenForm(this, typeof(InterestDptForm));
 
-               
-                string Email = email.Text;
+                string str1 = email.Text;
+                string Email = str1.ToLower();  /* TO lower will store always in lowercase of email */
                 string Password = password.Text;
-                string Firstname = firstName.Text;
-                string Lastname = lastName.Text;
+
+                /* TO lower will store always in UPPERCASE  of first and last name */
+                string str2 = firstName.Text;
+                string Firstname = str2.ToUpper(); 
+                string str3 = lastName.Text;
+                string Lastname = str3.ToUpper();
+
                 string Phonenumber = phoneNumber.Text;
                 string Housenumber = houseNumber.Text;
                 string City = city.Text;
@@ -62,9 +68,8 @@ namespace SoftwareEngineering_2024
 
 
 
-
                 // Attempt to register the user
-                bool isRegistered = userDAL.RegisterUser(Email, Password, Firstname, Lastname, Phonenumber, Housenumber, City, State, Country, Street, Citycode);
+                bool isRegistered = userDAL.RegisterMember(Email, Password, Firstname, Lastname, Phonenumber, Housenumber, Street, City, State, Country, Citycode);
 
                 // if (isRegistered)
                 // {
@@ -83,7 +88,17 @@ namespace SoftwareEngineering_2024
                 //  }
 
             }
-            
+
+        }
+
+        private void phoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys (e.g., backspace) and digits
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Reject the input if it is not a digit or control key
+                e.Handled = true;
+            }
         }
 
 
