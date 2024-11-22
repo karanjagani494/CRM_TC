@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Org.BouncyCastle.Asn1.Cmp;
-using SoftwareEngineering_2024;
+﻿using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.utilities;
 
 namespace SoftwareEngineering_2024
 {
     public partial class SignUpForm : Form
     {
         private userDAL userDAL = new userDAL();
+        private UserContext userContext = new UserContext();
         public SignUpForm()
         {
             InitializeComponent();
@@ -54,7 +46,7 @@ namespace SoftwareEngineering_2024
 
                 /* TO lower will store always in UPPERCASE  of first and last name */
                 string str2 = firstName.Text;
-                string Firstname = str2.ToUpper(); 
+                string Firstname = str2.ToUpper();
                 string str3 = lastName.Text;
                 string Lastname = str3.ToUpper();
 
@@ -68,8 +60,25 @@ namespace SoftwareEngineering_2024
 
 
 
+                
+
+               
+
                 // Attempt to register the user
                 bool isRegistered = userDAL.RegisterMember(Email, Password, Firstname, Lastname, Phonenumber, Housenumber, Street, City, State, Country, Citycode);
+
+                UserContext.EMAIL = Email; /*  this line is storin email in userContext file in utilitis folder  */
+                userContext.RetrieveMemberID();
+
+                if (isRegistered) {
+
+
+                    FormTracker.StepsCompleted[0] = true;
+                    bool print = FormTracker.StepsCompleted[0];
+                    Console.WriteLine(print);
+
+                }
+
 
                 // if (isRegistered)
                 // {
@@ -86,6 +95,9 @@ namespace SoftwareEngineering_2024
                 //  {
                 //     lblStatus.Text = "Please fill in all fields and accept terms.";
                 //  }
+
+
+                
 
             }
 

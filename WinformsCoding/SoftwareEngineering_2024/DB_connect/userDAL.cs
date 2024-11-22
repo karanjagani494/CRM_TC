@@ -1,15 +1,17 @@
 ﻿using MySql.Data.MySqlClient;
-using SoftwareEngineering_2024;
+using SoftwareEngineering_2024.utilities;
 using System;
 using System.Security.Cryptography;
 using System.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace SoftwareEngineering_2024
+namespace SoftwareEngineering_2024.DB_connect
 {
     public class userDAL
     {
 
         private db_connect db = new db_connect();
+        private UserContext userContext = new UserContext();
 
         public void TestDatabaseConnection()
         {
@@ -27,12 +29,12 @@ namespace SoftwareEngineering_2024
             {
 
 
-                
+
                 registerCmd.Parameters.AddWithValue("@first_name", Firstname);
                 registerCmd.Parameters.AddWithValue("@last_name", Lastname);
                 registerCmd.Parameters.AddWithValue("@Email", Email);
                 registerCmd.Parameters.AddWithValue("@phone_no", Phonenumber);
-                registerCmd.Parameters.AddWithValue("@password", hashedPassword); 
+                registerCmd.Parameters.AddWithValue("@password", hashedPassword);
                 registerCmd.Parameters.AddWithValue("@house_no", Housenumber);
                 registerCmd.Parameters.AddWithValue("@street", Street);
                 registerCmd.Parameters.AddWithValue("@city", City);
@@ -61,6 +63,15 @@ namespace SoftwareEngineering_2024
         //  =====REGISTER MEMBER INTEREST AND TAGS MEMBERSHIP TYPE=====
         public bool SaveInterestToDatabase(List<string> INTEREST)
         {
+
+            int id = UserContext.Memberid;
+
+            if (id == 0) // Throw if Memberid is not set
+            {
+                throw new Exception("Member ID is not available.");
+            }
+
+
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.INTEREST_query, db.GetConnection()))
             {
                 //// Prepare parameters for interests
@@ -80,6 +91,9 @@ namespace SoftwareEngineering_2024
                         registerCmd.Parameters.AddWithValue($"@interest_{i + 1}", DBNull.Value);
                     }
                 }
+
+
+                registerCmd.Parameters.AddWithValue("@MemberID", id); /* this will save*/
 
                 try
                 {
@@ -143,12 +157,12 @@ namespace SoftwareEngineering_2024
         }
 
 
-        public bool SaveMem_TypeToDatabase( String Type)
+        public bool SaveMem_TypeToDatabase(string Type)
         {
             using (MySqlCommand command = new MySqlCommand(SqlQueries.MemInfo_query, db.GetConnection()))
             {
                 command.Parameters.AddWithValue("@membership_name", Type);
-                
+
                 try
                 {
                     db.OpenConnection();
@@ -172,7 +186,7 @@ namespace SoftwareEngineering_2024
 
         public bool Payment_infoToDatabse(string CardHolder_name, string Card_no, string Cvv, string House_no, string City, string State, string Country, string Street, string Citycode, string Exp_date)
         {
-            
+
 
             // User doesn't exist, proceed with insertion
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.Payment_query, db.GetConnection()))
@@ -208,6 +222,43 @@ namespace SoftwareEngineering_2024
                 }
             }
         }
+
+
+        public bool DeleteUserByEmail() {
+
+            int id = UserContext.Memberid;
+            string Delete_query = "DELETE FROM members WHERE Email = @Email";
+
+            using (MySqlCommand command = new MySqlCommand(Delete_query, db.GetConnection()))
+            {
+                command.Parameters.AddWithValue("@Email", id);
+
+
+                try
+                {
+                    db.OpenConnection();
+                    command.ExecuteNonQuery();
+                    db.CloseConnection();
+                    return true;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error registering user: " + ex.Message);
+                    db.CloseConnection();
+                    return false;
+                }
+                
+                
+            }
+
+
+        }
+
+
+
+
+
 
 
         //Authenticate user

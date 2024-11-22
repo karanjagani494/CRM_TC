@@ -1,5 +1,7 @@
 ﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Diagnostics.Metrics;
+using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.utilities;
 
 namespace SoftwareEngineering_2024
 {
@@ -39,7 +41,18 @@ namespace SoftwareEngineering_2024
 
 
 
+              
                 bool isRegistered = userDAL.Payment_infoToDatabse(CardHolder_name, Card_no, Cvv, House_no, City, State, Country, Street, Citycode, Exp_date);
+
+                if (isRegistered)
+                {
+
+
+                    FormTracker.StepsCompleted[4] = true;
+                   
+
+                }
+
             }
 
         }
@@ -47,6 +60,8 @@ namespace SoftwareEngineering_2024
         private void PreviousPageBt_Click(object sender, EventArgs e)
         {
             Opener.GoBack(this);
+            FormTracker.StepsCompleted[4] = false;
+            userDAL.DeleteUserByEmail();
         }
     }
 }

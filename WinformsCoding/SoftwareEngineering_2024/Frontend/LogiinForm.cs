@@ -2,6 +2,8 @@ using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.utilities;
 
 namespace SoftwareEngineering_2024
 {
@@ -42,8 +44,19 @@ namespace SoftwareEngineering_2024
 
             if (isAuthenticated)
             {
-                // Navigate to UserHomeForm1 if authentication is successful
-                Opener.OpenForm(this, typeof(UserHomeForm1));
+               
+                if (FormTracker.StepsCompleted.All(step => step))
+                {
+                    // Navigate to UserHomeForm1 if authentication is successful
+                    Opener.OpenForm(this, typeof(UserHomeForm1));
+
+                }else {
+                    MessageBox.Show("Please complete the registration process before logging in.",
+                                "Login Failed",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                }
+                        
             }
             else
             {

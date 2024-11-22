@@ -22,5 +22,10 @@ namespace SoftwareEngineering_2024
         {
             FormOpener.OpenUserForm(this, typeof(AdminHomeForm));
         }
+
+        private void Admin_log_in_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

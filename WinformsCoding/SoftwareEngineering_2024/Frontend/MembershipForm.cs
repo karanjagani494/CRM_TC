@@ -1,4 +1,6 @@
 ﻿using Mysqlx.Notice;
+using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,6 +61,7 @@ namespace SoftwareEngineering_2024
                     // Use the UserDAL instance to save the interests to the database
                     bool Registered = userDAL.SaveMem_TypeToDatabase(Type);
                     MessageBox.Show("Interests saved successfully!");
+                    FormTracker.StepsCompleted[3] = true;
                 }
                 catch (Exception ex)
                 {
@@ -93,6 +96,8 @@ namespace SoftwareEngineering_2024
         private void PreviousPageBt_Click(object sender, EventArgs e)
         {
             Opener.GoBack(this);
+            FormTracker.StepsCompleted[3] = false;
+            userDAL.DeleteUserByEmail();
         }
 
         private void ProceedIntBt_Click(object sender, EventArgs e)

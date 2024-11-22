@@ -9,6 +9,8 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.utilities;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SoftwareEngineering_2024
@@ -41,7 +43,16 @@ namespace SoftwareEngineering_2024
                 {
                     // Use the UserDAL instance to save the interests to the database
                     bool Registered = userDAL.SaveInterestToDatabase(INTEREST);
+                   
                     MessageBox.Show("Interests saved successfully!");
+                    
+                    {
+
+
+                        FormTracker.StepsCompleted[1] = true;
+                        
+
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -81,6 +92,9 @@ namespace SoftwareEngineering_2024
         private void PreviousPageBt_Click(object sender, EventArgs e)
         {
             Opener.GoBack(this);
+            FormTracker.StepsCompleted[1] = false;
+            FormTracker.StepsCompleted[0] = false;
+            userDAL.DeleteUserByEmail();
         }
     }
 }
