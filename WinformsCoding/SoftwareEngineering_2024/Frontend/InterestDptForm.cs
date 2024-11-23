@@ -48,7 +48,7 @@ namespace SoftwareEngineering_2024
                     
                     {
 
-
+                        //this will count this form if the form is completed then it will store true
                         FormTracker.StepsCompleted[1] = true;
                         
 
@@ -94,7 +94,7 @@ namespace SoftwareEngineering_2024
             Opener.GoBack(this);
             FormTracker.StepsCompleted[1] = false;
             FormTracker.StepsCompleted[0] = false;
-            userDAL.DeleteUserByEmail();
+            userDAL.DeleteUserByMEmid();
         }
     }
 }

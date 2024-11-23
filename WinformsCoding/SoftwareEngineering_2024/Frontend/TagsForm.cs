@@ -44,7 +44,7 @@ namespace SoftwareEngineering_2024
                     
                     bool Registered = userDAL.SaveTagToDatabase(TAG);
                     MessageBox.Show("Interests saved successfully!");
-                    FormTracker.StepsCompleted[2] = true;
+                    FormTracker.StepsCompleted[2] = true; //this will count this form if the form is completed then it will store true
                 }
                 catch (Exception ex)
                 {
@@ -91,7 +91,7 @@ namespace SoftwareEngineering_2024
         {
             Opener.GoBack(this);
             FormTracker.StepsCompleted[2] = false;
-            userDAL.DeleteUserByEmail();
+            userDAL.DeleteUserByMEmid();
         }
 
         private void EmploymentCb_CheckedChanged(object sender, EventArgs e)

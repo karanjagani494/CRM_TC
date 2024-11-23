@@ -33,7 +33,7 @@ namespace SoftwareEngineering_2024
         private void ProceedIntBt_Click(object sender, EventArgs e)
         {
 
-            userDAL.TestDatabaseConnection();
+            
 
             // Check if all required textboxes are filled
             if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
@@ -73,9 +73,7 @@ namespace SoftwareEngineering_2024
                 if (isRegistered) {
 
 
-                    FormTracker.StepsCompleted[0] = true;
-                    bool print = FormTracker.StepsCompleted[0];
-                    Console.WriteLine(print);
+                    FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
 
                 }
 

@@ -61,7 +61,7 @@ namespace SoftwareEngineering_2024
                     // Use the UserDAL instance to save the interests to the database
                     bool Registered = userDAL.SaveMem_TypeToDatabase(Type);
                     MessageBox.Show("Interests saved successfully!");
-                    FormTracker.StepsCompleted[3] = true;
+                    FormTracker.StepsCompleted[3] = true; //this will count this form if the form is completed then it will store true
                 }
                 catch (Exception ex)
                 {
@@ -97,7 +97,7 @@ namespace SoftwareEngineering_2024
         {
             Opener.GoBack(this);
             FormTracker.StepsCompleted[3] = false;
-            userDAL.DeleteUserByEmail();
+            userDAL.DeleteUserByMEmid();
         }
 
         private void ProceedIntBt_Click(object sender, EventArgs e)

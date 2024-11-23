@@ -13,10 +13,18 @@ namespace SoftwareEngineering_2024.DB_connect
         private db_connect db = new db_connect();
         private UserContext userContext = new UserContext();
 
+
+
         public void TestDatabaseConnection()
         {
             db.TestConnection();
         }
+
+
+        /* id can be used in any method */
+        private int id = UserContext.Memberid;  
+
+
 
         //  ===== REGISTER MEMBER IN "TEST" DATABSE IN "MEMBER" TABLE =====
         public bool RegisterMember(string Email, string Password, string Firstname, string Lastname, string Phonenumber, string Housenumber, string City, string State, string Country, string Street, string Citycode)
@@ -43,7 +51,7 @@ namespace SoftwareEngineering_2024.DB_connect
                 registerCmd.Parameters.AddWithValue("@country", Country);
 
 
-
+                registerCmd.Parameters.AddWithValue("@member_id", id); /* this will save member id in table*/
                 try
                 {
                     db.OpenConnection();
@@ -63,14 +71,6 @@ namespace SoftwareEngineering_2024.DB_connect
         //  =====REGISTER MEMBER INTEREST AND TAGS MEMBERSHIP TYPE=====
         public bool SaveInterestToDatabase(List<string> INTEREST)
         {
-
-            int id = UserContext.Memberid;
-
-            if (id == 0) // Throw if Memberid is not set
-            {
-                throw new Exception("Member ID is not available.");
-            }
-
 
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.INTEREST_query, db.GetConnection()))
             {
@@ -93,7 +93,7 @@ namespace SoftwareEngineering_2024.DB_connect
                 }
 
 
-                registerCmd.Parameters.AddWithValue("@MemberID", id); /* this will save*/
+                registerCmd.Parameters.AddWithValue("@member_id", id); /* this will save member id in table*/
 
                 try
                 {
@@ -137,6 +137,8 @@ namespace SoftwareEngineering_2024.DB_connect
                     }
                 }
 
+                registerCmd.Parameters.AddWithValue("@member_id", id); /* this will save member id in table*/
+
                 try
                 {
                     db.OpenConnection();
@@ -163,6 +165,7 @@ namespace SoftwareEngineering_2024.DB_connect
             {
                 command.Parameters.AddWithValue("@membership_name", Type);
 
+                command.Parameters.AddWithValue("@member_id", id); /* this will save member id in table*/
                 try
                 {
                     db.OpenConnection();
@@ -205,6 +208,7 @@ namespace SoftwareEngineering_2024.DB_connect
                 registerCmd.Parameters.AddWithValue("@citycode", Citycode);
                 registerCmd.Parameters.AddWithValue("@exp_date", Exp_date);
 
+                registerCmd.Parameters.AddWithValue("@member_id", id); //* this will save member id in table*/
 
 
                 try
@@ -224,14 +228,15 @@ namespace SoftwareEngineering_2024.DB_connect
         }
 
 
-        public bool DeleteUserByEmail() {
+        public bool DeleteUserByMEmid()
+        {
 
             int id = UserContext.Memberid;
-            string Delete_query = "DELETE FROM members WHERE Email = @Email";
+            string Delete_query = "DELETE FROM members WHERE member_id = @member_id";
 
             using (MySqlCommand command = new MySqlCommand(Delete_query, db.GetConnection()))
             {
-                command.Parameters.AddWithValue("@Email", id);
+                command.Parameters.AddWithValue("@member_id", id);
 
 
                 try
@@ -248,15 +253,12 @@ namespace SoftwareEngineering_2024.DB_connect
                     db.CloseConnection();
                     return false;
                 }
-                
-                
+
+
             }
 
 
         }
-
-
-
 
 
 
