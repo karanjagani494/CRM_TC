@@ -7,6 +7,8 @@ namespace SoftwareEngineering_2024
     {
         private userDAL userDAL = new userDAL();
         private UserContext userContext = new UserContext();
+        private EmailService emailService = new EmailService();
+
         public SignUpForm()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace SoftwareEngineering_2024
         private void ProceedIntBt_Click(object sender, EventArgs e)
         {
 
-            
+
 
             // Check if all required textboxes are filled
             if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
@@ -60,20 +62,25 @@ namespace SoftwareEngineering_2024
 
 
 
-                
-
-               
-
                 // Attempt to register the user
                 bool isRegistered = userDAL.RegisterMember(Email, Password, Firstname, Lastname, Phonenumber, Housenumber, Street, City, State, Country, Citycode);
 
                 UserContext.EMAIL = Email; /*  this line is storin email in userContext file in utilitis folder  */
                 userContext.RetrieveMemberID();
 
-                if (isRegistered) {
+                if (isRegistered)
+                {
 
 
                     FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
+                    //string toEmail = UserContext.EMAIL;
+                    //string subject = "Welcome to CRM!";
+
+                    //// Personalize the email body with the user's first and last name
+                    //string body = $"Dear {Firstname} {Lastname},\n\nThank you for registering with us.\n\nBest Regards,\nCRM Team";
+
+
+                    //emailService.SendEmail(toEmail, subject, body);
 
                 }
 
@@ -95,7 +102,7 @@ namespace SoftwareEngineering_2024
                 //  }
 
 
-                
+
 
             }
 

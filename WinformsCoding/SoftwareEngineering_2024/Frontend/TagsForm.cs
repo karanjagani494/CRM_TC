@@ -41,7 +41,7 @@ namespace SoftwareEngineering_2024
             {
                 try
                 {
-                    
+
                     bool Registered = userDAL.SaveTagToDatabase(TAG);
                     MessageBox.Show("Interests saved successfully!");
                     FormTracker.StepsCompleted[2] = true; //this will count this form if the form is completed then it will store true
