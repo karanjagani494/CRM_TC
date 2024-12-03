@@ -14,6 +14,9 @@ namespace SoftwareEngineering_2024
         {
             InitializeComponent();
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
+            cardNo_txt.KeyPress += Opener.Number_KeyPress;
+            Cvv_txt.KeyPress += Opener.Number_KeyPress;
+                            
         }
 
 

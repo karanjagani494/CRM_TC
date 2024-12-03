@@ -121,8 +121,18 @@ namespace SoftwareEngineering_2024
             }
 
             return true; // All checks passed
-        }        
+        }
 
-        
+        public static void Number_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys (e.g., backspace) and digits
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Reject the input if it is not a digit or control key
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

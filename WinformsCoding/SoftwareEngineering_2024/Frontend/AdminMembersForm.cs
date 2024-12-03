@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoftwareEngineering_2024.DB_connect;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,12 @@ namespace SoftwareEngineering_2024
         {
             InitializeComponent();
             FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt);
+        }
+
+        private void AdminMembersForm_Load(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM user;"; // Query to load payment data
+            userDAL.PopulateDataGridViewUsingBindingSource(MembersTableDg, query);
         }
     }
 }
