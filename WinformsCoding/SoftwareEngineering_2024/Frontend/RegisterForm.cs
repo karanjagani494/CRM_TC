@@ -72,7 +72,7 @@ namespace SoftwareEngineering_2024
                 {
 
 
-                    FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
+                    //FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
                     //string toEmail = UserContext.EMAIL;
                     //string subject = "Welcome to CRM!";
 

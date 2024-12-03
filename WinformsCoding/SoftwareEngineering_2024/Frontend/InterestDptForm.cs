@@ -96,7 +96,7 @@ namespace SoftwareEngineering_2024
             Opener.GoBack(this);
             FormTracker.StepsCompleted[1] = false;
             FormTracker.StepsCompleted[0] = false;
-            //userDAL.DeleteUserByMEmid();
+            userDAL.DeleteUserByMEmid();
         }
 
         
