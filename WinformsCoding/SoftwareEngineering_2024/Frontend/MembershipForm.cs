@@ -52,16 +52,16 @@ namespace SoftwareEngineering_2024
 
 
 
-            string Type = GetSelectedMem_type();
+            int Type = GetSelectedMem_type();
 
-            if (!string.IsNullOrEmpty(Type)) // Check if the list is not null and contains items
+            if (Type != 0) // Check if the list is not null and contains items
             {
                 try
                 {
                     // Use the UserDAL instance to save the interests to the database
                     bool Registered = userDAL.SaveMem_TypeToDatabase(Type);
-                    MessageBox.Show("Interests saved successfully!");
-                    FormTracker.StepsCompleted[3] = true;
+                    MessageBox.Show("Membership saved successfully!");
+                    FormTracker.StepsCompleted[3] = true; //this will count this form if the form is completed then it will store true
                 }
                 catch (Exception ex)
                 {
@@ -79,25 +79,25 @@ namespace SoftwareEngineering_2024
 
 
 
-        private string GetSelectedMem_type()
+        private int GetSelectedMem_type()
         {
             
 
             // Check each radio button and add the corresponding interest to the list if it's checked
-            if (partTime_cb.Checked) return ("Part_TIME");
-            if (fullTime_cb.Checked) return("Full_Time");
-            if (Community_cb.Checked) return("Community01");
-            if (Community02_cb.Checked) return ("Community02");
+            if (partTime_cb.Checked) return 1;
+            if (fullTime_cb.Checked) return 2;
+            if (Community_cb.Checked) return 3 ;
+            if (Community02_cb.Checked) return 4;
             
 
-            return null;
+            return 0;
         }
 
         private void PreviousPageBt_Click(object sender, EventArgs e)
         {
             Opener.GoBack(this);
             FormTracker.StepsCompleted[3] = false;
-            userDAL.DeleteUserByEmail();
+            userDAL.DeleteUserByMEmid();
         }
 
         private void ProceedIntBt_Click(object sender, EventArgs e)

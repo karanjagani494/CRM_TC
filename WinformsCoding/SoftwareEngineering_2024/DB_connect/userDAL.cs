@@ -3,6 +3,8 @@ using MySqlX.XDevAPI.Relational;
 using SoftwareEngineering_2024.utilities;
 using System;
 using System.Data;
+using System.Runtime.CompilerServices;
+using System.Data;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -16,10 +18,40 @@ namespace SoftwareEngineering_2024.DB_connect
         private db_connect db = new db_connect();
         private UserContext userContext = new UserContext();
 
+
+
         public void TestDatabaseConnection()
         {
             db.TestConnection();
         }
+
+
+        /* id can be used in any method */
+        private int id = UserContext.Memberid;
+
+        //public DataTable GetMembersData()
+        //{
+        //    string query = "SELECT * FROM members";  // Ensure the table name is correct
+        //    DataTable dataTable = new DataTable();
+
+        //    try
+        //    {
+        //        if (db.OpenConnection())
+        //        {
+        //            MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
+        //            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+        //            adapter.Fill(dataTable);  // Fill the DataTable with data
+        //            db.CloseConnection();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Error fetching members data: " + ex.Message);
+        //        db.CloseConnection();
+        //    }
+
+        //    return dataTable;
+        //}
 
         //  ===== REGISTER MEMBER IN "TEST" DATABSE IN "MEMBER" TABLE =====
         public bool RegisterMember(string Email, string Password, string Firstname, string Lastname, string Phonenumber, string Housenumber, string City, string State, string Country, string Street, string Citycode)
@@ -27,12 +59,38 @@ namespace SoftwareEngineering_2024.DB_connect
             // Hash the password before storing it
             string hashedPassword = HashPassword(Password);
 
+            // Check if the user with the given email already exists
+            using (MySqlCommand checkCmd = new MySqlCommand("SELECT COUNT(*) FROM members WHERE email = @Email", db.GetConnection()))
+            {
+                checkCmd.Parameters.AddWithValue("@Email", Email);
+
+                try
+                {
+                    db.OpenConnection();
+                    var result = checkCmd.ExecuteScalar();
+                    db.CloseConnection();
+
+                    if (result != null && Convert.ToInt32(result) > 0)
+                    {
+                        // User already exists, show an alert box
+                        MessageBox.Show("A user with this email already exists. Please use a different email.",
+                                        "Registration Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error checking user existence: " + ex.Message);
+                    db.CloseConnection();
+                    return false;
+                }
+            }
+
             // User doesn't exist, proceed with insertion
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.RegisterMember, db.GetConnection()))
             {
-
-
-
                 registerCmd.Parameters.AddWithValue("@first_name", Firstname);
                 registerCmd.Parameters.AddWithValue("@last_name", Lastname);
                 registerCmd.Parameters.AddWithValue("@Email", Email);
@@ -46,7 +104,7 @@ namespace SoftwareEngineering_2024.DB_connect
                 registerCmd.Parameters.AddWithValue("@country", Country);
 
 
-
+                registerCmd.Parameters.AddWithValue("@member_id", id); /* this will save member id in table*/
                 try
                 {
                     db.OpenConnection();
@@ -66,14 +124,6 @@ namespace SoftwareEngineering_2024.DB_connect
         //  =====REGISTER MEMBER INTEREST AND TAGS MEMBERSHIP TYPE=====
         public bool SaveInterestToDatabase(List<string> INTEREST)
         {
-
-            int id = UserContext.Memberid;
-
-            if (id == 0) // Throw if Memberid is not set
-            {
-                throw new Exception("Member ID is not available.");
-            }
-
 
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.INTEREST_query, db.GetConnection()))
             {
@@ -96,7 +146,7 @@ namespace SoftwareEngineering_2024.DB_connect
                 }
 
 
-                registerCmd.Parameters.AddWithValue("@MemberID", id); /* this will save*/
+                registerCmd.Parameters.AddWithValue("@member_id", id); /* this will save member id in table*/
 
                 try
                 {
@@ -122,8 +172,6 @@ namespace SoftwareEngineering_2024.DB_connect
         {
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.TAG_query, db.GetConnection()))
             {
-                //// Prepare parameters for interests
-                //registerCmd.Parameters.AddWithValue("@userId", GetUserId());  // Replace with your user ID retrieval logic
 
                 // For the 5 interest columns (interest_1, interest_2, etc.)
                 for (int i = 0; i < 12; i++)
@@ -139,6 +187,8 @@ namespace SoftwareEngineering_2024.DB_connect
                         registerCmd.Parameters.AddWithValue($"@tag_{i + 1}", DBNull.Value);
                     }
                 }
+
+                registerCmd.Parameters.AddWithValue("@member_id", id); /* this will save member id in table*/
 
                 try
                 {
@@ -160,16 +210,17 @@ namespace SoftwareEngineering_2024.DB_connect
         }
 
 
-        public bool SaveMem_TypeToDatabase(string Type)
+        public bool SaveMem_TypeToDatabase(int Type)
         {
-            using (MySqlCommand command = new MySqlCommand(SqlQueries.MemInfo_query, db.GetConnection()))
+            using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.MemInfo_query, db.GetConnection()))
             {
-                command.Parameters.AddWithValue("@membership_name", Type);
+                registerCmd.Parameters.AddWithValue("@membership_id", Type);
 
+               
                 try
                 {
                     db.OpenConnection();
-                    int rowsAffected = command.ExecuteNonQuery();
+                    int rowsAffected = registerCmd.ExecuteNonQuery();
                     db.CloseConnection();
                     return rowsAffected > 0;
                 }
@@ -208,6 +259,7 @@ namespace SoftwareEngineering_2024.DB_connect
                 registerCmd.Parameters.AddWithValue("@citycode", Citycode);
                 registerCmd.Parameters.AddWithValue("@exp_date", Exp_date);
 
+                registerCmd.Parameters.AddWithValue("@member_id", id); //* this will save member id in table*/
 
 
                 try
@@ -227,14 +279,18 @@ namespace SoftwareEngineering_2024.DB_connect
         }
 
 
-        public bool DeleteUserByEmail() {
+
+
+        /* This method is called when user press the prvious button and this method will delete thw last entered data from the databse*/
+        public bool DeleteUserByMEmid()
+        {
 
             int id = UserContext.Memberid;
-            string Delete_query = "DELETE FROM members WHERE Email = @Email";
+            string Delete_query = "DELETE FROM members WHERE member_id = @member_id";
 
             using (MySqlCommand command = new MySqlCommand(Delete_query, db.GetConnection()))
             {
-                command.Parameters.AddWithValue("@Email", id);
+                command.Parameters.AddWithValue("@member_id", id);
 
 
                 try
@@ -251,8 +307,8 @@ namespace SoftwareEngineering_2024.DB_connect
                     db.CloseConnection();
                     return false;
                 }
-                
-                
+
+
             }
 
 
@@ -261,10 +317,7 @@ namespace SoftwareEngineering_2024.DB_connect
 
 
 
-
-
-
-        //Authenticate user
+        //This method will authentic the user at the time of login
         public bool AuthenticateUser(string Email, string Password)
         {
             string hashedPassword = HashPassword(Password); // Hash the input password
@@ -298,6 +351,8 @@ namespace SoftwareEngineering_2024.DB_connect
                 }
             }
         }
+
+
 
 
         // Helper method to hash passwords
