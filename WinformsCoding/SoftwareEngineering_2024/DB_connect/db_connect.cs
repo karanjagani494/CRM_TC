@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace SoftwareEngineering_2024
+namespace SoftwareEngineering_2024.DB_connect
 {
 
     public class db_connect
@@ -21,9 +21,9 @@ namespace SoftwareEngineering_2024
         // Initialize database connection
         private void InitializeConnection()
         {
-              string connectionString = "server=localhost;database=crm;user=root;password=Shau@410;";
+            string connectionString = "server=localhost;port=3307;database=karan_crm;user=root;password=;";
 
-        connection = new MySqlConnection(connectionString);
+            connection = new MySqlConnection(connectionString);
         }
 
         // Open the connection

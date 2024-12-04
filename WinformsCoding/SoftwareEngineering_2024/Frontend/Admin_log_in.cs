@@ -1,31 +1,30 @@
+﻿using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.utilities;
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class LoginForm : Form
+    public partial class Admin_log_in : Form
     {
-        // Initialize userDAL to ensure it's not null when used
-        private userDAL userDAL = new userDAL();
 
-        public LoginForm()
+        private adminDAL adminDAL = new adminDAL();
+        public Admin_log_in()
         {
             InitializeComponent();
-
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-
-            AccountCreateLink.Click += SignUpLinkClicked;
         }
 
-        private void SignUpLinkClicked(object sender, EventArgs e)
+        private void AdminLoginBt_Click(object sender, EventArgs e)
         {
-            FormOpener.OpenUserForm(this, typeof(SignUpForm));
-        }
 
-        private void LoginBt_Click(object sender, EventArgs e)
-        {
             // Retrieve email and password from form inputs
             string Email = email_txt?.Text ?? string.Empty;
             string Password = password_txt?.Text ?? string.Empty;
@@ -38,12 +37,13 @@ namespace SoftwareEngineering_2024
             }
 
             // Authenticate the user
-            bool isAuthenticated = userDAL.AuthenticateUser(Email, Password);
+            bool isAuthenticated = adminDAL.AuthenticateAdmin(Email, Password);
 
             if (isAuthenticated)
             {
                 // Navigate to UserHomeForm1 if authentication is successful
-                Opener.OpenForm(this, typeof(UserHomeForm1));
+                FormOpener.OpenUserForm(this, typeof(AdminHomeForm));
+
             }
             else
             {
@@ -53,12 +53,20 @@ namespace SoftwareEngineering_2024
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+
+
+
+
+
+
+
+
+            
         }
 
-
-        private void AdminLoginLb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Admin_log_in_Load(object sender, EventArgs e)
         {
-            FormOpener.OpenUserForm(this, typeof(Admin_log_in));
+
         }
     }
 }

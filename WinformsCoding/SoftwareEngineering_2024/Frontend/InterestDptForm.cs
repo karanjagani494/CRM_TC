@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
@@ -9,6 +10,9 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.utilities;
+using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SoftwareEngineering_2024
@@ -16,7 +20,7 @@ namespace SoftwareEngineering_2024
     public partial class InterestDptForm : Form
     {
 
-
+        private db_connect db = new db_connect();
         private userDAL userDAL = new userDAL();
 
         public InterestDptForm()
@@ -41,7 +45,16 @@ namespace SoftwareEngineering_2024
                 {
                     // Use the UserDAL instance to save the interests to the database
                     bool Registered = userDAL.SaveInterestToDatabase(INTEREST);
+
                     MessageBox.Show("Interests saved successfully!");
+
+                    {
+
+                        //this will count this form if the form is completed then it will store true
+                        FormTracker.StepsCompleted[1] = true;
+
+
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -81,6 +94,12 @@ namespace SoftwareEngineering_2024
         private void PreviousPageBt_Click(object sender, EventArgs e)
         {
             Opener.GoBack(this);
+            FormTracker.StepsCompleted[1] = false;
+            FormTracker.StepsCompleted[0] = false;
+            userDAL.DeleteUserByMEmid();
         }
+
+        
+
     }
 }

@@ -52,9 +52,9 @@
             WelcomeBackLogin.AutoSize = true;
             WelcomeBackLogin.BackColor = Color.RosyBrown;
             WelcomeBackLogin.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            WelcomeBackLogin.Location = new Point(304, 33);
+            WelcomeBackLogin.Location = new Point(266, 25);
             WelcomeBackLogin.Name = "WelcomeBackLogin";
-            WelcomeBackLogin.Size = new Size(216, 32);
+            WelcomeBackLogin.Size = new Size(173, 25);
             WelcomeBackLogin.TabIndex = 0;
             WelcomeBackLogin.Text = "Welcome Admin!";
             WelcomeBackLogin.TextAlign = ContentAlignment.MiddleRight;
@@ -72,9 +72,10 @@
             panel1.Controls.Add(password_txt);
             panel1.Controls.Add(email_txt);
             panel1.Controls.Add(WelcomeBackLogin);
-            panel1.Location = new Point(942, 62);
+            panel1.Location = new Point(824, 46);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(773, 513);
+            panel1.Size = new Size(676, 385);
             panel1.TabIndex = 3;
             // 
             // IgLink
@@ -82,9 +83,10 @@
             IgLink.BackgroundImage = (Image)resources.GetObject("IgLink.BackgroundImage");
             IgLink.BackgroundImageLayout = ImageLayout.Stretch;
             IgLink.Cursor = Cursors.Hand;
-            IgLink.Location = new Point(552, 420);
+            IgLink.Location = new Point(483, 315);
+            IgLink.Margin = new Padding(3, 2, 3, 2);
             IgLink.Name = "IgLink";
-            IgLink.Size = new Size(43, 43);
+            IgLink.Size = new Size(38, 32);
             IgLink.TabIndex = 9;
             IgLink.TabStop = false;
             // 
@@ -93,9 +95,10 @@
             GmapLink.BackgroundImage = Properties.Resources.Gmaps;
             GmapLink.BackgroundImageLayout = ImageLayout.Stretch;
             GmapLink.Cursor = Cursors.Hand;
-            GmapLink.Location = new Point(379, 420);
+            GmapLink.Location = new Point(332, 315);
+            GmapLink.Margin = new Padding(3, 2, 3, 2);
             GmapLink.Name = "GmapLink";
-            GmapLink.Size = new Size(43, 43);
+            GmapLink.Size = new Size(38, 32);
             GmapLink.TabIndex = 8;
             GmapLink.TabStop = false;
             // 
@@ -104,36 +107,38 @@
             FbLink.BackgroundImage = Properties.Resources.fb;
             FbLink.BackgroundImageLayout = ImageLayout.Stretch;
             FbLink.Cursor = Cursors.Hand;
-            FbLink.Location = new Point(215, 420);
+            FbLink.Location = new Point(188, 315);
+            FbLink.Margin = new Padding(3, 2, 3, 2);
             FbLink.Name = "FbLink";
-            FbLink.Size = new Size(43, 43);
+            FbLink.Size = new Size(38, 32);
             FbLink.TabIndex = 7;
             FbLink.TabStop = false;
             // 
             // AdminPasswordLb
             // 
             AdminPasswordLb.AutoSize = true;
-            AdminPasswordLb.Location = new Point(112, 219);
+            AdminPasswordLb.Location = new Point(98, 164);
             AdminPasswordLb.Name = "AdminPasswordLb";
-            AdminPasswordLb.Size = new Size(118, 20);
+            AdminPasswordLb.Size = new Size(96, 15);
             AdminPasswordLb.TabIndex = 5;
             AdminPasswordLb.Text = "Admin Password";
             // 
             // AdminEmailLb
             // 
             AdminEmailLb.AutoSize = true;
-            AdminEmailLb.Location = new Point(112, 131);
+            AdminEmailLb.Location = new Point(98, 98);
             AdminEmailLb.Name = "AdminEmailLb";
-            AdminEmailLb.Size = new Size(100, 20);
+            AdminEmailLb.Size = new Size(80, 15);
             AdminEmailLb.TabIndex = 4;
             AdminEmailLb.Text = "Admin E-Mail";
             // 
             // AdminLoginBt
             // 
             AdminLoginBt.BackColor = Color.IndianRed;
-            AdminLoginBt.Location = new Point(304, 324);
+            AdminLoginBt.Location = new Point(266, 243);
+            AdminLoginBt.Margin = new Padding(3, 2, 3, 2);
             AdminLoginBt.Name = "AdminLoginBt";
-            AdminLoginBt.Size = new Size(197, 57);
+            AdminLoginBt.Size = new Size(172, 43);
             AdminLoginBt.TabIndex = 3;
             AdminLoginBt.Text = "Login";
             AdminLoginBt.TextImageRelation = TextImageRelation.TextAboveImage;
@@ -142,16 +147,18 @@
             // 
             // password_txt
             // 
-            password_txt.Location = new Point(112, 241);
+            password_txt.Location = new Point(98, 181);
+            password_txt.Margin = new Padding(3, 2, 3, 2);
             password_txt.Name = "password_txt";
-            password_txt.Size = new Size(563, 27);
+            password_txt.Size = new Size(493, 23);
             password_txt.TabIndex = 2;
             // 
             // email_txt
             // 
-            email_txt.Location = new Point(112, 153);
+            email_txt.Location = new Point(98, 115);
+            email_txt.Margin = new Padding(3, 2, 3, 2);
             email_txt.Name = "email_txt";
-            email_txt.Size = new Size(563, 27);
+            email_txt.Size = new Size(493, 23);
             email_txt.TabIndex = 1;
             // 
             // TCLogo
@@ -159,24 +166,27 @@
             TCLogo.BackColor = Color.Transparent;
             TCLogo.BackgroundImage = (Image)resources.GetObject("TCLogo.BackgroundImage");
             TCLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            TCLogo.Location = new Point(64, 62);
+            TCLogo.Location = new Point(56, 46);
+            TCLogo.Margin = new Padding(3, 2, 3, 2);
             TCLogo.Name = "TCLogo";
-            TCLogo.Size = new Size(558, 513);
+            TCLogo.Size = new Size(488, 385);
             TCLogo.TabIndex = 2;
             TCLogo.TabStop = false;
             // 
             // Admin_log_in
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1841, 637);
+            ClientSize = new Size(1611, 478);
             Controls.Add(panel1);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Admin_log_in";
             Text = "Admin_log_in";
+            Load += Admin_log_in_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).EndInit();

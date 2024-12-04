@@ -1,4 +1,6 @@
 ﻿using Mysqlx.Notice;
+using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,9 +41,10 @@ namespace SoftwareEngineering_2024
             {
                 try
                 {
-                    
+
                     bool Registered = userDAL.SaveTagToDatabase(TAG);
                     MessageBox.Show("Interests saved successfully!");
+                    FormTracker.StepsCompleted[2] = true; //this will count this form if the form is completed then it will store true
                 }
                 catch (Exception ex)
                 {
@@ -87,6 +90,8 @@ namespace SoftwareEngineering_2024
         private void PreviousPageBt_Click(object sender, EventArgs e)
         {
             Opener.GoBack(this);
+            FormTracker.StepsCompleted[2] = false;
+            userDAL.DeleteUserByMEmid();
         }
 
         private void EmploymentCb_CheckedChanged(object sender, EventArgs e)
