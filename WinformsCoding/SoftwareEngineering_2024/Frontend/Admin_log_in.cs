@@ -25,43 +25,43 @@ namespace SoftwareEngineering_2024
         private void AdminLoginBt_Click(object sender, EventArgs e)
         {
 
-            // Retrieve email and password from form inputs
-            string Email = email_txt?.Text ?? string.Empty;
-            string Password = password_txt?.Text ?? string.Empty;
+            //// Retrieve email and password from form inputs
+            //string Email = email_txt?.Text ?? string.Empty;
+            //string Password = password_txt?.Text ?? string.Empty;
 
-            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
-            {
-                MessageBox.Show("Please enter both email and password.", "Login Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            //{
+            //    MessageBox.Show("Please enter both email and password.", "Login Error",
+            //                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
-            // Authenticate the user
-            bool isAuthenticated = adminDAL.AuthenticateAdmin(Email, Password);
+            //// Authenticate the user
+            //bool isAuthenticated = adminDAL.AuthenticateAdmin(Email, Password);
 
-            if (isAuthenticated)
-            {
-                // Navigate to UserHomeForm1 if authentication is successful
-                FormOpener.OpenUserForm(this, typeof(AdminHomeForm));
+            //if (isAuthenticated)
+            //{
+            //    // Navigate to UserHomeForm1 if authentication is successful
+            //    FormOpener.OpenUserForm(this, typeof(AdminHomeForm));
 
-            }
-            else
-            {
-                // Show error message if authentication fails
-                MessageBox.Show("Invalid email or password. Please try again.",
-                                "Login Failed",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-            }
-
-
-
+            //}
+            //else
+            //{
+            //    // Show error message if authentication fails
+            //    MessageBox.Show("Invalid email or password. Please try again.",
+            //                    "Login Failed",
+            //                    MessageBoxButtons.OK,
+            //                    MessageBoxIcon.Error);
+            //}
+            FormOpener.OpenUserForm(this, typeof(AdminHomeForm));
 
 
 
 
 
-            
+
+
+
         }
 
         private void Admin_log_in_Load(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace SoftwareEngineering_2024
 {
-    partial class AdminMembersForm
+    partial class Attendance_Log
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            button2 = new Button();
             panel2 = new Panel();
             AdminQueryBt = new Button();
             EngagementBt = new Button();
@@ -37,23 +37,28 @@
             StaffEventsBt = new Button();
             AdminHomeBt = new Button();
             panel1 = new Panel();
-            adminDALBindingSource = new BindingSource(components);
-            MembersTableDg = new DataGridView();
-            adminDALBindingSource2 = new BindingSource(components);
-            adminDALBindingSource1 = new BindingSource(components);
             AdminMembersLb = new Label();
+            AttendanceLogTableDg = new DataGridView();
+            button1 = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)MembersTableDg).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AttendanceLogTableDg).BeginInit();
             SuspendLayout();
+            // 
+            // button2
+            // 
+            button2.Location = new Point(232, 156);
+            button2.Name = "button2";
+            button2.Size = new Size(8, 8);
+            button2.TabIndex = 1;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             panel2.AutoSize = true;
             panel2.BackColor = Color.RosyBrown;
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(AdminQueryBt);
             panel2.Controls.Add(EngagementBt);
             panel2.Controls.Add(AdminBookingsBt);
@@ -63,16 +68,16 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(235, 558);
-            panel2.TabIndex = 19;
+            panel2.Size = new Size(234, 625);
+            panel2.TabIndex = 22;
             // 
             // AdminQueryBt
             // 
             AdminQueryBt.BackColor = Color.LightCoral;
             AdminQueryBt.Cursor = Cursors.Hand;
-            AdminQueryBt.Location = new Point(3, 435);
+            AdminQueryBt.Location = new Point(3, 434);
             AdminQueryBt.Name = "AdminQueryBt";
-            AdminQueryBt.Size = new Size(229, 52);
+            AdminQueryBt.Size = new Size(228, 52);
             AdminQueryBt.TabIndex = 5;
             AdminQueryBt.Text = "User Queries/Feedback";
             AdminQueryBt.UseVisualStyleBackColor = false;
@@ -81,9 +86,9 @@
             // 
             EngagementBt.BackColor = Color.LightCoral;
             EngagementBt.Cursor = Cursors.Hand;
-            EngagementBt.Location = new Point(3, 349);
+            EngagementBt.Location = new Point(3, 350);
             EngagementBt.Name = "EngagementBt";
-            EngagementBt.Size = new Size(229, 52);
+            EngagementBt.Size = new Size(228, 52);
             EngagementBt.TabIndex = 4;
             EngagementBt.Text = "Engagement Data";
             EngagementBt.UseVisualStyleBackColor = false;
@@ -94,7 +99,7 @@
             AdminBookingsBt.Cursor = Cursors.Hand;
             AdminBookingsBt.Location = new Point(3, 265);
             AdminBookingsBt.Name = "AdminBookingsBt";
-            AdminBookingsBt.Size = new Size(229, 52);
+            AdminBookingsBt.Size = new Size(228, 52);
             AdminBookingsBt.TabIndex = 3;
             AdminBookingsBt.Text = "User Bookings/Payments";
             AdminBookingsBt.UseVisualStyleBackColor = false;
@@ -105,7 +110,7 @@
             MembersBt.Cursor = Cursors.Hand;
             MembersBt.Location = new Point(3, 101);
             MembersBt.Name = "MembersBt";
-            MembersBt.Size = new Size(229, 52);
+            MembersBt.Size = new Size(228, 52);
             MembersBt.TabIndex = 2;
             MembersBt.Text = "Members";
             MembersBt.UseVisualStyleBackColor = false;
@@ -114,9 +119,9 @@
             // 
             StaffEventsBt.BackColor = Color.LightCoral;
             StaffEventsBt.Cursor = Cursors.Hand;
-            StaffEventsBt.Location = new Point(3, 181);
+            StaffEventsBt.Location = new Point(3, 182);
             StaffEventsBt.Name = "StaffEventsBt";
-            StaffEventsBt.Size = new Size(229, 52);
+            StaffEventsBt.Size = new Size(228, 52);
             StaffEventsBt.TabIndex = 1;
             StaffEventsBt.Text = "Events";
             StaffEventsBt.UseVisualStyleBackColor = false;
@@ -127,7 +132,7 @@
             AdminHomeBt.Cursor = Cursors.Hand;
             AdminHomeBt.Location = new Point(3, 25);
             AdminHomeBt.Name = "AdminHomeBt";
-            AdminHomeBt.Size = new Size(229, 52);
+            AdminHomeBt.Size = new Size(228, 52);
             AdminHomeBt.TabIndex = 0;
             AdminHomeBt.Text = "Home";
             AdminHomeBt.UseVisualStyleBackColor = false;
@@ -139,57 +144,62 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1817, 49);
-            panel1.TabIndex = 18;
-            // 
-            // MembersTableDg
-            // 
-            MembersTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            MembersTableDg.Location = new Point(258, 74);
-            MembersTableDg.Margin = new Padding(3, 4, 3, 4);
-            MembersTableDg.Name = "MembersTableDg";
-            MembersTableDg.RowHeadersWidth = 51;
-            MembersTableDg.Size = new Size(1485, 462);
-            MembersTableDg.TabIndex = 22;
+            panel1.Size = new Size(1779, 49);
+            panel1.TabIndex = 21;
             // 
             // AdminMembersLb
             // 
             AdminMembersLb.Anchor = AnchorStyles.Top;
             AdminMembersLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminMembersLb.Location = new Point(905, 9);
+            AdminMembersLb.Location = new Point(820, 9);
             AdminMembersLb.Name = "AdminMembersLb";
-            AdminMembersLb.Size = new Size(147, 25);
-            AdminMembersLb.TabIndex = 4;
-            AdminMembersLb.Text = "Members";
+            AdminMembersLb.Size = new Size(249, 25);
+            AdminMembersLb.TabIndex = 3;
+            AdminMembersLb.Text = "Attendance Log";
+            AdminMembersLb.Click += AdminMembersLb_Click;
             // 
-            // AdminMembersForm
+            // AttendanceLogTableDg
+            // 
+            AttendanceLogTableDg.AllowUserToAddRows = false;
+            AttendanceLogTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AttendanceLogTableDg.Location = new Point(267, 95);
+            AttendanceLogTableDg.Name = "AttendanceLogTableDg";
+            AttendanceLogTableDg.RowHeadersWidth = 51;
+            AttendanceLogTableDg.Size = new Size(1454, 303);
+            AttendanceLogTableDg.TabIndex = 23;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.LightCoral;
+            button1.Cursor = Cursors.Hand;
+            button1.Location = new Point(3, 509);
+            button1.Name = "button1";
+            button1.Size = new Size(228, 52);
+            button1.TabIndex = 6;
+            button1.Text = "User Queries/Feedback";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // Attendance_Log
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1817, 607);
-            Controls.Add(MembersTableDg);
+            ClientSize = new Size(1779, 674);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            DoubleBuffered = true;
-            ForeColor = SystemColors.ControlText;
-            HelpButton = true;
-            Name = "AdminMembersForm";
-            Text = "Form1";
-            Load += AdminMembersForm_Load;
+            Controls.Add(AttendanceLogTableDg);
+            Controls.Add(button2);
+            Name = "Attendance_Log";
+            Text = "Attendance_Log";
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)MembersTableDg).EndInit();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AttendanceLogTableDg).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
+        private Button button2;
         private Panel panel2;
         private Button AdminQueryBt;
         private Button EngagementBt;
@@ -198,11 +208,8 @@
         private Button StaffEventsBt;
         private Button AdminHomeBt;
         private Panel panel1;
-        private BindingSource adminDALBindingSource;
-        private Button button1;
-        private DataGridView MembersTableDg;
-        private BindingSource adminDALBindingSource1;
-        private BindingSource adminDALBindingSource2;
         private Label AdminMembersLb;
+        private DataGridView AttendanceLogTableDg;
+        private Button button1;
     }
 }

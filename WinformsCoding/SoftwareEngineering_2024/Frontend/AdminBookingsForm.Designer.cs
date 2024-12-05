@@ -56,7 +56,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 573);
+            panel2.Size = new Size(234, 591);
             panel2.TabIndex = 22;
             // 
             // AdminQueryBt
@@ -132,14 +132,14 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1808, 49);
+            panel1.Size = new Size(1816, 49);
             panel1.TabIndex = 21;
             // 
             // AdminBookingsLb
             // 
             AdminBookingsLb.Anchor = AnchorStyles.Top;
             AdminBookingsLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminBookingsLb.Location = new Point(906, 9);
+            AdminBookingsLb.Location = new Point(910, 9);
             AdminBookingsLb.Name = "AdminBookingsLb";
             AdminBookingsLb.Size = new Size(147, 25);
             AdminBookingsLb.TabIndex = 3;
@@ -149,10 +149,10 @@
             // 
             BookingsTableDg.AllowUserToAddRows = false;
             BookingsTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            BookingsTableDg.Location = new Point(267, 95);
+            BookingsTableDg.Location = new Point(259, 74);
             BookingsTableDg.Name = "BookingsTableDg";
             BookingsTableDg.RowHeadersWidth = 51;
-            BookingsTableDg.Size = new Size(1454, 303);
+            BookingsTableDg.Size = new Size(1473, 518);
             BookingsTableDg.TabIndex = 23;
             // 
             // AdminBookingsForm
@@ -161,7 +161,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1808, 622);
+            ClientSize = new Size(1816, 640);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(BookingsTableDg);

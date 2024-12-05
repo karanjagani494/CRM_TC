@@ -12,11 +12,8 @@ namespace SoftwareEngineering_2024
         public SignUpForm()
         {
             InitializeComponent();
-            /*FbLink.Click += Opener.OpenFacebook;
-            GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;*/
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-            phoneNumber.KeyPress += phoneNumber_KeyPress;
+            phoneNumber.KeyPress += Opener.Number_KeyPress;
             LogInLink.Click += LogInLink_LinkClicked;
             userDAL = new userDAL();
 
@@ -108,15 +105,15 @@ namespace SoftwareEngineering_2024
 
         }
 
-        private void phoneNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Allow control keys (e.g., backspace) and digits
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Reject the input if it is not a digit or control key
-                e.Handled = true;
-            }
-        }
+        //private void phoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    // Allow control keys (e.g., backspace) and digits
+        //    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+        //    {
+        //        // Reject the input if it is not a digit or control key
+        //        e.Handled = true;
+        //    }
+        //}
 
 
         private void PreviousPageBt_Click(object sender, EventArgs e)
