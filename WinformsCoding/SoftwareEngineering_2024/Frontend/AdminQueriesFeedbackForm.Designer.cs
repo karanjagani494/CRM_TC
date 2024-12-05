@@ -152,7 +152,7 @@
             QueriesFeedbackTableDg.Location = new Point(267, 95);
             QueriesFeedbackTableDg.Name = "QueriesFeedbackTableDg";
             QueriesFeedbackTableDg.RowHeadersWidth = 51;
-            QueriesFeedbackTableDg.Size = new Size(1454, 303);
+            QueriesFeedbackTableDg.Size = new Size(1498, 469);
             QueriesFeedbackTableDg.TabIndex = 23;
             // 
             // AdminQueriesFeedbackForm
