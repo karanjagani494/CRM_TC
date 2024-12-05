@@ -1,4 +1,5 @@
 ﻿using SoftwareEngineering_2024.DB_connect;
+using SoftwareEngineering_2024.DB_connect;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -9,68 +10,18 @@ namespace SoftwareEngineering_2024
 {
     public partial class AdminMembersForm : Form
     {
-        private userDAL userDal = new userDAL();
-        public db_connect db;
         private showTables ShowTables = new showTables();
 
         public AdminMembersForm()
         {
             InitializeComponent();
-            // Initialize the dashboard and other pages
-            db = new db_connect();
-            //button1.Click += button1_Click;
             FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt);
         }
 
-        // Method to load data into the DataGridView
-        //private void GRIDVIEW()
-        //{
-        //    // SQL query to fetch data
-        //    string query = "SELECT * FROM members";  // Ensure 'members' is your actual table name
-
-        //    try
-        //    {
-        //        if (db.OpenConnection())
-        //        {
-        //            // Create a MySQL command
-        //            MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-
-        //            // Use MySqlDataAdapter to fill DataTable
-        //            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-        //            DataTable dataTable = new DataTable();
-        //            adapter.Fill(dataTable);
-
-        //            // Bind the data to the DataGridView
-        //            karan.DataSource = dataTable; // Ensure DATAGRID matches your DataGridView name
-
-        //            // Close the connection after fetching data
-        //            db.CloseConnection();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Unable to connect to the database.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message);
-        //    }
-        //}
-
-        // Event handler for the form load event
-
-
-        // Event handler for the button click
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    GRIDVIEW();  // Reload data when the button is clicked
-        //}
-
         private void AdminMembersForm_Load(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM members";
-            ShowTables.GRIDVIEW(MembersTableDg , query);
-
+            string query = "SELECT \r\n    m.member_id AS MemberID,\r\n    m.first_name AS FirstName,\r\n    m.last_name AS LastName,\r\n    m.email AS Email,\r\n    m.phone_no AS PhoneNumber,\r\n    m.membership_id AS MembershipID,\r\n    m.password AS Password, \r\n    m.joining_date AS JoiningDate,\r\n    m.house_no AS HouseNumber,\r\n    m.street AS Street,\r\n    m.city AS City,\r\n    m.state AS State,\r\n    m.city_code AS CityCode,\r\n    m.country AS Country\r\nFROM \r\n    members m;\r\n"; 
+            ShowTables.GRIDVIEW(MembersTableDg, query);
         }
     }
 }

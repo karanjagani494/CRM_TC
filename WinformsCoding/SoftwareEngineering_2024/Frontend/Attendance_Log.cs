@@ -10,14 +10,21 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineering_2024
 {
-    public partial class AdminEngagementForm : Form
+    public partial class Attendance_Log : Form
     {
-        public AdminEngagementForm()
+        public Attendance_Log()
         {
             InitializeComponent();
-            FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt);
         }
 
+        private void AdminMembersLb_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
