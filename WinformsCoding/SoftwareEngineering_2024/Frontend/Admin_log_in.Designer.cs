@@ -40,6 +40,7 @@
             password_txt = new MaskedTextBox();
             email_txt = new MaskedTextBox();
             TCLogo = new PictureBox();
+            oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).BeginInit();
@@ -173,6 +174,10 @@
             TCLogo.TabIndex = 2;
             TCLogo.TabStop = false;
             // 
+            // oracleCommand1
+            // 
+            oracleCommand1.Transaction = null;
+            // 
             // Admin_log_in
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -209,5 +214,6 @@
         private MaskedTextBox password_txt;
         private MaskedTextBox email_txt;
         private PictureBox TCLogo;
+        private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand1;
     }
 }

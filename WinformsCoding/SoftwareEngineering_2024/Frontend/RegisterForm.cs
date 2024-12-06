@@ -37,7 +37,7 @@ namespace SoftwareEngineering_2024
             // Check if all required textboxes are filled
             if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
             {
-                Opener.OpenForm(this, typeof(InterestDptForm));
+                
 
                 string str1 = email.Text;
                 string Email = str1.ToLower();  /* TO lower will store always in lowercase of email */
@@ -69,7 +69,14 @@ namespace SoftwareEngineering_2024
                 {
 
 
-                    //FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
+                    FormTracker.StepsCompleted[0] = true;    //this will count this form if the form is completed then it will store true
+
+                    Opener.OpenForm(this, typeof(InterestDptForm));
+
+
+
+                    /* this will send emil to user who is registering*/
+
                     //string toEmail = UserContext.EMAIL;
                     //string subject = "Welcome to CRM!";
 
@@ -78,6 +85,7 @@ namespace SoftwareEngineering_2024
 
 
                     //emailService.SendEmail(toEmail, subject, body);
+
 
                 }
 

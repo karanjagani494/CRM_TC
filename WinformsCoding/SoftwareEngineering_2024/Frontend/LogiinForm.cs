@@ -44,19 +44,21 @@ namespace SoftwareEngineering_2024
 
             if (isAuthenticated)
             {
-               
+
                 if (FormTracker.StepsCompleted.All(step => step))
                 {
                     // Navigate to UserHomeForm1 if authentication is successful
                     Opener.OpenForm(this, typeof(UserHomeForm1));
 
-                }else {
+                }
+                else
+                {
                     MessageBox.Show("Please complete the registration process before logging in.",
                                 "Login Failed",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 }
-                        
+
             }
             else
             {
@@ -66,6 +68,8 @@ namespace SoftwareEngineering_2024
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+
+           
         }
 
 

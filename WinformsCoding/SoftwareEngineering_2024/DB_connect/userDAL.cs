@@ -29,29 +29,7 @@ namespace SoftwareEngineering_2024.DB_connect
         /* id can be used in any method */
         private int id = UserContext.Memberid;
 
-        //public DataTable GetMembersData()
-        //{
-        //    string query = "SELECT * FROM members";  // Ensure the table name is correct
-        //    DataTable dataTable = new DataTable();
-
-        //    try
-        //    {
-        //        if (db.OpenConnection())
-        //        {
-        //            MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-        //            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-        //            adapter.Fill(dataTable);  // Fill the DataTable with data
-        //            db.CloseConnection();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Error fetching members data: " + ex.Message);
-        //        db.CloseConnection();
-        //    }
-
-        //    return dataTable;
-        //}
+       
 
         //  ===== REGISTER MEMBER IN "TEST" DATABSE IN "MEMBER" TABLE =====
         public bool RegisterMember(string Email, string Password, string Firstname, string Lastname, string Phonenumber, string Housenumber, string City, string State, string Country, string Street, string Citycode)
