@@ -29,29 +29,7 @@ namespace SoftwareEngineering_2024.DB_connect
         /* id can be used in any method */
         private int id = UserContext.Memberid;
 
-        //public DataTable GetMembersData()
-        //{
-        //    string query = "SELECT * FROM members";  // Ensure the table name is correct
-        //    DataTable dataTable = new DataTable();
 
-        //    try
-        //    {
-        //        if (db.OpenConnection())
-        //        {
-        //            MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-        //            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-        //            adapter.Fill(dataTable);  // Fill the DataTable with data
-        //            db.CloseConnection();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Error fetching members data: " + ex.Message);
-        //        db.CloseConnection();
-        //    }
-
-        //    return dataTable;
-        //}
 
         //  ===== REGISTER MEMBER IN "TEST" DATABSE IN "MEMBER" TABLE =====
         public bool RegisterMember(string Email, string Password, string Firstname, string Lastname, string Phonenumber, string Housenumber, string City, string State, string Country, string Street, string Citycode)
@@ -210,13 +188,15 @@ namespace SoftwareEngineering_2024.DB_connect
         }
 
 
-        public bool SaveMem_TypeToDatabase(int Type)
+        public bool SaveMem_TypeToDatabase(int membership_id, int member_id )
         {
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.MemInfo_query, db.GetConnection()))
             {
-                registerCmd.Parameters.AddWithValue("@membership_id", Type);
+                registerCmd.Parameters.AddWithValue("@membership_id", membership_id);
+                registerCmd.Parameters.AddWithValue("@member_id", member_id);
 
-               
+
+
                 try
                 {
                     db.OpenConnection();
@@ -318,9 +298,10 @@ namespace SoftwareEngineering_2024.DB_connect
 
 
         //This method will authentic the user at the time of login
-        public bool AuthenticateUser(string Email, string Password)
+        public bool AuthenticateUser(string Email, string Password, out bool isRegistered)
         {
             string hashedPassword = HashPassword(Password); // Hash the input password
+            isRegistered = false; // Default value for isRegistered
 
             using (MySqlCommand cmd = new MySqlCommand(SqlQueries.AuthenticateUser, db.GetConnection()))
             {
@@ -334,14 +315,36 @@ namespace SoftwareEngineering_2024.DB_connect
 
                     if (result != null)
                     {
+                        // Assuming the query returns the hashed password
                         string storedHashedPassword = result.ToString();
                         Console.WriteLine($"Stored Hashed Password: {storedHashedPassword}");
                         Console.WriteLine($"Input Hashed Password: {hashedPassword}");
 
                         // Check if passwords match
-                        return storedHashedPassword == hashedPassword;
+                        if (storedHashedPassword == hashedPassword)
+                        {
+                            // Now check the user's registration status (is_registered)
+                            string query = "SELECT is_registered FROM members WHERE email = @Email";
+                            using (MySqlCommand registrationCmd = new MySqlCommand(query, db.GetConnection()))
+                            {
+                                registrationCmd.Parameters.AddWithValue("@Email", Email);
+
+                                db.OpenConnection();
+                                var regResult = registrationCmd.ExecuteScalar();
+                                db.CloseConnection();
+
+                                if (regResult != null)
+                                {
+                                    // Convert to boolean (assuming 1 for registered, 0 for not)
+                                    isRegistered = Convert.ToBoolean(regResult);
+                                }
+                            }
+
+                            return true; // Successful authentication
+                        }
                     }
-                    return false;
+
+                    return false; // Failed authentication
                 }
                 catch (Exception ex)
                 {
@@ -351,6 +354,7 @@ namespace SoftwareEngineering_2024.DB_connect
                 }
             }
         }
+
 
 
 

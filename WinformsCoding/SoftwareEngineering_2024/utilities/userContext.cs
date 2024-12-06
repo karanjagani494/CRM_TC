@@ -20,6 +20,8 @@ namespace SoftwareEngineering_2024.utilities
 
         // Static properties to store user data temporarily
         public static string? EMAIL { get; set; }
+        public static int Memberid { get; set; }
+
 
 
         // Method to clear the context if needed (e.g., logout)
@@ -74,7 +76,6 @@ namespace SoftwareEngineering_2024.utilities
             }
         }
 
-        public static int Memberid { get; set; }
     }
 }
 

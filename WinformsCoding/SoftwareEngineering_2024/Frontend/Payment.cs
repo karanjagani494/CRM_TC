@@ -16,7 +16,7 @@ namespace SoftwareEngineering_2024
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
             cardNo_txt.KeyPress += Opener.Number_KeyPress;
             Cvv_txt.KeyPress += Opener.Number_KeyPress;
-                            
+
         }
 
 
@@ -44,11 +44,11 @@ namespace SoftwareEngineering_2024
 
 
 
-              
+
                 bool isRegistered = userDAL.Payment_infoToDatabse(CardHolder_name, Card_no, Cvv, House_no, City, State, Country, Street, Citycode, Exp_date);
 
                 if (isRegistered)
-                {   
+                {
                     //this will count this form if the form is completed then it will store true
                     FormTracker.StepsCompleted[4] = true;
                 }
@@ -63,5 +63,7 @@ namespace SoftwareEngineering_2024
             FormTracker.StepsCompleted[4] = false;
             userDAL.DeleteUserByMEmid();
         }
+
+        
     }
 }

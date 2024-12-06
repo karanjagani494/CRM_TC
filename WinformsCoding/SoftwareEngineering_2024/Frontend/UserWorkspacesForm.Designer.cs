@@ -44,6 +44,11 @@
             label3 = new Label();
             label4 = new Label();
             WsDateDtp = new DateTimePicker();
+            CafeBt = new Button();
+            ArtRoomBt = new Button();
+            button2 = new Button();
+            LivingRoomBt = new Button();
+            button4 = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -224,6 +229,61 @@
             WsDateDtp.Size = new Size(250, 27);
             WsDateDtp.TabIndex = 27;
             // 
+            // CafeBt
+            // 
+            CafeBt.BackColor = Color.LightCoral;
+            CafeBt.Cursor = Cursors.Hand;
+            CafeBt.Location = new Point(253, 118);
+            CafeBt.Name = "CafeBt";
+            CafeBt.Size = new Size(228, 52);
+            CafeBt.TabIndex = 28;
+            CafeBt.Text = "CAFE";
+            CafeBt.UseVisualStyleBackColor = false;
+            // 
+            // ArtRoomBt
+            // 
+            ArtRoomBt.BackColor = Color.LightCoral;
+            ArtRoomBt.Cursor = Cursors.Hand;
+            ArtRoomBt.Location = new Point(834, 241);
+            ArtRoomBt.Name = "ArtRoomBt";
+            ArtRoomBt.Size = new Size(228, 52);
+            ArtRoomBt.TabIndex = 29;
+            ArtRoomBt.Text = "Art Room";
+            ArtRoomBt.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.LightCoral;
+            button2.Cursor = Cursors.Hand;
+            button2.Location = new Point(782, 307);
+            button2.Name = "button2";
+            button2.Size = new Size(228, 52);
+            button2.TabIndex = 30;
+            button2.Text = "CAFE";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // LivingRoomBt
+            // 
+            LivingRoomBt.BackColor = Color.LightCoral;
+            LivingRoomBt.Cursor = Cursors.Hand;
+            LivingRoomBt.Location = new Point(571, 118);
+            LivingRoomBt.Name = "LivingRoomBt";
+            LivingRoomBt.Size = new Size(228, 52);
+            LivingRoomBt.TabIndex = 31;
+            LivingRoomBt.Text = "LIVING ROOM";
+            LivingRoomBt.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.LightCoral;
+            button4.Cursor = Cursors.Hand;
+            button4.Location = new Point(1210, 307);
+            button4.Name = "button4";
+            button4.Size = new Size(228, 52);
+            button4.TabIndex = 32;
+            button4.Text = "CAFE";
+            button4.UseVisualStyleBackColor = false;
+            // 
             // UserWorkspacesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -231,6 +291,11 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1793, 667);
+            Controls.Add(button4);
+            Controls.Add(LivingRoomBt);
+            Controls.Add(button2);
+            Controls.Add(ArtRoomBt);
+            Controls.Add(CafeBt);
             Controls.Add(WsDateDtp);
             Controls.Add(AvailiblityBt);
             Controls.Add(TogetherHallWsLb);
@@ -267,5 +332,10 @@
         private Label label3;
         private Label label4;
         private DateTimePicker WsDateDtp;
+        private Button CafeBt;
+        private Button ArtRoomBt;
+        private Button button2;
+        private Button LivingRoomBt;
+        private Button button4;
     }
 }
