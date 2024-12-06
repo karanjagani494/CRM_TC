@@ -37,15 +37,15 @@
             HomeBt = new Button();
             panel1 = new Panel();
             UserEventsLb = new Label();
-            dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
+            UpEventsDg = new DataGridView();
             ViewEventsLinkBt = new Button();
             EventsTodayLb = new Label();
             UpcomingEventsLb = new Label();
+            TodayEventsDg = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UpEventsDg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TodayEventsDg).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -150,25 +150,15 @@
             UserEventsLb.TabIndex = 3;
             UserEventsLb.Text = "Events";
             // 
-            // dataGridView1
+            // UpEventsDg
             // 
-            dataGridView1.Anchor = AnchorStyles.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(318, 106);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(541, 202);
-            dataGridView1.TabIndex = 22;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.Anchor = AnchorStyles.None;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(318, 402);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(541, 202);
-            dataGridView2.TabIndex = 23;
+            UpEventsDg.Anchor = AnchorStyles.None;
+            UpEventsDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            UpEventsDg.Location = new Point(318, 402);
+            UpEventsDg.Name = "UpEventsDg";
+            UpEventsDg.RowHeadersWidth = 51;
+            UpEventsDg.Size = new Size(541, 202);
+            UpEventsDg.TabIndex = 23;
             // 
             // ViewEventsLinkBt
             // 
@@ -206,6 +196,15 @@
             UpcomingEventsLb.TabIndex = 26;
             UpcomingEventsLb.Text = "Upcoming Events";
             // 
+            // TodayEventsDg
+            // 
+            TodayEventsDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TodayEventsDg.Location = new Point(318, 107);
+            TodayEventsDg.Name = "TodayEventsDg";
+            TodayEventsDg.RowHeadersWidth = 51;
+            TodayEventsDg.Size = new Size(535, 204);
+            TodayEventsDg.TabIndex = 27;
+            // 
             // UserEventsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -214,20 +213,21 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1814, 676);
+            Controls.Add(TodayEventsDg);
             Controls.Add(UpcomingEventsLb);
             Controls.Add(EventsTodayLb);
             Controls.Add(ViewEventsLinkBt);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
+            Controls.Add(UpEventsDg);
             Controls.Add(panel2);
             Controls.Add(panel1);
             DoubleBuffered = true;
             Name = "UserEventsForm";
             Text = "UserEventsForm";
+            Load += UserEventsForm_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UpEventsDg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TodayEventsDg).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,8 +245,8 @@
         private Label UserEventsLb;
         private Label UpcomingEventsLb;
         private Label EventsTodayLb;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
+        private DataGridView UpEventsDg;
         private Button ViewEventsLinkBt;
+        private DataGridView TodayEventsDg;
     }
 }

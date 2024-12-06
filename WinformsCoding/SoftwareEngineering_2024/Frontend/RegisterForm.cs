@@ -15,7 +15,6 @@ namespace SoftwareEngineering_2024
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
             phoneNumber.KeyPress += Opener.Number_KeyPress;
             LogInLink.Click += LogInLink_LinkClicked;
-            userDAL = new userDAL();
 
         }
 
@@ -25,10 +24,6 @@ namespace SoftwareEngineering_2024
             Opener.OpenForm(this, typeof(LoginForm));
         }
 
-
-
-
-
         private void ProceedIntBt_Click(object sender, EventArgs e)
         {
 
@@ -37,11 +32,12 @@ namespace SoftwareEngineering_2024
             // Check if all required textboxes are filled
             if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
             {
-                
+
 
                 string str1 = email.Text;
                 string Email = str1.ToLower();  /* TO lower will store always in lowercase of email */
                 string Password = password.Text;
+                string RePass = rePassTb.Text;
 
                 /* TO lower will store always in UPPERCASE  of first and last name */
                 string str2 = firstName.Text;
@@ -57,17 +53,31 @@ namespace SoftwareEngineering_2024
                 string Street = street.Text;
                 string Citycode = cityCode.Text;
 
-
-
-                // Attempt to register the user
-                bool isRegistered = userDAL.RegisterMember(Email, Password, Firstname, Lastname, Phonenumber, Housenumber, Street, City, State, Country, Citycode);
-
-                UserContext.EMAIL = Email; /*  this line is storin email in userContext file in utilitis folder  */
-                userContext.RetrieveMemberID();
-
-                if (isRegistered)
+                if (Password != RePass) 
                 {
+                    MessageBox.Show("Passwords do not match",
+                                        "Registration Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+                }
 
+                else
+                {
+                    bool isRegistered = userDAL.RegisterMember(Email, Password, Firstname, Lastname, Phonenumber, Housenumber, Street, City, State, Country, Citycode);
+
+                    UserContext.EMAIL = Email; /*  this line is storin email in userContext file in utilitis folder  */
+                    userContext.RetrieveMemberID();
+
+                    if (isRegistered)
+                    {
+
+
+                        FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
+                        Opener.OpenForm(this, typeof(InterestDptForm));
+
+
+                        //string toEmail = UserContext.EMAIL;
+                        //string subject = "Welcome to CRM!";
 
                     FormTracker.StepsCompleted[0] = true;    //this will count this form if the form is completed then it will store true
 
@@ -80,14 +90,23 @@ namespace SoftwareEngineering_2024
                     //string toEmail = UserContext.EMAIL;
                     //string subject = "Welcome to CRM!";
 
-                    //// Personalize the email body with the user's first and last name
-                    //string body = $"Dear {Firstname} {Lastname},\n\nThank you for registering with us.\n\nBest Regards,\nCRM Team";
+
+                        //// Personalize the email body with the user's first and last name
+                        //string body = $"Dear {Firstname} {Lastname},\n\nThank you for registering with us.\n\nBest Regards,\nCRM Team";
 
 
-                    //emailService.SendEmail(toEmail, subject, body);
+                        //emailService.SendEmail(toEmail, subject, body);
+
+
+                    }
+
 
 
                 }
+
+
+                // Attempt to register the user
+                
 
 
                 // if (isRegistered)

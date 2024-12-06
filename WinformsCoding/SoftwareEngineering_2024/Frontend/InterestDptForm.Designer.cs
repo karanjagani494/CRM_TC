@@ -39,7 +39,6 @@
             IgLink = new PictureBox();
             GmapLink = new PictureBox();
             FbLink = new PictureBox();
-            LogInLink = new LinkLabel();
             ProceedTagBt = new Button();
             WelcomeSignUp = new Label();
             TCLogo = new PictureBox();
@@ -67,13 +66,11 @@
             panel1.Controls.Add(IgLink);
             panel1.Controls.Add(GmapLink);
             panel1.Controls.Add(FbLink);
-            panel1.Controls.Add(LogInLink);
             panel1.Controls.Add(ProceedTagBt);
             panel1.Controls.Add(WelcomeSignUp);
-            panel1.Location = new Point(819, 72);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(936, 96);
             panel1.Name = "panel1";
-            panel1.Size = new Size(692, 417);
+            panel1.Size = new Size(791, 556);
             panel1.TabIndex = 4;
             // 
             // Sharing
@@ -81,10 +78,9 @@
             Sharing.AllowDrop = true;
             Sharing.BackColor = Color.IndianRed;
             Sharing.FlatStyle = FlatStyle.Popup;
-            Sharing.Location = new Point(415, 190);
-            Sharing.Margin = new Padding(3, 2, 3, 2);
+            Sharing.Location = new Point(474, 253);
             Sharing.Name = "Sharing";
-            Sharing.Size = new Size(110, 65);
+            Sharing.Size = new Size(126, 87);
             Sharing.TabIndex = 14;
             Sharing.Text = "Sharing";
             Sharing.UseVisualStyleBackColor = false;
@@ -94,10 +90,9 @@
             Helping.AllowDrop = true;
             Helping.BackColor = Color.IndianRed;
             Helping.FlatStyle = FlatStyle.Popup;
-            Helping.Location = new Point(487, 92);
-            Helping.Margin = new Padding(3, 2, 3, 2);
+            Helping.Location = new Point(557, 123);
             Helping.Name = "Helping";
-            Helping.Size = new Size(110, 61);
+            Helping.Size = new Size(126, 81);
             Helping.TabIndex = 13;
             Helping.Text = "Helping";
             Helping.UseVisualStyleBackColor = false;
@@ -107,10 +102,9 @@
             Working.AllowDrop = true;
             Working.BackColor = Color.IndianRed;
             Working.FlatStyle = FlatStyle.Popup;
-            Working.Location = new Point(207, 190);
-            Working.Margin = new Padding(3, 2, 3, 2);
+            Working.Location = new Point(237, 253);
             Working.Name = "Working";
-            Working.Size = new Size(110, 65);
+            Working.Size = new Size(126, 87);
             Working.TabIndex = 12;
             Working.Text = "Working";
             Working.UseVisualStyleBackColor = false;
@@ -120,10 +114,9 @@
             Happening.AllowDrop = true;
             Happening.BackColor = Color.IndianRed;
             Happening.FlatStyle = FlatStyle.Popup;
-            Happening.Location = new Point(304, 88);
-            Happening.Margin = new Padding(3, 2, 3, 2);
+            Happening.Location = new Point(347, 117);
             Happening.Name = "Happening";
-            Happening.Size = new Size(110, 65);
+            Happening.Size = new Size(126, 87);
             Happening.TabIndex = 11;
             Happening.Text = "Happening";
             Happening.UseVisualStyleBackColor = false;
@@ -133,10 +126,9 @@
             Learning.AllowDrop = true;
             Learning.BackColor = Color.IndianRed;
             Learning.FlatStyle = FlatStyle.Popup;
-            Learning.Location = new Point(108, 90);
-            Learning.Margin = new Padding(3, 2, 3, 2);
+            Learning.Location = new Point(123, 120);
             Learning.Name = "Learning";
-            Learning.Size = new Size(110, 65);
+            Learning.Size = new Size(126, 87);
             Learning.TabIndex = 10;
             Learning.Text = "Learning";
             Learning.UseVisualStyleBackColor = false;
@@ -146,10 +138,9 @@
             IgLink.BackgroundImage = (Image)resources.GetObject("IgLink.BackgroundImage");
             IgLink.BackgroundImageLayout = ImageLayout.Stretch;
             IgLink.Cursor = Cursors.Hand;
-            IgLink.Location = new Point(487, 334);
-            IgLink.Margin = new Padding(3, 2, 3, 2);
+            IgLink.Location = new Point(557, 445);
             IgLink.Name = "IgLink";
-            IgLink.Size = new Size(38, 32);
+            IgLink.Size = new Size(43, 43);
             IgLink.TabIndex = 9;
             IgLink.TabStop = false;
             // 
@@ -158,10 +149,9 @@
             GmapLink.BackgroundImage = Properties.Resources.Gmaps;
             GmapLink.BackgroundImageLayout = ImageLayout.Stretch;
             GmapLink.Cursor = Cursors.Hand;
-            GmapLink.Location = new Point(337, 334);
-            GmapLink.Margin = new Padding(3, 2, 3, 2);
+            GmapLink.Location = new Point(385, 445);
             GmapLink.Name = "GmapLink";
-            GmapLink.Size = new Size(38, 32);
+            GmapLink.Size = new Size(43, 43);
             GmapLink.TabIndex = 8;
             GmapLink.TabStop = false;
             // 
@@ -170,31 +160,18 @@
             FbLink.BackgroundImage = Properties.Resources.fb;
             FbLink.BackgroundImageLayout = ImageLayout.Stretch;
             FbLink.Cursor = Cursors.Hand;
-            FbLink.Location = new Point(192, 334);
-            FbLink.Margin = new Padding(3, 2, 3, 2);
+            FbLink.Location = new Point(219, 445);
             FbLink.Name = "FbLink";
-            FbLink.Size = new Size(38, 32);
+            FbLink.Size = new Size(43, 43);
             FbLink.TabIndex = 7;
             FbLink.TabStop = false;
-            // 
-            // LogInLink
-            // 
-            LogInLink.AutoSize = true;
-            LogInLink.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LogInLink.Location = new Point(266, 384);
-            LogInLink.Name = "LogInLink";
-            LogInLink.Size = new Size(168, 19);
-            LogInLink.TabIndex = 6;
-            LogInLink.TabStop = true;
-            LogInLink.Text = "Already a Member, Log In";
             // 
             // ProceedTagBt
             // 
             ProceedTagBt.BackColor = Color.IndianRed;
-            ProceedTagBt.Location = new Point(265, 279);
-            ProceedTagBt.Margin = new Padding(3, 2, 3, 2);
+            ProceedTagBt.Location = new Point(303, 372);
             ProceedTagBt.Name = "ProceedTagBt";
-            ProceedTagBt.Size = new Size(172, 43);
+            ProceedTagBt.Size = new Size(197, 57);
             ProceedTagBt.TabIndex = 3;
             ProceedTagBt.Text = "Proceed";
             ProceedTagBt.UseVisualStyleBackColor = false;
@@ -204,9 +181,9 @@
             WelcomeSignUp.AutoSize = true;
             WelcomeSignUp.BackColor = Color.RosyBrown;
             WelcomeSignUp.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            WelcomeSignUp.Location = new Point(207, 22);
+            WelcomeSignUp.Location = new Point(237, 29);
             WelcomeSignUp.Name = "WelcomeSignUp";
-            WelcomeSignUp.Size = new Size(289, 25);
+            WelcomeSignUp.Size = new Size(358, 32);
             WelcomeSignUp.TabIndex = 0;
             WelcomeSignUp.Text = "Welcome to Together Culture";
             WelcomeSignUp.TextAlign = ContentAlignment.MiddleRight;
@@ -216,10 +193,9 @@
             TCLogo.BackColor = Color.Transparent;
             TCLogo.BackgroundImage = (Image)resources.GetObject("TCLogo.BackgroundImage");
             TCLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            TCLogo.Location = new Point(69, 72);
-            TCLogo.Margin = new Padding(3, 2, 3, 2);
+            TCLogo.Location = new Point(79, 96);
             TCLogo.Name = "TCLogo";
-            TCLogo.Size = new Size(488, 417);
+            TCLogo.Size = new Size(558, 556);
             TCLogo.TabIndex = 3;
             TCLogo.TabStop = false;
             // 
@@ -227,10 +203,9 @@
             // 
             PreviousPageBt.BackColor = Color.IndianRed;
             PreviousPageBt.ForeColor = Color.Black;
-            PreviousPageBt.Location = new Point(1399, 9);
-            PreviousPageBt.Margin = new Padding(3, 2, 3, 2);
+            PreviousPageBt.Location = new Point(1599, 12);
             PreviousPageBt.Name = "PreviousPageBt";
-            PreviousPageBt.Size = new Size(112, 22);
+            PreviousPageBt.Size = new Size(128, 29);
             PreviousPageBt.TabIndex = 12;
             PreviousPageBt.Text = "<- Previous Page";
             PreviousPageBt.UseVisualStyleBackColor = false;
@@ -238,16 +213,15 @@
             // 
             // InterestDptForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1500, 561);
+            ClientSize = new Size(1714, 748);
             Controls.Add(PreviousPageBt);
             Controls.Add(panel1);
             Controls.Add(TCLogo);
             DoubleBuffered = true;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "InterestDptForm";
             Text = "InterestDpt";
             panel1.ResumeLayout(false);
@@ -267,7 +241,6 @@
         private PictureBox IgLink;
         private PictureBox GmapLink;
         private PictureBox FbLink;
-        private LinkLabel LogInLink;
         private Button ProceedTagBt;
         private Label WelcomeSignUp;
         private PictureBox TCLogo;
