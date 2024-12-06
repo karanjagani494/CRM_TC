@@ -30,7 +30,6 @@ namespace SoftwareEngineering_2024.DB_connect
         private int id = UserContext.Memberid;
 
 
-
         //  ===== REGISTER MEMBER IN "TEST" DATABSE IN "MEMBER" TABLE =====
         public bool RegisterMember(string Email, string Password, string Firstname, string Lastname, string Phonenumber, string Housenumber, string City, string State, string Country, string Street, string Citycode)
         {

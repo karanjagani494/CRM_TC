@@ -25,7 +25,6 @@ namespace SoftwareEngineering_2024
         private void AdminLoginBt_Click(object sender, EventArgs e)
         {
 
-            // Retrieve email and password from form inputs
             string Email = email_txt?.Text ?? string.Empty;
             string Password = password_txt?.Text ?? string.Empty;
 
@@ -53,13 +52,8 @@ namespace SoftwareEngineering_2024
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+
             FormOpener.OpenUserForm(this, typeof(AdminHomeForm));
-
-
-
-
-
-
 
 
         }

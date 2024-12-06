@@ -33,6 +33,7 @@ namespace SoftwareEngineering_2024
             if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
             {
 
+
                 string str1 = email.Text;
                 string Email = str1.ToLower();  /* TO lower will store always in lowercase of email */
                 string Password = password.Text;
@@ -74,8 +75,21 @@ namespace SoftwareEngineering_2024
                         FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
                         Opener.OpenForm(this, typeof(InterestDptForm));
 
+
                         //string toEmail = UserContext.EMAIL;
                         //string subject = "Welcome to CRM!";
+
+                    FormTracker.StepsCompleted[0] = true;    //this will count this form if the form is completed then it will store true
+
+                    Opener.OpenForm(this, typeof(InterestDptForm));
+
+
+
+                    /* this will send emil to user who is registering*/
+
+                    //string toEmail = UserContext.EMAIL;
+                    //string subject = "Welcome to CRM!";
+
 
                         //// Personalize the email body with the user's first and last name
                         //string body = $"Dear {Firstname} {Lastname},\n\nThank you for registering with us.\n\nBest Regards,\nCRM Team";
@@ -83,7 +97,11 @@ namespace SoftwareEngineering_2024
 
                         //emailService.SendEmail(toEmail, subject, body);
 
+
                     }
+
+
+
                 }
 
 
