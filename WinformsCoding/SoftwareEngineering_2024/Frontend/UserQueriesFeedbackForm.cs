@@ -19,12 +19,10 @@ namespace SoftwareEngineering_2024
 
         }
 
-        private void UserQueriesFeedbackForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         
+
+            
+
 
         private void QuerySubmitBt_Click(object sender, EventArgs e)
         {

@@ -37,11 +37,14 @@
             StaffEventsBt = new Button();
             AdminHomeBt = new Button();
             panel1 = new Panel();
+            AdminMembersLb = new Label();
             adminDALBindingSource = new BindingSource(components);
             MembersTableDg = new DataGridView();
             adminDALBindingSource2 = new BindingSource(components);
             adminDALBindingSource1 = new BindingSource(components);
-            AdminMembersLb = new Label();
+            button2 = new Button();
+            button3 = new Button();
+            textBox1 = new TextBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminDALBindingSource).BeginInit();
@@ -162,8 +165,38 @@
             MembersTableDg.Margin = new Padding(3, 4, 3, 4);
             MembersTableDg.Name = "MembersTableDg";
             MembersTableDg.RowHeadersWidth = 51;
-            MembersTableDg.Size = new Size(1485, 462);
+            MembersTableDg.Size = new Size(1485, 292);
             MembersTableDg.TabIndex = 22;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.LightCoral;
+            button2.Cursor = Cursors.Hand;
+            button2.Location = new Point(1235, 484);
+            button2.Name = "button2";
+            button2.Size = new Size(229, 52);
+            button2.TabIndex = 23;
+            button2.Text = "q2";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.LightCoral;
+            button3.Cursor = Cursors.Hand;
+            button3.Location = new Point(536, 495);
+            button3.Name = "button3";
+            button3.Size = new Size(229, 52);
+            button3.TabIndex = 24;
+            button3.Text = "Q1";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(536, 411);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(642, 27);
+            textBox1.TabIndex = 25;
             // 
             // AdminMembersForm
             // 
@@ -172,6 +205,9 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1817, 702);
+            Controls.Add(textBox1);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(MembersTableDg);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -207,5 +243,8 @@
         private BindingSource adminDALBindingSource1;
         private BindingSource adminDALBindingSource2;
         private Label AdminMembersLb;
+        private Button button2;
+        private Button button3;
+        private TextBox textBox1;
     }
 }
