@@ -40,6 +40,7 @@
             StaffHomeLb = new Label();
             AdminHomeTb = new TextBox();
             WelcomeUserLb = new Label();
+            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -169,6 +170,13 @@
             WelcomeUserLb.TabIndex = 24;
             WelcomeUserLb.Text = "Welcome to your Home Page";
             // 
+            // mySqlCommand1
+            // 
+            mySqlCommand1.CacheAge = 0;
+            mySqlCommand1.Connection = null;
+            mySqlCommand1.EnableCaching = false;
+            mySqlCommand1.Transaction = null;
+            // 
             // AdminHomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -202,5 +210,6 @@
         private Label StaffHomeLb;
         private TextBox AdminHomeTb;
         private Label WelcomeUserLb;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }

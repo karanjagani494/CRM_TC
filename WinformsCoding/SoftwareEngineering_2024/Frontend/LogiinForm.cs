@@ -39,34 +39,48 @@ namespace SoftwareEngineering_2024
                 return;
             }
 
-            // Authenticate the user
-            bool isAuthenticated = userDAL.AuthenticateUser(Email, Password);
+            // Declare a variable to store the registration status
+            bool isRegistered;
+
+            // Authenticate the user and get the registration status
+            bool isAuthenticated = userDAL.AuthenticateUser(Email, Password, out isRegistered);
 
             if (isAuthenticated)
             {
-               
+
+                if (isRegistered)
+
+
                 if (FormTracker.StepsCompleted.All(step => step))
+
                 {
-                    // Navigate to UserHomeForm1 if authentication is successful
+                    // Navigate to UserHomeForm1 if authentication is successful and registration is complete
                     Opener.OpenForm(this, typeof(UserHomeForm1));
 
-                }else {
-                    MessageBox.Show("Please complete the registration process before logging in.",
-                                "Login Failed",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
                 }
-                        
+                else
+                {
+                    // Show an error message if registration is not completed
+
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Please complete the registration process before logging in.",
+                                     "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
                 // Show error message if authentication fails
                 MessageBox.Show("Invalid email or password. Please try again.",
-                                "Login Failed",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                                "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+           
         }
+
 
 
         private void AdminLoginLb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -63,7 +63,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(235, 558);
+            panel2.Size = new Size(235, 653);
             panel2.TabIndex = 19;
             // 
             // AdminQueryBt
@@ -142,16 +142,6 @@
             panel1.Size = new Size(1817, 49);
             panel1.TabIndex = 18;
             // 
-            // MembersTableDg
-            // 
-            MembersTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            MembersTableDg.Location = new Point(258, 74);
-            MembersTableDg.Margin = new Padding(3, 4, 3, 4);
-            MembersTableDg.Name = "MembersTableDg";
-            MembersTableDg.RowHeadersWidth = 51;
-            MembersTableDg.Size = new Size(1485, 462);
-            MembersTableDg.TabIndex = 22;
-            // 
             // AdminMembersLb
             // 
             AdminMembersLb.Anchor = AnchorStyles.Top;
@@ -162,13 +152,26 @@
             AdminMembersLb.TabIndex = 4;
             AdminMembersLb.Text = "Members";
             // 
+            // MembersTableDg
+            // 
+            MembersTableDg.AllowUserToOrderColumns = true;
+            MembersTableDg.BackgroundColor = Color.IndianRed;
+            MembersTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MembersTableDg.ImeMode = ImeMode.Disable;
+            MembersTableDg.Location = new Point(258, 74);
+            MembersTableDg.Margin = new Padding(3, 4, 3, 4);
+            MembersTableDg.Name = "MembersTableDg";
+            MembersTableDg.RowHeadersWidth = 51;
+            MembersTableDg.Size = new Size(1485, 462);
+            MembersTableDg.TabIndex = 22;
+            // 
             // AdminMembersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1817, 607);
+            ClientSize = new Size(1817, 702);
             Controls.Add(MembersTableDg);
             Controls.Add(panel2);
             Controls.Add(panel1);

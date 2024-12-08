@@ -27,7 +27,6 @@ namespace SoftwareEngineering_2024
         {
             InitializeComponent();
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-            LogInLink.Click += LogInLink_Click;
             ProceedTagBt.Click += ProceedTagBt_Click;
 
 
@@ -35,7 +34,6 @@ namespace SoftwareEngineering_2024
 
         private void ProceedTagBt_Click(object? sender, EventArgs e)
         {
-            Opener.OpenForm(this, typeof(TagsForm));
 
             List<string> INTEREST = GetSelectedInterest(); // Ensure you are calling the correct method
 
@@ -45,16 +43,11 @@ namespace SoftwareEngineering_2024
                 {
                     // Use the UserDAL instance to save the interests to the database
                     bool Registered = userDAL.SaveInterestToDatabase(INTEREST);
-
+                     
                     MessageBox.Show("Interests saved successfully!");
+                    FormTracker.StepsCompleted[1] = true;  //this will count this form if the form is completed then it will store true
+                    Opener.OpenForm(this, typeof(TagsForm));
 
-                    {
-
-                        //this will count this form if the form is completed then it will store true
-                        FormTracker.StepsCompleted[1] = true;
-
-
-                    }
                 }
                 catch (Exception ex)
                 {
@@ -82,13 +75,6 @@ namespace SoftwareEngineering_2024
             if (Sharing.Checked) INTEREST.Add("Sharing");
 
             return INTEREST;
-        }
-
-
-
-        private void LogInLink_Click(object sender, EventArgs e)
-        {
-            Opener.OpenForm(this, typeof(LoginForm));
         }
 
         private void PreviousPageBt_Click(object sender, EventArgs e)
