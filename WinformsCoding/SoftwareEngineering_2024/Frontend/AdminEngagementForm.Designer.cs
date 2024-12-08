@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             panel2 = new Panel();
             AdminQueryBt = new Button();
             EngagementBt = new Button();
@@ -38,9 +41,11 @@
             panel1 = new Panel();
             AdminEngagementLb = new Label();
             EngagementsTableDg = new DataGridView();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)EngagementsTableDg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -56,7 +61,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 578);
+            panel2.Size = new Size(234, 685);
             panel2.TabIndex = 22;
             // 
             // AdminQueryBt
@@ -155,13 +160,30 @@
             EngagementsTableDg.Size = new Size(1454, 303);
             EngagementsTableDg.TabIndex = 23;
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart1.Legends.Add(legend1);
+            chart1.Location = new Point(450, 399);
+            chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart1.Series.Add(series1);
+            chart1.Size = new Size(375, 375);
+            chart1.TabIndex = 24;
+            chart1.Text = "chart1";
+            // 
             // AdminEngagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_1036481;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1815, 627);
+            ClientSize = new Size(1815, 734);
+            Controls.Add(chart1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(EngagementsTableDg);
@@ -171,6 +193,7 @@
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)EngagementsTableDg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,5 +210,6 @@
         private Panel panel1;
         private Label AdminEngagementLb;
         private DataGridView EngagementsTableDg;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

@@ -18,7 +18,6 @@ namespace SoftwareEngineering_2024
     {
 
         private userDAL userDAL = new userDAL();
-        private UserContext userContext = new UserContext();
         int member_id = UserContext.Memberid;
 
         public MembershipForm()

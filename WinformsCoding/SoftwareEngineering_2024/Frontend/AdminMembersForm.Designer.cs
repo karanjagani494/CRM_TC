@@ -37,11 +37,15 @@
             StaffEventsBt = new Button();
             AdminHomeBt = new Button();
             panel1 = new Panel();
+            AdminMembersLb = new Label();
             adminDALBindingSource = new BindingSource(components);
             MembersTableDg = new DataGridView();
             adminDALBindingSource2 = new BindingSource(components);
             adminDALBindingSource1 = new BindingSource(components);
-            AdminMembersLb = new Label();
+            MemQ2Bt = new Button();
+            MemQ1Bt = new Button();
+            querytxt = new TextBox();
+            MemQuerySubmitBt = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminDALBindingSource).BeginInit();
@@ -162,8 +166,51 @@
             MembersTableDg.Margin = new Padding(3, 4, 3, 4);
             MembersTableDg.Name = "MembersTableDg";
             MembersTableDg.RowHeadersWidth = 51;
-            MembersTableDg.Size = new Size(1485, 462);
+            MembersTableDg.Size = new Size(1485, 292);
             MembersTableDg.TabIndex = 22;
+            // 
+            // MemQ2Bt
+            // 
+            MemQ2Bt.BackColor = Color.LightCoral;
+            MemQ2Bt.Cursor = Cursors.Hand;
+            MemQ2Bt.Location = new Point(1351, 424);
+            MemQ2Bt.Name = "MemQ2Bt";
+            MemQ2Bt.Size = new Size(229, 52);
+            MemQ2Bt.TabIndex = 23;
+            MemQ2Bt.Text = "q2";
+            MemQ2Bt.UseVisualStyleBackColor = false;
+            MemQ2Bt.Click += MemQ2Bt_Click;
+            // 
+            // MemQ1Bt
+            // 
+            MemQ1Bt.BackColor = Color.LightCoral;
+            MemQ1Bt.Cursor = Cursors.Hand;
+            MemQ1Bt.Location = new Point(452, 424);
+            MemQ1Bt.Name = "MemQ1Bt";
+            MemQ1Bt.Size = new Size(229, 52);
+            MemQ1Bt.TabIndex = 24;
+            MemQ1Bt.Text = "Q1";
+            MemQ1Bt.UseVisualStyleBackColor = false;
+            MemQ1Bt.Click += MemQ1Bt_Click;
+            // 
+            // querytxt
+            // 
+            querytxt.Location = new Point(671, 530);
+            querytxt.Name = "querytxt";
+            querytxt.Size = new Size(642, 27);
+            querytxt.TabIndex = 25;
+            // 
+            // MemQuerySubmitBt
+            // 
+            MemQuerySubmitBt.BackColor = Color.LightCoral;
+            MemQuerySubmitBt.Cursor = Cursors.Hand;
+            MemQuerySubmitBt.Location = new Point(877, 592);
+            MemQuerySubmitBt.Name = "MemQuerySubmitBt";
+            MemQuerySubmitBt.Size = new Size(229, 52);
+            MemQuerySubmitBt.TabIndex = 26;
+            MemQuerySubmitBt.Text = "Enter";
+            MemQuerySubmitBt.UseVisualStyleBackColor = false;
+            MemQuerySubmitBt.Click += MemQuerySubmitBt_Click;
             // 
             // AdminMembersForm
             // 
@@ -172,6 +219,10 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1817, 702);
+            Controls.Add(MemQuerySubmitBt);
+            Controls.Add(querytxt);
+            Controls.Add(MemQ1Bt);
+            Controls.Add(MemQ2Bt);
             Controls.Add(MembersTableDg);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -207,5 +258,9 @@
         private BindingSource adminDALBindingSource1;
         private BindingSource adminDALBindingSource2;
         private Label AdminMembersLb;
+        private Button MemQ2Bt;
+        private Button MemQ1Bt;
+        private TextBox querytxt;
+        private Button MemQuerySubmitBt;
     }
 }

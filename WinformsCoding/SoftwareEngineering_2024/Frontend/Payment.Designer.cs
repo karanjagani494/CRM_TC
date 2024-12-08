@@ -357,7 +357,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1714, 720);
+            ClientSize = new Size(1811, 786);
             Controls.Add(panel1);
             Controls.Add(PreviousPageBt);
             Controls.Add(TCLogo);

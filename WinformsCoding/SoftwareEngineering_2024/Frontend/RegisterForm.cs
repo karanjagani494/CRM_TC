@@ -53,7 +53,7 @@ namespace SoftwareEngineering_2024
                 string Street = street.Text;
                 string Citycode = cityCode.Text;
 
-                if (Password != RePass) 
+                if (Password != RePass)
                 {
                     MessageBox.Show("Passwords do not match",
                                         "Registration Error",
@@ -75,14 +75,10 @@ namespace SoftwareEngineering_2024
                         FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
                         Opener.OpenForm(this, typeof(InterestDptForm));
 
-
-                        //string toEmail = UserContext.EMAIL;
-                        //string subject = "Welcome to CRM!";
-
-                    FormTracker.StepsCompleted[0] = true;    //this will count this form if the form is completed then it will store true
-
-                    Opener.OpenForm(this, typeof(InterestDptForm));
-
+                    }
+                }
+            }
+        }
 
 
                     /* this will send emil to user who is registering*/
@@ -98,11 +94,11 @@ namespace SoftwareEngineering_2024
                         //emailService.SendEmail(toEmail, subject, body);
 
 
-                    }
+                    
 
 
 
-                }
+                
 
 
                 // Attempt to register the user
@@ -128,9 +124,9 @@ namespace SoftwareEngineering_2024
 
 
 
-            }
+            
 
-        }
+        
 
         //private void phoneNumber_KeyPress(object sender, KeyPressEventArgs e)
         //{
