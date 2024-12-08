@@ -42,9 +42,10 @@
             MembersTableDg = new DataGridView();
             adminDALBindingSource2 = new BindingSource(components);
             adminDALBindingSource1 = new BindingSource(components);
-            button2 = new Button();
-            button3 = new Button();
-            textBox1 = new TextBox();
+            MemQ2Bt = new Button();
+            MemQ1Bt = new Button();
+            querytxt = new TextBox();
+            MemQuerySubmitBt = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminDALBindingSource).BeginInit();
@@ -168,35 +169,48 @@
             MembersTableDg.Size = new Size(1485, 292);
             MembersTableDg.TabIndex = 22;
             // 
-            // button2
+            // MemQ2Bt
             // 
-            button2.BackColor = Color.LightCoral;
-            button2.Cursor = Cursors.Hand;
-            button2.Location = new Point(1235, 484);
-            button2.Name = "button2";
-            button2.Size = new Size(229, 52);
-            button2.TabIndex = 23;
-            button2.Text = "q2";
-            button2.UseVisualStyleBackColor = false;
+            MemQ2Bt.BackColor = Color.LightCoral;
+            MemQ2Bt.Cursor = Cursors.Hand;
+            MemQ2Bt.Location = new Point(1351, 424);
+            MemQ2Bt.Name = "MemQ2Bt";
+            MemQ2Bt.Size = new Size(229, 52);
+            MemQ2Bt.TabIndex = 23;
+            MemQ2Bt.Text = "q2";
+            MemQ2Bt.UseVisualStyleBackColor = false;
+            MemQ2Bt.Click += MemQ2Bt_Click;
             // 
-            // button3
+            // MemQ1Bt
             // 
-            button3.BackColor = Color.LightCoral;
-            button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(536, 495);
-            button3.Name = "button3";
-            button3.Size = new Size(229, 52);
-            button3.TabIndex = 24;
-            button3.Text = "Q1";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            MemQ1Bt.BackColor = Color.LightCoral;
+            MemQ1Bt.Cursor = Cursors.Hand;
+            MemQ1Bt.Location = new Point(452, 424);
+            MemQ1Bt.Name = "MemQ1Bt";
+            MemQ1Bt.Size = new Size(229, 52);
+            MemQ1Bt.TabIndex = 24;
+            MemQ1Bt.Text = "Q1";
+            MemQ1Bt.UseVisualStyleBackColor = false;
+            MemQ1Bt.Click += MemQ1Bt_Click;
             // 
-            // textBox1
+            // querytxt
             // 
-            textBox1.Location = new Point(536, 411);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(642, 27);
-            textBox1.TabIndex = 25;
+            querytxt.Location = new Point(671, 530);
+            querytxt.Name = "querytxt";
+            querytxt.Size = new Size(642, 27);
+            querytxt.TabIndex = 25;
+            // 
+            // MemQuerySubmitBt
+            // 
+            MemQuerySubmitBt.BackColor = Color.LightCoral;
+            MemQuerySubmitBt.Cursor = Cursors.Hand;
+            MemQuerySubmitBt.Location = new Point(877, 592);
+            MemQuerySubmitBt.Name = "MemQuerySubmitBt";
+            MemQuerySubmitBt.Size = new Size(229, 52);
+            MemQuerySubmitBt.TabIndex = 26;
+            MemQuerySubmitBt.Text = "Enter";
+            MemQuerySubmitBt.UseVisualStyleBackColor = false;
+            MemQuerySubmitBt.Click += MemQuerySubmitBt_Click;
             // 
             // AdminMembersForm
             // 
@@ -205,9 +219,10 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1817, 702);
-            Controls.Add(textBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(MemQuerySubmitBt);
+            Controls.Add(querytxt);
+            Controls.Add(MemQ1Bt);
+            Controls.Add(MemQ2Bt);
             Controls.Add(MembersTableDg);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -243,8 +258,9 @@
         private BindingSource adminDALBindingSource1;
         private BindingSource adminDALBindingSource2;
         private Label AdminMembersLb;
-        private Button button2;
-        private Button button3;
-        private TextBox textBox1;
+        private Button MemQ2Bt;
+        private Button MemQ1Bt;
+        private TextBox querytxt;
+        private Button MemQuerySubmitBt;
     }
 }

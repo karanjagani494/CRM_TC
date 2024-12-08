@@ -23,7 +23,7 @@ namespace SoftwareEngineering_2024.DB_connect
         {
 
 
-            string connectionString = "server=localhost;port=3307;database=final_crm;user=root;password=;";
+            string connectionString = "server=localhost;port=3306;database=fresh;user=root;password=Shau@410;";
 
 
             connection = new MySqlConnection(connectionString);
