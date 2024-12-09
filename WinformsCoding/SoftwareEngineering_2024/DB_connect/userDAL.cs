@@ -384,6 +384,35 @@ namespace SoftwareEngineering_2024.DB_connect
             }
         }
 
+        
+
+        public bool SaveQueryFeedbackToDatabase(string queryType, string description, int? memberId)
+        {
+            using (MySqlCommand queryCmd = new MySqlCommand(SqlQueries.QUERY_FEEDBACK_query, db.GetConnection()))
+            {
+                queryCmd.Parameters.AddWithValue("@query_type", queryType);
+                queryCmd.Parameters.AddWithValue("@description", description);
+                queryCmd.Parameters.AddWithValue("@member_id", memberId);
+
+                try
+                {
+                    db.OpenConnection();
+                    int rowsAffected = queryCmd.ExecuteNonQuery();
+                    db.CloseConnection();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    db.CloseConnection();
+                }
+            }
+        }
+
 
 
 

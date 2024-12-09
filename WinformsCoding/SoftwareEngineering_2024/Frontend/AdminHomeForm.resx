@@ -122,10 +122,4 @@
 
 Take control of user management, review feedback, and manage resources seamlessly through intuitive interfaces and organized workflows. Whether it’s updating system settings, resolving queries, or generating reports, the Admin Dashboard empowers you to ensure a seamless experience for all users. Dive into the features and keep the system thriving with your expertise!</value>
   </data>
-  <metadata name="mySqlCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="mySqlCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

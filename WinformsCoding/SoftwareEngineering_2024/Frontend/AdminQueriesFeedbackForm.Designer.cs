@@ -36,8 +36,14 @@
             StaffEventsBt = new Button();
             AdminHomeBt = new Button();
             panel1 = new Panel();
+            LogOutBt = new Button();
             AdminQueriesFeedbacksLb = new Label();
             QueriesFeedbackTableDg = new DataGridView();
+            MemQuerySubmitBt = new Button();
+            querytxt = new TextBox();
+            MemQ1Bt = new Button();
+            MemQ2Bt = new Button();
+            Attendance_log_bt = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)QueriesFeedbackTableDg).BeginInit();
@@ -47,6 +53,7 @@
             // 
             panel2.AutoSize = true;
             panel2.BackColor = Color.RosyBrown;
+            panel2.Controls.Add(Attendance_log_bt);
             panel2.Controls.Add(AdminQueryBt);
             panel2.Controls.Add(EngagementBt);
             panel2.Controls.Add(AdminBookingsBt);
@@ -56,7 +63,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 561);
+            panel2.Size = new Size(234, 730);
             panel2.TabIndex = 22;
             // 
             // AdminQueryBt
@@ -128,18 +135,31 @@
             // panel1
             // 
             panel1.BackColor = Color.RosyBrown;
+            panel1.Controls.Add(LogOutBt);
             panel1.Controls.Add(AdminQueriesFeedbacksLb);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1836, 49);
+            panel1.Size = new Size(1783, 49);
             panel1.TabIndex = 21;
+            // 
+            // LogOutBt
+            // 
+            LogOutBt.BackColor = Color.LightCoral;
+            LogOutBt.Cursor = Cursors.Hand;
+            LogOutBt.Location = new Point(1583, 9);
+            LogOutBt.Name = "LogOutBt";
+            LogOutBt.Size = new Size(182, 32);
+            LogOutBt.TabIndex = 24;
+            LogOutBt.Text = "Refresh";
+            LogOutBt.UseVisualStyleBackColor = false;
+            LogOutBt.Click += RefreshBt_Click;
             // 
             // AdminQueriesFeedbacksLb
             // 
             AdminQueriesFeedbacksLb.Anchor = AnchorStyles.Top;
             AdminQueriesFeedbacksLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminQueriesFeedbacksLb.Location = new Point(859, 9);
+            AdminQueriesFeedbacksLb.Location = new Point(832, 9);
             AdminQueriesFeedbacksLb.Name = "AdminQueriesFeedbacksLb";
             AdminQueriesFeedbacksLb.Size = new Size(300, 25);
             AdminQueriesFeedbacksLb.TabIndex = 3;
@@ -148,12 +168,64 @@
             // QueriesFeedbackTableDg
             // 
             QueriesFeedbackTableDg.AllowUserToAddRows = false;
+            QueriesFeedbackTableDg.BackgroundColor = Color.RosyBrown;
             QueriesFeedbackTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            QueriesFeedbackTableDg.Location = new Point(267, 95);
+            QueriesFeedbackTableDg.Location = new Point(590, 74);
             QueriesFeedbackTableDg.Name = "QueriesFeedbackTableDg";
             QueriesFeedbackTableDg.RowHeadersWidth = 51;
-            QueriesFeedbackTableDg.Size = new Size(1498, 469);
+            QueriesFeedbackTableDg.Size = new Size(681, 315);
             QueriesFeedbackTableDg.TabIndex = 23;
+            // 
+            // MemQuerySubmitBt
+            // 
+            MemQuerySubmitBt.BackColor = Color.LightCoral;
+            MemQuerySubmitBt.Cursor = Cursors.Hand;
+            MemQuerySubmitBt.Location = new Point(796, 633);
+            MemQuerySubmitBt.Name = "MemQuerySubmitBt";
+            MemQuerySubmitBt.Size = new Size(229, 52);
+            MemQuerySubmitBt.TabIndex = 30;
+            MemQuerySubmitBt.Text = "Enter";
+            MemQuerySubmitBt.UseVisualStyleBackColor = false;
+            // 
+            // querytxt
+            // 
+            querytxt.Location = new Point(590, 571);
+            querytxt.Name = "querytxt";
+            querytxt.Size = new Size(642, 27);
+            querytxt.TabIndex = 29;
+            // 
+            // MemQ1Bt
+            // 
+            MemQ1Bt.BackColor = Color.LightCoral;
+            MemQ1Bt.Cursor = Cursors.Hand;
+            MemQ1Bt.Location = new Point(371, 465);
+            MemQ1Bt.Name = "MemQ1Bt";
+            MemQ1Bt.Size = new Size(229, 52);
+            MemQ1Bt.TabIndex = 28;
+            MemQ1Bt.Text = "Q1";
+            MemQ1Bt.UseVisualStyleBackColor = false;
+            // 
+            // MemQ2Bt
+            // 
+            MemQ2Bt.BackColor = Color.LightCoral;
+            MemQ2Bt.Cursor = Cursors.Hand;
+            MemQ2Bt.Location = new Point(1270, 465);
+            MemQ2Bt.Name = "MemQ2Bt";
+            MemQ2Bt.Size = new Size(229, 52);
+            MemQ2Bt.TabIndex = 27;
+            MemQ2Bt.Text = "q2";
+            MemQ2Bt.UseVisualStyleBackColor = false;
+            // 
+            // Attendance_log_bt
+            // 
+            Attendance_log_bt.BackColor = Color.LightCoral;
+            Attendance_log_bt.Cursor = Cursors.Hand;
+            Attendance_log_bt.Location = new Point(0, 522);
+            Attendance_log_bt.Name = "Attendance_log_bt";
+            Attendance_log_bt.Size = new Size(228, 52);
+            Attendance_log_bt.TabIndex = 7;
+            Attendance_log_bt.Text = "Attendance Log";
+            Attendance_log_bt.UseVisualStyleBackColor = false;
             // 
             // AdminQueriesFeedbackForm
             // 
@@ -161,7 +233,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1836, 610);
+            ClientSize = new Size(1783, 779);
+            Controls.Add(MemQuerySubmitBt);
+            Controls.Add(querytxt);
+            Controls.Add(MemQ1Bt);
+            Controls.Add(MemQ2Bt);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(QueriesFeedbackTableDg);
@@ -187,5 +263,11 @@
         private Panel panel1;
         private Label AdminQueriesFeedbacksLb;
         private DataGridView QueriesFeedbackTableDg;
+        private Button LogOutBt;
+        private Button MemQuerySubmitBt;
+        private TextBox querytxt;
+        private Button MemQ1Bt;
+        private Button MemQ2Bt;
+        private Button Attendance_log_bt;
     }
 }

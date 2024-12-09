@@ -133,6 +133,27 @@ namespace SoftwareEngineering_2024
             }
         }
 
+        public static void ValidateNumericTextBox(TextBoxBase textBoxBase)
+        {
+            // Remove any non-numeric characters from the text
+            string validText = string.Concat(textBoxBase.Text.Where(char.IsDigit));
+            if (textBoxBase.Text != validText)
+            {
+                textBoxBase.Text = validText;
+
+                // Move cursor to the end
+                if (textBoxBase is TextBox textBox)
+                {
+                    textBox.SelectionStart = textBox.Text.Length;
+                }
+                else if (textBoxBase is MaskedTextBox maskedTextBox)
+                {
+                    maskedTextBox.SelectionStart = maskedTextBox.Text.Length;
+                }
+            }
+        }
+
+
 
     }
 }

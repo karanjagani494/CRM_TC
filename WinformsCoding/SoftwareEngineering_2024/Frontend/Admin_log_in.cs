@@ -53,7 +53,7 @@ namespace SoftwareEngineering_2024
                                 MessageBoxIcon.Error);
             }
 
-            FormOpener.OpenUserForm(this, typeof(AdminHomeForm));
+            
 
 
         }

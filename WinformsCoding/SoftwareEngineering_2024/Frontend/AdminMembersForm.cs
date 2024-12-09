@@ -16,7 +16,7 @@ namespace SoftwareEngineering_2024
         public AdminMembersForm()
         {
             InitializeComponent();
-            FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt);
+            FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt, Attendance_log_bt);
         }
 
         private void AdminMembersForm_Load(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace SoftwareEngineering_2024
 
         }
 
-       
+
         private void MemQ2Bt_Click(object sender, EventArgs e)
         {
             string query2 = "SELECT membership_id, COUNT(*) AS member_count FROM members GROUP BY membership_id ORDER BY membership_id";
@@ -44,6 +44,11 @@ namespace SoftwareEngineering_2024
         {
             string query3 = querytxt.Text;
             ShowTables.GRIDVIEW(MembersTableDg, query3);
+        }
+
+        private void RefreshBt_Click(object sender, EventArgs e)
+        {
+            Opener.OpenForm(this , typeof(AdminMembersForm));
         }
     }
 }

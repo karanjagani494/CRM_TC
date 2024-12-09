@@ -15,6 +15,7 @@ namespace SoftwareEngineering_2024
         public Attendance_Log()
         {
             InitializeComponent();
+            FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt, Attendance_log_bt);
         }
 
         private void AdminMembersLb_Click(object sender, EventArgs e)

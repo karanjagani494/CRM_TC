@@ -9,6 +9,7 @@ namespace SoftwareEngineering_2024
     {
 
         private userDAL userDAL = new userDAL();
+        
         int member_id = UserContext.Memberid;
 
         public Payment()
@@ -17,6 +18,8 @@ namespace SoftwareEngineering_2024
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
             cardNo_txt.KeyPress += Opener.Number_KeyPress;
             Cvv_txt.KeyPress += Opener.Number_KeyPress;
+            cardNo_txt.TextChanged += (s, e) => Opener.ValidateNumericTextBox(cardNo_txt);
+            Cvv_txt.TextChanged += (s, e) => Opener.ValidateNumericTextBox(Cvv_txt);
 
         }
 

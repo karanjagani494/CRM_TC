@@ -38,30 +38,49 @@ namespace SoftwareEngineering_2024.utilities
 
                     // Create a new series
                     Series series = new Series(legendText);
-                    series.ChartType = chartType;
+                    series.ChartType = chartType; // Ensure it's a bar chart
 
                     // Populate the series with data from the query
                     while (reader.Read())
                     {
-                        string xValue = reader[0].ToString();       // First column for X-axis (e.g., labels)
-                        double yValue = Convert.ToDouble(reader[1]); // Second column for Y-axis (e.g., values)
+                        double yValue = Convert.ToDouble(reader[1]);
+                        string xValue = reader[0].ToString();
 
-                        series.Points.AddXY(xValue, yValue);
+                        // Add points to the series
+
+                        if (chartType == SeriesChartType.Bar)
+                        {
+                            series.Points.AddXY(yValue, xValue);
+                        }
+                        else { series.Points.AddXY(xValue, yValue); }
+
+                        if (chartType == SeriesChartType.Bar)
+                        {
+
+                            series.Points[series.Points.Count - 1].Label = xValue.ToString(); // Display count as label on bar
+                        }
+                        else
+                        {
+                            series.Points[series.Points.Count - 1].Label = $"{xValue} ({yValue})";
+                        }
+
+
+
+
                     }
 
                     // Add the series to the chart
                     chartControl.Series.Add(series);
 
-                    // Add chart title (optional)
-                    chartControl.Titles.Add("Generated Chart");
+
 
                     // Set chart area labels
                     if (chartControl.ChartAreas.Count == 0)
                         chartControl.ChartAreas.Add(new ChartArea());
 
                     ChartArea chartArea = chartControl.ChartAreas[0];
-                    chartArea.AxisX.Title = xAxisLabel;
-                    chartArea.AxisY.Title = yAxisLabel;
+                    chartArea.AxisX.Title = xAxisLabel; // Membership Type
+                    chartArea.AxisY.Title = yAxisLabel; // Number of People
 
                     // Add legend
                     if (chartControl.Legends.Count == 0)
@@ -88,6 +107,11 @@ namespace SoftwareEngineering_2024.utilities
                 }
             }
         }
+
+
+
+
+
 
 
     }

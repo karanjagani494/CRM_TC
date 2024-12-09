@@ -95,6 +95,8 @@ namespace SoftwareEngineering_2024
 
 
 
+
+
         private void AdminLoginLb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormOpener.OpenUserForm(this, typeof(Admin_log_in));

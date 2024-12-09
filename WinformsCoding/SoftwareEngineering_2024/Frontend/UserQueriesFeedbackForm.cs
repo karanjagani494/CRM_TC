@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoftwareEngineering_2024.DB_connect;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,16 +17,17 @@ namespace SoftwareEngineering_2024
         {
             InitializeComponent();
             FormOpener.OpenUserDashboardPages(HomeBt, MembershipsBt, EventsBt, MyBookingsBt, SpaceBt, QueryBt);
-
         }
 
-        
-
-            
+        private LoginForm loginForm = new LoginForm();
+        private userDAL userDAL = new userDAL();
 
 
         private void QuerySubmitBt_Click(object sender, EventArgs e)
         {
+            int? id = loginForm.Give_Id();
+            string Query_description = QueryTb.Text;
+            string selectedQueryType = QueryTypeCb.SelectedItem.ToString();
             bool IsQueryTypeSelected = QueryTypeCb.SelectedItem != null;
             bool IsTextSubmitted = !string.IsNullOrWhiteSpace(QueryTb.Text);
 
@@ -36,9 +38,11 @@ namespace SoftwareEngineering_2024
             }
             else
             {
+                bool Registered = userDAL.SaveQueryFeedbackToDatabase(selectedQueryType, Query_description, id);
                 QueryTb.Clear();
                 QueryTypeCb.SelectedIndex = 0;
                 MessageBox.Show("Query Submitted", "Submission Done", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             
             
