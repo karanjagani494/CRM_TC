@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoftwareEngineering_2024.utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace SoftwareEngineering_2024
 {
     public partial class ThankYouForm : Form
     {
+
+        private SignUpForm SignUpForm = new SignUpForm();
+
+      EmailService emailService = new EmailService();
         public ThankYouForm()
         {
             InitializeComponent();
@@ -22,6 +27,11 @@ namespace SoftwareEngineering_2024
         private void ThankyouLoginBt_Click(object sender, EventArgs e)
         {
             Opener.OpenForm(this, typeof(LoginForm));
+
+            /* this will send emil to user who is registering*/
+
+
+            SignUpForm.callemail();
         }
     }
 }

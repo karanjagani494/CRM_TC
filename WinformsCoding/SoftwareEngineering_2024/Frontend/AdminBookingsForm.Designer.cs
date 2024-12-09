@@ -36,8 +36,10 @@
             StaffEventsBt = new Button();
             AdminHomeBt = new Button();
             panel1 = new Panel();
+            LogOutBt = new Button();
             AdminBookingsLb = new Label();
             BookingsTableDg = new DataGridView();
+            Attendance_log_bt = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BookingsTableDg).BeginInit();
@@ -47,6 +49,7 @@
             // 
             panel2.AutoSize = true;
             panel2.BackColor = Color.RosyBrown;
+            panel2.Controls.Add(Attendance_log_bt);
             panel2.Controls.Add(AdminQueryBt);
             panel2.Controls.Add(EngagementBt);
             panel2.Controls.Add(AdminBookingsBt);
@@ -56,7 +59,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 591);
+            panel2.Size = new Size(234, 734);
             panel2.TabIndex = 22;
             // 
             // AdminQueryBt
@@ -128,18 +131,31 @@
             // panel1
             // 
             panel1.BackColor = Color.RosyBrown;
+            panel1.Controls.Add(LogOutBt);
             panel1.Controls.Add(AdminBookingsLb);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1816, 49);
+            panel1.Size = new Size(1782, 49);
             panel1.TabIndex = 21;
+            // 
+            // LogOutBt
+            // 
+            LogOutBt.BackColor = Color.LightCoral;
+            LogOutBt.Cursor = Cursors.Hand;
+            LogOutBt.Location = new Point(1622, 9);
+            LogOutBt.Name = "LogOutBt";
+            LogOutBt.Size = new Size(182, 32);
+            LogOutBt.TabIndex = 6;
+            LogOutBt.Text = "Refresh";
+            LogOutBt.UseVisualStyleBackColor = false;
+            LogOutBt.Click += LogOutBt_Click;
             // 
             // AdminBookingsLb
             // 
             AdminBookingsLb.Anchor = AnchorStyles.Top;
             AdminBookingsLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminBookingsLb.Location = new Point(910, 9);
+            AdminBookingsLb.Location = new Point(893, 9);
             AdminBookingsLb.Name = "AdminBookingsLb";
             AdminBookingsLb.Size = new Size(147, 25);
             AdminBookingsLb.TabIndex = 3;
@@ -148,12 +164,25 @@
             // BookingsTableDg
             // 
             BookingsTableDg.AllowUserToAddRows = false;
+            BookingsTableDg.BackgroundColor = Color.RosyBrown;
             BookingsTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            BookingsTableDg.Location = new Point(259, 74);
+            BookingsTableDg.GridColor = Color.IndianRed;
+            BookingsTableDg.Location = new Point(609, 74);
             BookingsTableDg.Name = "BookingsTableDg";
             BookingsTableDg.RowHeadersWidth = 51;
-            BookingsTableDg.Size = new Size(1473, 518);
+            BookingsTableDg.Size = new Size(709, 342);
             BookingsTableDg.TabIndex = 23;
+            // 
+            // Attendance_log_bt
+            // 
+            Attendance_log_bt.BackColor = Color.LightCoral;
+            Attendance_log_bt.Cursor = Cursors.Hand;
+            Attendance_log_bt.Location = new Point(3, 509);
+            Attendance_log_bt.Name = "Attendance_log_bt";
+            Attendance_log_bt.Size = new Size(228, 52);
+            Attendance_log_bt.TabIndex = 24;
+            Attendance_log_bt.Text = "Attendance Log";
+            Attendance_log_bt.UseVisualStyleBackColor = false;
             // 
             // AdminBookingsForm
             // 
@@ -161,13 +190,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1816, 640);
+            ClientSize = new Size(1782, 783);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(BookingsTableDg);
             DoubleBuffered = true;
             Name = "AdminBookingsForm";
             Text = "AdminBookingsForm";
+            Load += AdminBookingForm_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)BookingsTableDg).EndInit();
@@ -187,5 +217,7 @@
         private Panel panel1;
         private Label AdminBookingsLb;
         private DataGridView BookingsTableDg;
+        private Button LogOutBt;
+        private Button Attendance_log_bt;
     }
 }

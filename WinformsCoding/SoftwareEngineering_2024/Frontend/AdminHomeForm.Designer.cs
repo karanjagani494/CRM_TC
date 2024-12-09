@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomeForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             panel2 = new Panel();
+            Attendance_log_bt = new Button();
             AdminQueryBt = new Button();
             EngagementBt = new Button();
             AdminBookingsBt = new Button();
@@ -37,18 +44,23 @@
             StaffEventsBt = new Button();
             AdminHomeBt = new Button();
             panel1 = new Panel();
+            LogOutBt = new Button();
             StaffHomeLb = new Label();
             AdminHomeTb = new TextBox();
             WelcomeUserLb = new Label();
-            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            DiagramA = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            DiagramB = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DiagramA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DiagramB).BeginInit();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.AutoSize = true;
             panel2.BackColor = Color.RosyBrown;
+            panel2.Controls.Add(Attendance_log_bt);
             panel2.Controls.Add(AdminQueryBt);
             panel2.Controls.Add(EngagementBt);
             panel2.Controls.Add(AdminBookingsBt);
@@ -58,8 +70,19 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 594);
+            panel2.Size = new Size(234, 736);
             panel2.TabIndex = 17;
+            // 
+            // Attendance_log_bt
+            // 
+            Attendance_log_bt.BackColor = Color.LightCoral;
+            Attendance_log_bt.Cursor = Cursors.Hand;
+            Attendance_log_bt.Location = new Point(3, 523);
+            Attendance_log_bt.Name = "Attendance_log_bt";
+            Attendance_log_bt.Size = new Size(228, 52);
+            Attendance_log_bt.TabIndex = 25;
+            Attendance_log_bt.Text = "Attendance Log";
+            Attendance_log_bt.UseVisualStyleBackColor = false;
             // 
             // AdminQueryBt
             // 
@@ -130,12 +153,25 @@
             // panel1
             // 
             panel1.BackColor = Color.RosyBrown;
+            panel1.Controls.Add(LogOutBt);
             panel1.Controls.Add(StaffHomeLb);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1783, 49);
             panel1.TabIndex = 16;
+            // 
+            // LogOutBt
+            // 
+            LogOutBt.BackColor = Color.LightCoral;
+            LogOutBt.Cursor = Cursors.Hand;
+            LogOutBt.Location = new Point(1589, 9);
+            LogOutBt.Name = "LogOutBt";
+            LogOutBt.Size = new Size(182, 32);
+            LogOutBt.TabIndex = 5;
+            LogOutBt.Text = "Log Out";
+            LogOutBt.UseVisualStyleBackColor = false;
+            LogOutBt.Click += LogOutBt_Click;
             // 
             // StaffHomeLb
             // 
@@ -170,12 +206,40 @@
             WelcomeUserLb.TabIndex = 24;
             WelcomeUserLb.Text = "Welcome to your Home Page";
             // 
-            // mySqlCommand1
+            // DiagramA
             // 
-            mySqlCommand1.CacheAge = 0;
-            mySqlCommand1.Connection = null;
-            mySqlCommand1.EnableCaching = false;
-            mySqlCommand1.Transaction = null;
+            DiagramA.BorderlineColor = Color.RosyBrown;
+            chartArea1.Name = "ChartArea1";
+            DiagramA.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            DiagramA.Legends.Add(legend1);
+            DiagramA.Location = new Point(348, 389);
+            DiagramA.Name = "DiagramA";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            DiagramA.Series.Add(series1);
+            DiagramA.Size = new Size(386, 293);
+            DiagramA.TabIndex = 25;
+            DiagramA.Text = "Attendance log info";
+            DiagramA.Click += DiagramA_Click;
+            // 
+            // DiagramB
+            // 
+            DiagramB.BorderlineColor = Color.RosyBrown;
+            chartArea2.Name = "ChartArea1";
+            DiagramB.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            DiagramB.Legends.Add(legend2);
+            DiagramB.Location = new Point(1028, 389);
+            DiagramB.Name = "DiagramB";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            DiagramB.Series.Add(series2);
+            DiagramB.Size = new Size(386, 293);
+            DiagramB.TabIndex = 26;
+            DiagramB.Text = "Membership info";
             // 
             // AdminHomeForm
             // 
@@ -183,7 +247,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_1036481;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1783, 643);
+            ClientSize = new Size(1783, 785);
+            Controls.Add(DiagramB);
+            Controls.Add(DiagramA);
             Controls.Add(WelcomeUserLb);
             Controls.Add(AdminHomeTb);
             Controls.Add(panel2);
@@ -191,8 +257,11 @@
             DoubleBuffered = true;
             Name = "AdminHomeForm";
             Text = "Admin Home Page ";
+            Load += AdminHomeLoad;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DiagramA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DiagramB).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,6 +279,9 @@
         private Label StaffHomeLb;
         private TextBox AdminHomeTb;
         private Label WelcomeUserLb;
-        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Button LogOutBt;
+        private Button Attendance_log_bt;
+        private System.Windows.Forms.DataVisualization.Charting.Chart DiagramA;
+        private System.Windows.Forms.DataVisualization.Charting.Chart DiagramB;
     }
 }

@@ -150,7 +150,7 @@ namespace SoftwareEngineering_2024
             phoneNumber.Name = "phoneNumber";
             phoneNumber.Size = new Size(282, 27);
             phoneNumber.TabIndex = 28;
-            phoneNumber.MaskInputRejected += phoneNumber_MaskInputRejected;
+            
             // 
             // CountryLb
             // 
@@ -183,7 +183,7 @@ namespace SoftwareEngineering_2024
             rePassTb.Name = "rePassTb";
             rePassTb.Size = new Size(269, 27);
             rePassTb.TabIndex = 24;
-            rePassTb.MaskInputRejected += maskedTextBox3_MaskInputRejected;
+          
             // 
             // StateLb
             // 

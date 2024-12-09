@@ -31,7 +31,7 @@ namespace SoftwareEngineering_2024.DB_connect
 
 
         //  ===== REGISTER MEMBER IN "TEST" DATABSE IN "MEMBER" TABLE =====
-        public bool RegisterMember(string Email, string Password, string Firstname, string Lastname, string Phonenumber, string Housenumber, string City, string State, string Country, string Street, string Citycode)
+        public bool RegisterMember(string Email, string Password, string Firstname, string Lastname, string Phonenumber, string Housenumber, string Street , string City , string State , string Country, string Citycode)
         {
             // Hash the password before storing it
             string hashedPassword = HashPassword(Password);
@@ -186,12 +186,42 @@ namespace SoftwareEngineering_2024.DB_connect
             }
         }
 
+       
+
 
         public bool SaveMem_TypeToDatabase(int membership_id, int member_id )
         {
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.MemInfo_query, db.GetConnection()))
             {
                 registerCmd.Parameters.AddWithValue("@membership_id", membership_id);
+                registerCmd.Parameters.AddWithValue("@member_id", member_id);
+
+
+
+                try
+                {
+                    db.OpenConnection();
+                    int rowsAffected = registerCmd.ExecuteNonQuery();
+                    db.CloseConnection();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    db.CloseConnection();
+                }
+            }
+        }
+
+        public bool SaveisRegisToDatabase(int member_id)
+        {
+            using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.IsRegisteredUpdate, db.GetConnection()))
+            {
+                registerCmd.Parameters.AddWithValue("@is_registered", 1);
                 registerCmd.Parameters.AddWithValue("@member_id", member_id);
 
 
@@ -350,6 +380,35 @@ namespace SoftwareEngineering_2024.DB_connect
                     Console.WriteLine("Error: " + ex.Message);
                     db.CloseConnection();
                     return false;
+                }
+            }
+        }
+
+        
+
+        public bool SaveQueryFeedbackToDatabase(string queryType, string description, int? memberId)
+        {
+            using (MySqlCommand queryCmd = new MySqlCommand(SqlQueries.QUERY_FEEDBACK_query, db.GetConnection()))
+            {
+                queryCmd.Parameters.AddWithValue("@query_type", queryType);
+                queryCmd.Parameters.AddWithValue("@description", description);
+                queryCmd.Parameters.AddWithValue("@member_id", memberId);
+
+                try
+                {
+                    db.OpenConnection();
+                    int rowsAffected = queryCmd.ExecuteNonQuery();
+                    db.CloseConnection();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    db.CloseConnection();
                 }
             }
         }

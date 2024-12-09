@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             panel2 = new Panel();
             AdminQueryBt = new Button();
             EngagementBt = new Button();
@@ -36,17 +39,22 @@
             StaffEventsBt = new Button();
             AdminHomeBt = new Button();
             panel1 = new Panel();
+            LogOutBt = new Button();
             AdminEngagementLb = new Label();
             EngagementsTableDg = new DataGridView();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            Attendance_log_bt = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)EngagementsTableDg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.AutoSize = true;
             panel2.BackColor = Color.RosyBrown;
+            panel2.Controls.Add(Attendance_log_bt);
             panel2.Controls.Add(AdminQueryBt);
             panel2.Controls.Add(EngagementBt);
             panel2.Controls.Add(AdminBookingsBt);
@@ -56,7 +64,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 578);
+            panel2.Size = new Size(234, 685);
             panel2.TabIndex = 22;
             // 
             // AdminQueryBt
@@ -128,12 +136,25 @@
             // panel1
             // 
             panel1.BackColor = Color.RosyBrown;
+            panel1.Controls.Add(LogOutBt);
             panel1.Controls.Add(AdminEngagementLb);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1815, 49);
             panel1.TabIndex = 21;
+            // 
+            // LogOutBt
+            // 
+            LogOutBt.BackColor = Color.LightCoral;
+            LogOutBt.Cursor = Cursors.Hand;
+            LogOutBt.Location = new Point(1660, 9);
+            LogOutBt.Name = "LogOutBt";
+            LogOutBt.Size = new Size(182, 32);
+            LogOutBt.TabIndex = 25;
+            LogOutBt.Text = "Refresh";
+            LogOutBt.UseVisualStyleBackColor = false;
+            LogOutBt.Click += RefreshBt_Click;
             // 
             // AdminEngagementLb
             // 
@@ -149,11 +170,38 @@
             // 
             EngagementsTableDg.AllowUserToAddRows = false;
             EngagementsTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            EngagementsTableDg.Location = new Point(267, 95);
+            EngagementsTableDg.Location = new Point(280, 55);
             EngagementsTableDg.Name = "EngagementsTableDg";
             EngagementsTableDg.RowHeadersWidth = 51;
             EngagementsTableDg.Size = new Size(1454, 303);
             EngagementsTableDg.TabIndex = 23;
+            // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chart1.Legends.Add(legend2);
+            chart1.Location = new Point(412, 364);
+            chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chart1.Series.Add(series2);
+            chart1.Size = new Size(375, 375);
+            chart1.TabIndex = 24;
+            chart1.Text = "chart1";
+            // 
+            // Attendance_log_bt
+            // 
+            Attendance_log_bt.BackColor = Color.LightCoral;
+            Attendance_log_bt.Cursor = Cursors.Hand;
+            Attendance_log_bt.Location = new Point(0, 504);
+            Attendance_log_bt.Name = "Attendance_log_bt";
+            Attendance_log_bt.Size = new Size(228, 52);
+            Attendance_log_bt.TabIndex = 26;
+            Attendance_log_bt.Text = "Attendance Log";
+            Attendance_log_bt.UseVisualStyleBackColor = false;
             // 
             // AdminEngagementForm
             // 
@@ -161,7 +209,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_1036481;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1815, 627);
+            ClientSize = new Size(1815, 734);
+            Controls.Add(chart1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(EngagementsTableDg);
@@ -171,6 +220,7 @@
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)EngagementsTableDg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,5 +237,8 @@
         private Panel panel1;
         private Label AdminEngagementLb;
         private DataGridView EngagementsTableDg;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Button LogOutBt;
+        private Button Attendance_log_bt;
     }
 }

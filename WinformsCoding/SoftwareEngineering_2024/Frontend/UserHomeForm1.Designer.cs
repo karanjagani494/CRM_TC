@@ -38,6 +38,7 @@
             EventsBt = new Button();
             HomeBt = new Button();
             panel1 = new Panel();
+            LogOutBt = new Button();
             UserHomeLb = new Label();
             UsefulLinksUserLb = new Label();
             Websitelb = new LinkLabel();
@@ -58,7 +59,7 @@
             WelcomeUserLb.AutoSize = true;
             WelcomeUserLb.BackColor = Color.LightCoral;
             WelcomeUserLb.Font = new Font("Stencil", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            WelcomeUserLb.Location = new Point(802, 87);
+            WelcomeUserLb.Location = new Point(835, 87);
             WelcomeUserLb.Name = "WelcomeUserLb";
             WelcomeUserLb.Size = new Size(348, 27);
             WelcomeUserLb.TabIndex = 16;
@@ -74,10 +75,9 @@
             panel2.Controls.Add(MembershipsBt);
             panel2.Controls.Add(EventsBt);
             panel2.Controls.Add(HomeBt);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 49);
+            panel2.Location = new Point(0, -3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 640);
+            panel2.Size = new Size(234, 836);
             panel2.TabIndex = 15;
             // 
             // QueryBt
@@ -148,19 +148,32 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.RosyBrown;
+            panel1.Controls.Add(LogOutBt);
             panel1.Controls.Add(UserHomeLb);
-            panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1785, 49);
+            panel1.Size = new Size(1846, 60);
             panel1.TabIndex = 14;
+            // 
+            // LogOutBt
+            // 
+            LogOutBt.BackColor = Color.LightCoral;
+            LogOutBt.Cursor = Cursors.Hand;
+            LogOutBt.Location = new Point(1656, 12);
+            LogOutBt.Name = "LogOutBt";
+            LogOutBt.Size = new Size(182, 32);
+            LogOutBt.TabIndex = 4;
+            LogOutBt.Text = "Log Out";
+            LogOutBt.UseVisualStyleBackColor = false;
+            LogOutBt.Click += LogOutBt_Click;
             // 
             // UserHomeLb
             // 
             UserHomeLb.Anchor = AnchorStyles.Top;
             UserHomeLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UserHomeLb.Location = new Point(928, 9);
+            UserHomeLb.Location = new Point(959, 9);
             UserHomeLb.Name = "UserHomeLb";
             UserHomeLb.Size = new Size(99, 25);
             UserHomeLb.TabIndex = 3;
@@ -172,7 +185,7 @@
             UsefulLinksUserLb.AutoSize = true;
             UsefulLinksUserLb.BackColor = Color.LightCoral;
             UsefulLinksUserLb.Font = new Font("Stencil", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UsefulLinksUserLb.Location = new Point(291, 425);
+            UsefulLinksUserLb.Location = new Point(291, 469);
             UsefulLinksUserLb.Name = "UsefulLinksUserLb";
             UsefulLinksUserLb.Size = new Size(167, 27);
             UsefulLinksUserLb.TabIndex = 17;
@@ -184,7 +197,7 @@
             Websitelb.AutoSize = true;
             Websitelb.BackColor = Color.Transparent;
             Websitelb.Font = new Font("Segoe UI Historic", 40.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Websitelb.Location = new Point(349, 502);
+            Websitelb.Location = new Point(382, 590);
             Websitelb.Name = "Websitelb";
             Websitelb.Size = new Size(277, 89);
             Websitelb.TabIndex = 21;
@@ -199,7 +212,7 @@
             IgLink.BackgroundImage = (Image)resources.GetObject("IgLink.BackgroundImage");
             IgLink.BackgroundImageLayout = ImageLayout.Stretch;
             IgLink.Cursor = Cursors.Hand;
-            IgLink.Location = new Point(1560, 502);
+            IgLink.Location = new Point(1593, 590);
             IgLink.Name = "IgLink";
             IgLink.Size = new Size(80, 81);
             IgLink.TabIndex = 20;
@@ -212,7 +225,7 @@
             GmapLink.BackgroundImage = Properties.Resources.Gmaps;
             GmapLink.BackgroundImageLayout = ImageLayout.Stretch;
             GmapLink.Cursor = Cursors.Hand;
-            GmapLink.Location = new Point(815, 502);
+            GmapLink.Location = new Point(848, 590);
             GmapLink.Name = "GmapLink";
             GmapLink.Size = new Size(80, 81);
             GmapLink.TabIndex = 19;
@@ -225,7 +238,7 @@
             FbLink.BackgroundImage = Properties.Resources.fb;
             FbLink.BackgroundImageLayout = ImageLayout.Stretch;
             FbLink.Cursor = Cursors.Hand;
-            FbLink.Location = new Point(1192, 502);
+            FbLink.Location = new Point(1225, 590);
             FbLink.Name = "FbLink";
             FbLink.Size = new Size(80, 81);
             FbLink.TabIndex = 18;
@@ -233,9 +246,10 @@
             // 
             // UserHomeTb
             // 
+            UserHomeTb.Anchor = AnchorStyles.Top;
             UserHomeTb.BackColor = Color.RosyBrown;
             UserHomeTb.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UserHomeTb.Location = new Point(237, 158);
+            UserHomeTb.Location = new Point(256, 158);
             UserHomeTb.Multiline = true;
             UserHomeTb.Name = "UserHomeTb";
             UserHomeTb.Size = new Size(1486, 227);
@@ -248,10 +262,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_1036481;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1785, 689);
+            ClientSize = new Size(1850, 777);
+            Controls.Add(panel2);
             Controls.Add(UserHomeTb);
             Controls.Add(WelcomeUserLb);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(UsefulLinksUserLb);
             Controls.Add(Websitelb);
@@ -288,5 +302,6 @@
         private PictureBox GmapLink;
         private PictureBox FbLink;
         private TextBox UserHomeTb;
+        private Button LogOutBt;
     }
 }
