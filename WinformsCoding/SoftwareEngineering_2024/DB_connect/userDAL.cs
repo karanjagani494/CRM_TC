@@ -221,7 +221,7 @@ namespace SoftwareEngineering_2024.DB_connect
         {
 
 
-            // User doesn't exist, proceed with insertion
+          
             using (MySqlCommand registerCmd = new MySqlCommand(SqlQueries.Payment_query, db.GetConnection()))
             {
 
