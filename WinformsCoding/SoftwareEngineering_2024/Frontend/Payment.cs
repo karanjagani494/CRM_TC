@@ -9,6 +9,8 @@ namespace SoftwareEngineering_2024
     {
 
         private userDAL userDAL = new userDAL();
+        
+        int member_id = UserContext.Memberid;
 
         public Payment()
         {
@@ -16,6 +18,8 @@ namespace SoftwareEngineering_2024
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
             cardNo_txt.KeyPress += Opener.Number_KeyPress;
             Cvv_txt.KeyPress += Opener.Number_KeyPress;
+            cardNo_txt.TextChanged += (s, e) => Opener.ValidateNumericTextBox(cardNo_txt);
+            Cvv_txt.TextChanged += (s, e) => Opener.ValidateNumericTextBox(Cvv_txt);
 
         }
 
@@ -27,7 +31,7 @@ namespace SoftwareEngineering_2024
 
             if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
             {
-                Opener.OpenForm(this, typeof(ThankYouForm));
+                
 
 
                 string str1 = CardName_txt.Text;
@@ -51,6 +55,8 @@ namespace SoftwareEngineering_2024
                 {
                     //this will count this form if the form is completed then it will store true
                     FormTracker.StepsCompleted[4] = true;
+                    bool Register_value = userDAL.SaveisRegisToDatabase(member_id);
+                    Opener.OpenForm(this, typeof(ThankYouForm));
                 }
 
             }

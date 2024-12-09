@@ -15,9 +15,12 @@ namespace SoftwareEngineering_2024
         public AdminEngagementForm()
         {
             InitializeComponent();
-            FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt);
+            FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt, Attendance_log_bt);
         }
 
-
+        private void RefreshBt_Click(object sender, EventArgs e)
+        {
+            Opener.OpenForm(this ,typeof(AdminEngagementForm));
+        }
     }
 }

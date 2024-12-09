@@ -30,6 +30,7 @@
         {
             button2 = new Button();
             panel2 = new Panel();
+            Attendance_log_bt = new Button();
             AdminQueryBt = new Button();
             EngagementBt = new Button();
             AdminBookingsBt = new Button();
@@ -39,7 +40,10 @@
             panel1 = new Panel();
             AdminMembersLb = new Label();
             AttendanceLogTableDg = new DataGridView();
-            button1 = new Button();
+            MemQuerySubmitBt = new Button();
+            querytxt = new TextBox();
+            MemQ1Bt = new Button();
+            MemQ2Bt = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AttendanceLogTableDg).BeginInit();
@@ -58,7 +62,7 @@
             // 
             panel2.AutoSize = true;
             panel2.BackColor = Color.RosyBrown;
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(Attendance_log_bt);
             panel2.Controls.Add(AdminQueryBt);
             panel2.Controls.Add(EngagementBt);
             panel2.Controls.Add(AdminBookingsBt);
@@ -68,8 +72,20 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 625);
+            panel2.Size = new Size(234, 733);
             panel2.TabIndex = 22;
+            // 
+            // Attendance_log_bt
+            // 
+            Attendance_log_bt.BackColor = Color.LightCoral;
+            Attendance_log_bt.Cursor = Cursors.Hand;
+            Attendance_log_bt.Location = new Point(3, 509);
+            Attendance_log_bt.Name = "Attendance_log_bt";
+            Attendance_log_bt.Size = new Size(228, 52);
+            Attendance_log_bt.TabIndex = 6;
+            Attendance_log_bt.Text = "Attendance Log";
+            Attendance_log_bt.UseVisualStyleBackColor = false;
+            Attendance_log_bt.Click += button1_Click;
             // 
             // AdminQueryBt
             // 
@@ -144,14 +160,14 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1779, 49);
+            panel1.Size = new Size(1782, 49);
             panel1.TabIndex = 21;
             // 
             // AdminMembersLb
             // 
             AdminMembersLb.Anchor = AnchorStyles.Top;
             AdminMembersLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminMembersLb.Location = new Point(820, 9);
+            AdminMembersLb.Location = new Point(822, 9);
             AdminMembersLb.Name = "AdminMembersLb";
             AdminMembersLb.Size = new Size(249, 25);
             AdminMembersLb.TabIndex = 3;
@@ -161,34 +177,70 @@
             // AttendanceLogTableDg
             // 
             AttendanceLogTableDg.AllowUserToAddRows = false;
+            AttendanceLogTableDg.BackgroundColor = Color.RosyBrown;
             AttendanceLogTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            AttendanceLogTableDg.Location = new Point(267, 95);
+            AttendanceLogTableDg.Location = new Point(540, 90);
             AttendanceLogTableDg.Name = "AttendanceLogTableDg";
             AttendanceLogTableDg.RowHeadersWidth = 51;
-            AttendanceLogTableDg.Size = new Size(1454, 303);
+            AttendanceLogTableDg.Size = new Size(811, 361);
             AttendanceLogTableDg.TabIndex = 23;
             // 
-            // button1
+            // MemQuerySubmitBt
             // 
-            button1.BackColor = Color.LightCoral;
-            button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(3, 509);
-            button1.Name = "button1";
-            button1.Size = new Size(228, 52);
-            button1.TabIndex = 6;
-            button1.Text = "User Queries/Feedback";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            MemQuerySubmitBt.BackColor = Color.LightCoral;
+            MemQuerySubmitBt.Cursor = Cursors.Hand;
+            MemQuerySubmitBt.Location = new Point(821, 716);
+            MemQuerySubmitBt.Name = "MemQuerySubmitBt";
+            MemQuerySubmitBt.Size = new Size(229, 52);
+            MemQuerySubmitBt.TabIndex = 30;
+            MemQuerySubmitBt.Text = "Enter";
+            MemQuerySubmitBt.UseVisualStyleBackColor = false;
+            // 
+            // querytxt
+            // 
+            querytxt.Location = new Point(615, 654);
+            querytxt.Name = "querytxt";
+            querytxt.Size = new Size(642, 27);
+            querytxt.TabIndex = 29;
+            // 
+            // MemQ1Bt
+            // 
+            MemQ1Bt.BackColor = Color.LightCoral;
+            MemQ1Bt.Cursor = Cursors.Hand;
+            MemQ1Bt.Location = new Point(396, 548);
+            MemQ1Bt.Name = "MemQ1Bt";
+            MemQ1Bt.Size = new Size(229, 52);
+            MemQ1Bt.TabIndex = 28;
+            MemQ1Bt.Text = "Q1";
+            MemQ1Bt.UseVisualStyleBackColor = false;
+            // 
+            // MemQ2Bt
+            // 
+            MemQ2Bt.BackColor = Color.LightCoral;
+            MemQ2Bt.Cursor = Cursors.Hand;
+            MemQ2Bt.Location = new Point(1295, 548);
+            MemQ2Bt.Name = "MemQ2Bt";
+            MemQ2Bt.Size = new Size(229, 52);
+            MemQ2Bt.TabIndex = 27;
+            MemQ2Bt.Text = "q2";
+            MemQ2Bt.UseVisualStyleBackColor = false;
             // 
             // Attendance_Log
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1779, 674);
+            BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1782, 782);
+            Controls.Add(MemQuerySubmitBt);
+            Controls.Add(querytxt);
+            Controls.Add(MemQ1Bt);
+            Controls.Add(MemQ2Bt);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(AttendanceLogTableDg);
             Controls.Add(button2);
+            DoubleBuffered = true;
             Name = "Attendance_Log";
             Text = "Attendance_Log";
             panel2.ResumeLayout(false);
@@ -210,6 +262,10 @@
         private Panel panel1;
         private Label AdminMembersLb;
         private DataGridView AttendanceLogTableDg;
-        private Button button1;
+        private Button Attendance_log_bt;
+        private Button MemQuerySubmitBt;
+        private TextBox querytxt;
+        private Button MemQ1Bt;
+        private Button MemQ2Bt;
     }
 }

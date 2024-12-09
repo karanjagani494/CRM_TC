@@ -61,7 +61,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 627);
+            panel2.Size = new Size(234, 737);
             panel2.TabIndex = 19;
             // 
             // QueryBt
@@ -74,6 +74,7 @@
             QueryBt.TabIndex = 5;
             QueryBt.Text = "Queries/Feedback";
             QueryBt.UseVisualStyleBackColor = false;
+            QueryBt.Click += QueryBt_Click;
             // 
             // SpaceBt
             // 
@@ -137,14 +138,14 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1814, 49);
+            panel1.Size = new Size(1779, 49);
             panel1.TabIndex = 18;
             // 
             // UserEventsLb
             // 
             UserEventsLb.Anchor = AnchorStyles.Top;
             UserEventsLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UserEventsLb.Location = new Point(878, 9);
+            UserEventsLb.Location = new Point(860, 9);
             UserEventsLb.Name = "UserEventsLb";
             UserEventsLb.Size = new Size(119, 25);
             UserEventsLb.TabIndex = 3;
@@ -152,21 +153,24 @@
             // 
             // UpEventsDg
             // 
+            UpEventsDg.AllowUserToAddRows = false;
+            UpEventsDg.AllowUserToDeleteRows = false;
             UpEventsDg.Anchor = AnchorStyles.None;
             UpEventsDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            UpEventsDg.Location = new Point(318, 402);
+            UpEventsDg.Location = new Point(300, 468);
             UpEventsDg.Name = "UpEventsDg";
             UpEventsDg.RowHeadersWidth = 51;
-            UpEventsDg.Size = new Size(541, 202);
+            UpEventsDg.ShowCellErrors = false;
+            UpEventsDg.Size = new Size(739, 257);
             UpEventsDg.TabIndex = 23;
             // 
             // ViewEventsLinkBt
             // 
             ViewEventsLinkBt.BackColor = Color.LightCoral;
             ViewEventsLinkBt.Cursor = Cursors.Hand;
-            ViewEventsLinkBt.Location = new Point(1258, 300);
+            ViewEventsLinkBt.Location = new Point(1417, 364);
             ViewEventsLinkBt.Name = "ViewEventsLinkBt";
-            ViewEventsLinkBt.Size = new Size(228, 95);
+            ViewEventsLinkBt.Size = new Size(228, 107);
             ViewEventsLinkBt.TabIndex = 24;
             ViewEventsLinkBt.Text = "View more Events";
             ViewEventsLinkBt.UseVisualStyleBackColor = false;
@@ -178,7 +182,7 @@
             EventsTodayLb.AutoSize = true;
             EventsTodayLb.BackColor = Color.RosyBrown;
             EventsTodayLb.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
-            EventsTodayLb.Location = new Point(318, 65);
+            EventsTodayLb.Location = new Point(300, 99);
             EventsTodayLb.Name = "EventsTodayLb";
             EventsTodayLb.Size = new Size(184, 27);
             EventsTodayLb.TabIndex = 25;
@@ -190,7 +194,7 @@
             UpcomingEventsLb.AutoSize = true;
             UpcomingEventsLb.BackColor = Color.RosyBrown;
             UpcomingEventsLb.Font = new Font("Stencil", 13.8F, FontStyle.Bold);
-            UpcomingEventsLb.Location = new Point(318, 368);
+            UpcomingEventsLb.Location = new Point(300, 423);
             UpcomingEventsLb.Name = "UpcomingEventsLb";
             UpcomingEventsLb.Size = new Size(230, 27);
             UpcomingEventsLb.TabIndex = 26;
@@ -198,11 +202,12 @@
             // 
             // TodayEventsDg
             // 
+            TodayEventsDg.Anchor = AnchorStyles.None;
             TodayEventsDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TodayEventsDg.Location = new Point(318, 107);
+            TodayEventsDg.Location = new Point(300, 147);
             TodayEventsDg.Name = "TodayEventsDg";
             TodayEventsDg.RowHeadersWidth = 51;
-            TodayEventsDg.Size = new Size(535, 204);
+            TodayEventsDg.Size = new Size(739, 257);
             TodayEventsDg.TabIndex = 27;
             // 
             // UserEventsForm
@@ -212,7 +217,7 @@
             AutoSize = true;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1814, 676);
+            ClientSize = new Size(1779, 786);
             Controls.Add(TodayEventsDg);
             Controls.Add(UpcomingEventsLb);
             Controls.Add(EventsTodayLb);

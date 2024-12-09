@@ -31,10 +31,7 @@ namespace SoftwareEngineering_2024
 
         private void ProceedMembBt_Click(object? sender, EventArgs e)
         {
-            Opener.OpenForm(this, typeof(MembershipForm)); // Opens MembershipForm and stores TagsForm
-
-
-
+ 
             List<string> TAG = GetSelectedInterest(); // Ensure you are calling the correct method
 
             if (TAG != null && TAG.Count > 0) // Check if the list is not null and contains items
@@ -43,7 +40,7 @@ namespace SoftwareEngineering_2024
                 {
 
                     bool Registered = userDAL.SaveTagToDatabase(TAG);
-                    MessageBox.Show("Interests saved successfully!");
+                    MessageBox.Show("Tags saved successfully!");
                     FormTracker.StepsCompleted[2] = true; //this will count this form if the form is completed then it will store true
                 }
                 catch (Exception ex)
@@ -53,8 +50,10 @@ namespace SoftwareEngineering_2024
             }
             else
             {
-                MessageBox.Show("Please select at least one interest.");
+                MessageBox.Show("Please select at least one tag.");
             }
+
+            Opener.OpenForm(this, typeof(MembershipForm)); // Opens MembershipForm and stores TagsForm
         }
 
 
