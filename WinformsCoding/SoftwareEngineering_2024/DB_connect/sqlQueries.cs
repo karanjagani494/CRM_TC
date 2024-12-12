@@ -27,13 +27,9 @@ namespace SoftwareEngineering_2024.DB_connect
 
         //public const string CheckUserExist = "SELECT 1 FROM Users WHERE Username = @Username OR Email = @Email LIMIT 1";
 
-        // Customer-related queries
-        //public const string InsertCustomer = "INSERT INTO Customer (Name, Email, Phone) VALUES (@Name, @Email, @Phone)";
-        //public const string GetAllCustomers = "SELECT * FROM Customer";
-        //public const string UpdateCustomer = "UPDATE Customer SET Name = @Name, Email = @Email, Phone = @Phone WHERE CustomerID = @CustomerID";
-        //public const string DeleteCustomer = "DELETE FROM Customer WHERE CustomerID = @CustomerID";
+        
 
-        // You can add more queries here as needed, following the same format
+       
     }
 
 
