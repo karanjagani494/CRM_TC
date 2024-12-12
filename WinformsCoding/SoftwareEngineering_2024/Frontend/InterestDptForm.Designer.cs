@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterestDptForm));
             panel1 = new Panel();
             Sharing = new CheckBox();
@@ -43,15 +42,11 @@
             WelcomeSignUp = new Label();
             TCLogo = new PictureBox();
             PreviousPageBt = new Button();
-            adminDALBindingSource = new BindingSource(components);
-            adminDALBindingSource1 = new BindingSource(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IgLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GmapLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TCLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -217,7 +212,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1714, 748);
+            ClientSize = new Size(1839, 802);
             Controls.Add(PreviousPageBt);
             Controls.Add(panel1);
             Controls.Add(TCLogo);
@@ -230,8 +225,6 @@
             ((System.ComponentModel.ISupportInitialize)GmapLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)FbLink).EndInit();
             ((System.ComponentModel.ISupportInitialize)TCLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)adminDALBindingSource1).EndInit();
             ResumeLayout(false);
         }
 
@@ -250,7 +243,5 @@
         private CheckBox Happening;
         private CheckBox Learning;
         private Button PreviousPageBt;
-        private BindingSource adminDALBindingSource;
-        private BindingSource adminDALBindingSource1;
     }
 }

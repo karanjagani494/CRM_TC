@@ -33,5 +33,23 @@ namespace SoftwareEngineering_2024
         {
             Opener.OpenForm(this, typeof(AdminEventsForm));
         }
+
+        private void MemQ1Bt_Click(object sender, EventArgs e)
+        {
+            string query2 = "SELECT membership_id, COUNT(*) AS member_count FROM members GROUP BY membership_id ORDER BY membership_id";
+            ShowTables.GRIDVIEW(EventsTableDg, query2);
+        }
+
+        private void MemQuerySubmitBt_Click(object sender, EventArgs e)
+        {
+            string query3 = querytxt.Text;
+            ShowTables.GRIDVIEW(EventsTableDg, query3);
+        }
+
+        private void Q2_Click(object sender, EventArgs e)
+        {
+            string query1 = "SELECT membership_id, COUNT(*) AS member_count FROM members GROUP BY membership_id ORDER BY membership_id";
+            ShowTables.GRIDVIEW(EventsTableDg, query1);
+        }
     }
 }

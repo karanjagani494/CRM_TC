@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             panel2 = new Panel();
+            Attendance_log_bt = new Button();
             AdminQueryBt = new Button();
             EngagementBt = new Button();
             AdminBookingsBt = new Button();
@@ -46,8 +47,8 @@
             MemQ2Bt = new Button();
             MemQ1Bt = new Button();
             querytxt = new TextBox();
-            MemQuerySubmitBt = new Button();
-            Attendance_log_bt = new Button();
+            DeleteRecordBt = new Button();
+            DeleteRecordLb = new Label();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminDALBindingSource).BeginInit();
@@ -70,8 +71,19 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(235, 705);
+            panel2.Size = new Size(235, 738);
             panel2.TabIndex = 19;
+            // 
+            // Attendance_log_bt
+            // 
+            Attendance_log_bt.BackColor = Color.LightCoral;
+            Attendance_log_bt.Cursor = Cursors.Hand;
+            Attendance_log_bt.Location = new Point(0, 512);
+            Attendance_log_bt.Name = "Attendance_log_bt";
+            Attendance_log_bt.Size = new Size(228, 52);
+            Attendance_log_bt.TabIndex = 7;
+            Attendance_log_bt.Text = "Attendance Log";
+            Attendance_log_bt.UseVisualStyleBackColor = false;
             // 
             // AdminQueryBt
             // 
@@ -147,7 +159,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1790, 49);
+            panel1.Size = new Size(1815, 49);
             panel1.TabIndex = 18;
             // 
             // LogOutBt
@@ -166,7 +178,7 @@
             // 
             AdminMembersLb.Anchor = AnchorStyles.Top;
             AdminMembersLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminMembersLb.Location = new Point(892, 9);
+            AdminMembersLb.Location = new Point(904, 9);
             AdminMembersLb.Name = "AdminMembersLb";
             AdminMembersLb.Size = new Size(147, 25);
             AdminMembersLb.TabIndex = 4;
@@ -178,7 +190,7 @@
             MembersTableDg.BackgroundColor = Color.RosyBrown;
             MembersTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             MembersTableDg.ImeMode = ImeMode.Disable;
-            MembersTableDg.Location = new Point(467, 74);
+            MembersTableDg.Location = new Point(469, 74);
             MembersTableDg.Margin = new Padding(3, 4, 3, 4);
             MembersTableDg.Name = "MembersTableDg";
             MembersTableDg.RowHeadersWidth = 51;
@@ -189,7 +201,7 @@
             // 
             MemQ2Bt.BackColor = Color.LightCoral;
             MemQ2Bt.Cursor = Cursors.Hand;
-            MemQ2Bt.Location = new Point(1343, 520);
+            MemQ2Bt.Location = new Point(1328, 500);
             MemQ2Bt.Name = "MemQ2Bt";
             MemQ2Bt.Size = new Size(229, 52);
             MemQ2Bt.TabIndex = 23;
@@ -201,7 +213,7 @@
             // 
             MemQ1Bt.BackColor = Color.LightCoral;
             MemQ1Bt.Cursor = Cursors.Hand;
-            MemQ1Bt.Location = new Point(444, 520);
+            MemQ1Bt.Location = new Point(483, 500);
             MemQ1Bt.Name = "MemQ1Bt";
             MemQ1Bt.Size = new Size(229, 52);
             MemQ1Bt.TabIndex = 24;
@@ -211,33 +223,32 @@
             // 
             // querytxt
             // 
-            querytxt.Location = new Point(663, 626);
+            querytxt.Location = new Point(698, 629);
             querytxt.Name = "querytxt";
             querytxt.Size = new Size(642, 27);
             querytxt.TabIndex = 25;
             // 
-            // MemQuerySubmitBt
+            // DeleteRecordBt
             // 
-            MemQuerySubmitBt.BackColor = Color.LightCoral;
-            MemQuerySubmitBt.Cursor = Cursors.Hand;
-            MemQuerySubmitBt.Location = new Point(869, 688);
-            MemQuerySubmitBt.Name = "MemQuerySubmitBt";
-            MemQuerySubmitBt.Size = new Size(229, 52);
-            MemQuerySubmitBt.TabIndex = 26;
-            MemQuerySubmitBt.Text = "Enter";
-            MemQuerySubmitBt.UseVisualStyleBackColor = false;
-            MemQuerySubmitBt.Click += MemQuerySubmitBt_Click;
+            DeleteRecordBt.BackColor = Color.LightCoral;
+            DeleteRecordBt.Cursor = Cursors.Hand;
+            DeleteRecordBt.Location = new Point(904, 683);
+            DeleteRecordBt.Name = "DeleteRecordBt";
+            DeleteRecordBt.Size = new Size(229, 52);
+            DeleteRecordBt.TabIndex = 27;
+            DeleteRecordBt.Text = "Delete Record";
+            DeleteRecordBt.UseVisualStyleBackColor = false;
+            DeleteRecordBt.Click += button3_Click;
             // 
-            // Attendance_log_bt
+            // DeleteRecordLb
             // 
-            Attendance_log_bt.BackColor = Color.LightCoral;
-            Attendance_log_bt.Cursor = Cursors.Hand;
-            Attendance_log_bt.Location = new Point(0, 512);
-            Attendance_log_bt.Name = "Attendance_log_bt";
-            Attendance_log_bt.Size = new Size(228, 52);
-            Attendance_log_bt.TabIndex = 7;
-            Attendance_log_bt.Text = "Attendance Log";
-            Attendance_log_bt.UseVisualStyleBackColor = false;
+            DeleteRecordLb.AutoSize = true;
+            DeleteRecordLb.BackColor = Color.RosyBrown;
+            DeleteRecordLb.Location = new Point(813, 606);
+            DeleteRecordLb.Name = "DeleteRecordLb";
+            DeleteRecordLb.Size = new Size(390, 20);
+            DeleteRecordLb.TabIndex = 28;
+            DeleteRecordLb.Text = "Submit the member_id whose record needs to be deleted";
             // 
             // AdminMembersForm
             // 
@@ -245,8 +256,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1790, 754);
-            Controls.Add(MemQuerySubmitBt);
+            ClientSize = new Size(1815, 787);
+            Controls.Add(DeleteRecordLb);
+            Controls.Add(DeleteRecordBt);
             Controls.Add(querytxt);
             Controls.Add(MemQ1Bt);
             Controls.Add(MemQ2Bt);
@@ -288,8 +300,9 @@
         private Button MemQ2Bt;
         private Button MemQ1Bt;
         private TextBox querytxt;
-        private Button MemQuerySubmitBt;
         private Button LogOutBt;
         private Button Attendance_log_bt;
+        private Button DeleteRecordBt;
+        private Label DeleteRecordLb;
     }
 }

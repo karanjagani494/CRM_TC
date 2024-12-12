@@ -21,15 +21,17 @@ namespace SoftwareEngineering_2024
             FormOpener.OpenAdminDashboardPages(AdminHomeBt, MembersBt, StaffEventsBt, AdminBookingsBt, EngagementBt, AdminQueryBt, Attendance_log_bt);
         }
 
-        private void AdminQueriesFeedbacksForm_Load(object sender, EventArgs e)
-        {
-            string query = "SELECT \r\n    i.inquiries_id AS InquiryID,\r\n    i.member_id AS MemberID,\r\n    i.inquiry_description AS InquiryDescription,\r\n    i.inquiry_mode AS InquiryMode,\r\n    i.inquiry_type_id AS InquiryTypeID,\r\n    i.user_category_id AS UserCategoryID,\r\n    i.inquiry_date AS InquiryDate,\r\n    i.follow_up_count AS FollowUpCount,\r\n    i.status AS Status\r\nFROM \r\n    inquiries_and_feedback i;\r\n";
-            ShowTables.GRIDVIEW(QueriesFeedbackTableDg, query);
-        }
+
 
         private void RefreshBt_Click(object sender, EventArgs e)
         {
             Opener.OpenForm(this, typeof(AdminQueriesFeedbackForm));
+        }
+
+        private void AdminQueriesFeedbackLoad(object sender, EventArgs e)
+        {
+            string query = "SELECT \r\n    `queries_feedback`.`Queries_Feedback_id` AS `Feedback_ID`,\r\n    `queries_feedback`.`Query_Type` AS `Type`,\r\n    `queries_feedback`.`Queries_Feedback_description` AS `Description`,\r\n    `queries_feedback`.`member_id` AS `Member_ID`\r\nFROM \r\n    `fresh`.`queries_feedback`;\r\n";
+            ShowTables.GRIDVIEW(QueriesFeedbackTableDg, query);
         }
     }
 }

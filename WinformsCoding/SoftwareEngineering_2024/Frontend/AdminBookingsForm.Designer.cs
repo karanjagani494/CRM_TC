@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            Attendance_log_bt = new Button();
             AdminQueryBt = new Button();
             EngagementBt = new Button();
             AdminBookingsBt = new Button();
@@ -39,7 +40,10 @@
             LogOutBt = new Button();
             AdminBookingsLb = new Label();
             BookingsTableDg = new DataGridView();
-            Attendance_log_bt = new Button();
+            Q2 = new Button();
+            MemQuerySubmitBt = new Button();
+            querytxt = new TextBox();
+            MemQ1Bt = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BookingsTableDg).BeginInit();
@@ -61,6 +65,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(234, 734);
             panel2.TabIndex = 22;
+            // 
+            // Attendance_log_bt
+            // 
+            Attendance_log_bt.BackColor = Color.LightCoral;
+            Attendance_log_bt.Cursor = Cursors.Hand;
+            Attendance_log_bt.Location = new Point(3, 509);
+            Attendance_log_bt.Name = "Attendance_log_bt";
+            Attendance_log_bt.Size = new Size(228, 52);
+            Attendance_log_bt.TabIndex = 24;
+            Attendance_log_bt.Text = "Attendance Log";
+            Attendance_log_bt.UseVisualStyleBackColor = false;
             // 
             // AdminQueryBt
             // 
@@ -173,16 +188,48 @@
             BookingsTableDg.Size = new Size(709, 342);
             BookingsTableDg.TabIndex = 23;
             // 
-            // Attendance_log_bt
+            // Q2
             // 
-            Attendance_log_bt.BackColor = Color.LightCoral;
-            Attendance_log_bt.Cursor = Cursors.Hand;
-            Attendance_log_bt.Location = new Point(3, 509);
-            Attendance_log_bt.Name = "Attendance_log_bt";
-            Attendance_log_bt.Size = new Size(228, 52);
-            Attendance_log_bt.TabIndex = 24;
-            Attendance_log_bt.Text = "Attendance Log";
-            Attendance_log_bt.UseVisualStyleBackColor = false;
+            Q2.BackColor = Color.LightCoral;
+            Q2.Cursor = Cursors.Hand;
+            Q2.Location = new Point(1298, 535);
+            Q2.Name = "Q2";
+            Q2.Size = new Size(229, 52);
+            Q2.TabIndex = 35;
+            Q2.Text = "Q2";
+            Q2.UseVisualStyleBackColor = false;
+            Q2.Click += Q2_Click;
+            // 
+            // MemQuerySubmitBt
+            // 
+            MemQuerySubmitBt.BackColor = Color.LightCoral;
+            MemQuerySubmitBt.Cursor = Cursors.Hand;
+            MemQuerySubmitBt.Location = new Point(879, 703);
+            MemQuerySubmitBt.Name = "MemQuerySubmitBt";
+            MemQuerySubmitBt.Size = new Size(229, 52);
+            MemQuerySubmitBt.TabIndex = 34;
+            MemQuerySubmitBt.Text = "Enter";
+            MemQuerySubmitBt.UseVisualStyleBackColor = false;
+            MemQuerySubmitBt.Click += MemQuerySubmitBt_Click;
+            // 
+            // querytxt
+            // 
+            querytxt.Location = new Point(673, 641);
+            querytxt.Name = "querytxt";
+            querytxt.Size = new Size(642, 27);
+            querytxt.TabIndex = 33;
+            // 
+            // MemQ1Bt
+            // 
+            MemQ1Bt.BackColor = Color.LightCoral;
+            MemQ1Bt.Cursor = Cursors.Hand;
+            MemQ1Bt.Location = new Point(454, 535);
+            MemQ1Bt.Name = "MemQ1Bt";
+            MemQ1Bt.Size = new Size(229, 52);
+            MemQ1Bt.TabIndex = 32;
+            MemQ1Bt.Text = "Q1";
+            MemQ1Bt.UseVisualStyleBackColor = false;
+            MemQ1Bt.Click += MemQ1Bt_Click;
             // 
             // AdminBookingsForm
             // 
@@ -191,6 +238,10 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1782, 783);
+            Controls.Add(Q2);
+            Controls.Add(MemQuerySubmitBt);
+            Controls.Add(querytxt);
+            Controls.Add(MemQ1Bt);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(BookingsTableDg);
@@ -219,5 +270,9 @@
         private DataGridView BookingsTableDg;
         private Button LogOutBt;
         private Button Attendance_log_bt;
+        private Button Q2;
+        private Button MemQuerySubmitBt;
+        private TextBox querytxt;
+        private Button MemQ1Bt;
     }
 }

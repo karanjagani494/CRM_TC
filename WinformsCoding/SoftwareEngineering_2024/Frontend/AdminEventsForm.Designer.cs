@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            Attendance_log_bt = new Button();
             AdminQueryBt = new Button();
             EngagementBt = new Button();
             AdminBookingsBt = new Button();
@@ -42,8 +43,7 @@
             MemQuerySubmitBt = new Button();
             querytxt = new TextBox();
             MemQ1Bt = new Button();
-            MemQ2Bt = new Button();
-            Attendance_log_bt = new Button();
+            Q2 = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)EventsTableDg).BeginInit();
@@ -63,8 +63,19 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 734);
+            panel2.Size = new Size(234, 856);
             panel2.TabIndex = 22;
+            // 
+            // Attendance_log_bt
+            // 
+            Attendance_log_bt.BackColor = Color.LightCoral;
+            Attendance_log_bt.Cursor = Cursors.Hand;
+            Attendance_log_bt.Location = new Point(3, 519);
+            Attendance_log_bt.Name = "Attendance_log_bt";
+            Attendance_log_bt.Size = new Size(228, 52);
+            Attendance_log_bt.TabIndex = 7;
+            Attendance_log_bt.Text = "Attendance Log";
+            Attendance_log_bt.UseVisualStyleBackColor = false;
             // 
             // AdminQueryBt
             // 
@@ -140,7 +151,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1789, 49);
+            panel1.Size = new Size(1857, 49);
             panel1.TabIndex = 21;
             // 
             // LogOutBt
@@ -159,7 +170,7 @@
             // 
             AdminEventsLb.Anchor = AnchorStyles.Top;
             AdminEventsLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminEventsLb.Location = new Point(962, 9);
+            AdminEventsLb.Location = new Point(996, 9);
             AdminEventsLb.Name = "AdminEventsLb";
             AdminEventsLb.Size = new Size(147, 25);
             AdminEventsLb.TabIndex = 3;
@@ -171,7 +182,7 @@
             EventsTableDg.BackgroundColor = Color.RosyBrown;
             EventsTableDg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             EventsTableDg.GridColor = Color.IndianRed;
-            EventsTableDg.Location = new Point(552, 83);
+            EventsTableDg.Location = new Point(608, 93);
             EventsTableDg.Name = "EventsTableDg";
             EventsTableDg.RowHeadersWidth = 51;
             EventsTableDg.Size = new Size(821, 303);
@@ -181,16 +192,17 @@
             // 
             MemQuerySubmitBt.BackColor = Color.LightCoral;
             MemQuerySubmitBt.Cursor = Cursors.Hand;
-            MemQuerySubmitBt.Location = new Point(853, 643);
+            MemQuerySubmitBt.Location = new Point(873, 784);
             MemQuerySubmitBt.Name = "MemQuerySubmitBt";
             MemQuerySubmitBt.Size = new Size(229, 52);
             MemQuerySubmitBt.TabIndex = 30;
             MemQuerySubmitBt.Text = "Enter";
             MemQuerySubmitBt.UseVisualStyleBackColor = false;
+            MemQuerySubmitBt.Click += MemQuerySubmitBt_Click;
             // 
             // querytxt
             // 
-            querytxt.Location = new Point(647, 581);
+            querytxt.Location = new Point(667, 722);
             querytxt.Name = "querytxt";
             querytxt.Size = new Size(642, 27);
             querytxt.TabIndex = 29;
@@ -199,34 +211,25 @@
             // 
             MemQ1Bt.BackColor = Color.LightCoral;
             MemQ1Bt.Cursor = Cursors.Hand;
-            MemQ1Bt.Location = new Point(428, 475);
+            MemQ1Bt.Location = new Point(448, 616);
             MemQ1Bt.Name = "MemQ1Bt";
             MemQ1Bt.Size = new Size(229, 52);
             MemQ1Bt.TabIndex = 28;
             MemQ1Bt.Text = "Q1";
             MemQ1Bt.UseVisualStyleBackColor = false;
+            MemQ1Bt.Click += MemQ1Bt_Click;
             // 
-            // MemQ2Bt
+            // Q2
             // 
-            MemQ2Bt.BackColor = Color.LightCoral;
-            MemQ2Bt.Cursor = Cursors.Hand;
-            MemQ2Bt.Location = new Point(1327, 475);
-            MemQ2Bt.Name = "MemQ2Bt";
-            MemQ2Bt.Size = new Size(229, 52);
-            MemQ2Bt.TabIndex = 27;
-            MemQ2Bt.Text = "q2";
-            MemQ2Bt.UseVisualStyleBackColor = false;
-            // 
-            // Attendance_log_bt
-            // 
-            Attendance_log_bt.BackColor = Color.LightCoral;
-            Attendance_log_bt.Cursor = Cursors.Hand;
-            Attendance_log_bt.Location = new Point(3, 519);
-            Attendance_log_bt.Name = "Attendance_log_bt";
-            Attendance_log_bt.Size = new Size(228, 52);
-            Attendance_log_bt.TabIndex = 7;
-            Attendance_log_bt.Text = "Attendance Log";
-            Attendance_log_bt.UseVisualStyleBackColor = false;
+            Q2.BackColor = Color.LightCoral;
+            Q2.Cursor = Cursors.Hand;
+            Q2.Location = new Point(1443, 616);
+            Q2.Name = "Q2";
+            Q2.Size = new Size(229, 52);
+            Q2.TabIndex = 31;
+            Q2.Text = "Q2";
+            Q2.UseVisualStyleBackColor = false;
+            Q2.Click += Q2_Click;
             // 
             // AdminEventsForm
             // 
@@ -234,11 +237,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1789, 783);
+            ClientSize = new Size(1857, 905);
+            Controls.Add(Q2);
             Controls.Add(MemQuerySubmitBt);
             Controls.Add(querytxt);
             Controls.Add(MemQ1Bt);
-            Controls.Add(MemQ2Bt);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(EventsTableDg);
@@ -271,5 +274,6 @@
         private Button MemQ1Bt;
         private Button MemQ2Bt;
         private Button Attendance_log_bt;
+        private Button Q2;
     }
 }
