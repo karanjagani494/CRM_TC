@@ -33,22 +33,22 @@ namespace SoftwareEngineering_2024
 
         }
 
-
         private void MemQ2Bt_Click(object sender, EventArgs e)
         {
             string query2 = "SELECT membership_id, COUNT(*) AS member_count FROM members GROUP BY membership_id ORDER BY membership_id";
             ShowTables.GRIDVIEW(MembersTableDg, query2);
         }
 
-        private void MemQuerySubmitBt_Click(object sender, EventArgs e)
-        {
-            string query3 = querytxt.Text;
-            ShowTables.GRIDVIEW(MembersTableDg, query3);
-        }
+
 
         private void RefreshBt_Click(object sender, EventArgs e)
         {
-            Opener.OpenForm(this , typeof(AdminMembersForm));
+            Opener.OpenForm(this, typeof(AdminMembersForm));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ShowTables.DeleteRecord("Members", "member_id", querytxt);
         }
     }
 }

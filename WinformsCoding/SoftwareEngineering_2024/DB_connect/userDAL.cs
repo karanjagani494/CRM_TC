@@ -247,6 +247,56 @@ namespace SoftwareEngineering_2024.DB_connect
 
 
 
+        public bool InsertMemberInterests(CheckBox checkBox1, CheckBox checkBox2, CheckBox checkBox3, CheckBox checkBox4, CheckBox checkBox5)
+        {
+            List<int> checkedInterestIds = new List<int>();
+
+            // Array of checkboxes to iterate through
+            CheckBox[] checkBoxes = { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5 };
+
+            // Add the interest IDs of checked checkboxes to the list
+            foreach (CheckBox checkBox in checkBoxes)
+            {
+                if (checkBox.Checked && checkBox.Tag != null && int.TryParse(checkBox.Tag.ToString(), out int interestId))
+                {
+                    checkedInterestIds.Add(interestId);
+                }
+            }
+
+            // Use your existing db class to execute the insert for each interest
+            using (MySqlCommand command = new MySqlCommand("INSERT INTO `member_interest` (`interest_id`, `member_id`) VALUES (@interest_id, @member_id)", db.GetConnection()))
+            {
+                try
+                {
+                    db.OpenConnection();
+
+                    // Prepare the parameters once and reuse them in the loop
+                    command.Parameters.Add("@interest_id", MySqlDbType.Int32);
+                    command.Parameters.AddWithValue("@member_id", id);
+
+                    // Iterate through the interest IDs and execute the insert for each
+                    foreach (int interestId in checkedInterestIds)
+                    {
+                        command.Parameters.AddWithValue("@interest_id", interestId);
+                        command.ExecuteNonQuery(); // Insert the interest for the member
+                    }
+
+                    db.CloseConnection();
+                    return true; // Success if at least one row is inserted
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inserting interests: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    db.CloseConnection();
+                    return false;
+                }
+            }
+        }
+
+
+
+
+
         public bool Payment_infoToDatabse(string CardHolder_name, string Card_no, string Cvv, string House_no, string City, string State, string Country, string Street, string Citycode, string Exp_date)
         {
 
@@ -397,19 +447,18 @@ namespace SoftwareEngineering_2024.DB_connect
                 try
                 {
                     db.OpenConnection();
-                    int rowsAffected = queryCmd.ExecuteNonQuery();
+                    queryCmd.ExecuteNonQuery();
                     db.CloseConnection();
-                    return rowsAffected > 0;
+                    return true;
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    MessageBox.Show("Error registering user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    db.CloseConnection();
                     return false;
                 }
-                finally
-                {
-                    db.CloseConnection();
-                }
+
+
             }
         }
 

@@ -70,7 +70,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 736);
+            panel2.Size = new Size(234, 850);
             panel2.TabIndex = 17;
             // 
             // Attendance_log_bt
@@ -158,14 +158,14 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1783, 49);
+            panel1.Size = new Size(1848, 49);
             panel1.TabIndex = 16;
             // 
             // LogOutBt
             // 
             LogOutBt.BackColor = Color.LightCoral;
             LogOutBt.Cursor = Cursors.Hand;
-            LogOutBt.Location = new Point(1589, 9);
+            LogOutBt.Location = new Point(1635, 9);
             LogOutBt.Name = "LogOutBt";
             LogOutBt.Size = new Size(182, 32);
             LogOutBt.TabIndex = 5;
@@ -177,7 +177,7 @@
             // 
             StaffHomeLb.Anchor = AnchorStyles.Top;
             StaffHomeLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            StaffHomeLb.Location = new Point(934, 9);
+            StaffHomeLb.Location = new Point(967, 9);
             StaffHomeLb.Name = "StaffHomeLb";
             StaffHomeLb.Size = new Size(93, 25);
             StaffHomeLb.TabIndex = 3;
@@ -200,7 +200,7 @@
             WelcomeUserLb.AutoSize = true;
             WelcomeUserLb.BackColor = Color.LightCoral;
             WelcomeUserLb.Font = new Font("Stencil", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            WelcomeUserLb.Location = new Point(791, 85);
+            WelcomeUserLb.Location = new Point(824, 85);
             WelcomeUserLb.Name = "WelcomeUserLb";
             WelcomeUserLb.Size = new Size(348, 27);
             WelcomeUserLb.TabIndex = 24;
@@ -213,7 +213,7 @@
             DiagramA.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             DiagramA.Legends.Add(legend1);
-            DiagramA.Location = new Point(348, 389);
+            DiagramA.Location = new Point(283, 468);
             DiagramA.Name = "DiagramA";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -231,7 +231,7 @@
             DiagramB.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             DiagramB.Legends.Add(legend2);
-            DiagramB.Location = new Point(1028, 389);
+            DiagramB.Location = new Point(1335, 468);
             DiagramB.Name = "DiagramB";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -247,7 +247,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_1036481;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1783, 785);
+            ClientSize = new Size(1848, 899);
             Controls.Add(DiagramB);
             Controls.Add(DiagramA);
             Controls.Add(WelcomeUserLb);

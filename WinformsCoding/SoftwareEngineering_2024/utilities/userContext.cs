@@ -22,8 +22,6 @@ namespace SoftwareEngineering_2024.utilities
         public static string? EMAIL { get; set; }
         public static int Memberid { get; set; }
 
-
-
         // Method to clear the context if needed (e.g., logout)
         public static void ClearContext()
         {
