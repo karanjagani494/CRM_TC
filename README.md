@@ -132,4 +132,4 @@ We welcome contributions to the Together Culture CRM! If you'd like to contribut
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [KARAN][SHAURYA][BURHAN][RASHID] file for details.
+This project is licensed under the MIT License - see the [KARAN][SHAURYA][BURHAN][RASHID] for details.
