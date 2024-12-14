@@ -57,7 +57,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(234, 844);
+            panel2.Size = new Size(234, 734);
             panel2.TabIndex = 19;
             // 
             // QueryBt
@@ -133,14 +133,14 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1850, 49);
+            panel1.Size = new Size(1783, 49);
             panel1.TabIndex = 18;
             // 
             // UserQueryFeedbackLb
             // 
             UserQueryFeedbackLb.Anchor = AnchorStyles.Top;
             UserQueryFeedbackLb.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UserQueryFeedbackLb.Location = new Point(800, 9);
+            UserQueryFeedbackLb.Location = new Point(766, 9);
             UserQueryFeedbackLb.Name = "UserQueryFeedbackLb";
             UserQueryFeedbackLb.Size = new Size(282, 25);
             UserQueryFeedbackLb.TabIndex = 3;
@@ -155,6 +155,7 @@
             QueryTypeCb.Size = new Size(151, 28);
             QueryTypeCb.TabIndex = 20;
             QueryTypeCb.Text = "Query Type";
+
             // 
             // QueryTb
             // 
@@ -182,7 +183,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1850, 893);
+            ClientSize = new Size(1783, 783);
             Controls.Add(QuerySubmitBt);
             Controls.Add(QueryTb);
             Controls.Add(QueryTypeCb);

@@ -77,6 +77,7 @@
             Sharing.Name = "Sharing";
             Sharing.Size = new Size(126, 87);
             Sharing.TabIndex = 14;
+            Sharing.Tag = "5";
             Sharing.Text = "Sharing";
             Sharing.UseVisualStyleBackColor = false;
             // 
@@ -89,6 +90,7 @@
             Helping.Name = "Helping";
             Helping.Size = new Size(126, 81);
             Helping.TabIndex = 13;
+            Helping.Tag = "3";
             Helping.Text = "Helping";
             Helping.UseVisualStyleBackColor = false;
             // 
@@ -101,6 +103,7 @@
             Working.Name = "Working";
             Working.Size = new Size(126, 87);
             Working.TabIndex = 12;
+            Working.Tag = "4";
             Working.Text = "Working";
             Working.UseVisualStyleBackColor = false;
             // 
@@ -113,6 +116,7 @@
             Happening.Name = "Happening";
             Happening.Size = new Size(126, 87);
             Happening.TabIndex = 11;
+            Happening.Tag = "2";
             Happening.Text = "Happening";
             Happening.UseVisualStyleBackColor = false;
             // 
@@ -125,6 +129,7 @@
             Learning.Name = "Learning";
             Learning.Size = new Size(126, 87);
             Learning.TabIndex = 10;
+            Learning.Tag = "1";
             Learning.Text = "Learning";
             Learning.UseVisualStyleBackColor = false;
             // 
