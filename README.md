@@ -118,3 +118,18 @@ Tags help categorize and label various entities such as events, members, or book
 ---
 
 Each of these tables is designed to interact with each other, making the Together Culture CRM a dynamic and flexible system for managing members, events, and payments.
+
+## 🤝 Contributing
+
+We welcome contributions to the Together Culture CRM! If you'd like to contribute, please follow these steps:
+
+1. **Fork** the repository.
+2. **Clone** your fork to your local machine.
+3. **Create** a new branch for your feature or bug fix.
+4. **Make your changes** and commit them with a clear message.
+5. **Push** your changes to your fork.
+6. **Create a pull request** to merge your changes into the main repository.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [KARAN][SHAURYA][BURHAN][RASHID] file for details.
