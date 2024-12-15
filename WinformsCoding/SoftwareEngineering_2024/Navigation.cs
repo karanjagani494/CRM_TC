@@ -19,7 +19,7 @@ namespace SoftwareEngineering_2024
             Queries.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(UserQueriesFeedbackForm));
         }
 
-        public static void OpenAdminDashboardPages(Button Home, Button Members, Button Events, Button Bookings, Button Engagement, Button Queries)
+        public static void OpenAdminDashboardPages(Button Home, Button Members, Button Events, Button Bookings, Button Engagement, Button Queries, Button Attendance)
         {
             Home.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(AdminHomeForm));
             Members.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(AdminMembersForm));
@@ -27,6 +27,7 @@ namespace SoftwareEngineering_2024
             Bookings.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(AdminBookingsForm));
             Engagement.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(AdminEngagementForm));
             Queries.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(AdminQueriesFeedbackForm));
+            Attendance.Click += (sender, e) => OpenUserForm((Form)((Control)sender).FindForm(), typeof(Attendance_Log));
         }
 
 

@@ -121,8 +121,39 @@ namespace SoftwareEngineering_2024
             }
 
             return true; // All checks passed
-        }        
+        }
 
-        
+        public static void Number_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys (e.g., backspace) and digits
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Reject the input if it is not a digit or control key
+                e.Handled = true;
+            }
+        }
+
+        public static void ValidateNumericTextBox(TextBoxBase textBoxBase)
+        {
+            // Remove any non-numeric characters from the text
+            string validText = string.Concat(textBoxBase.Text.Where(char.IsDigit));
+            if (textBoxBase.Text != validText)
+            {
+                textBoxBase.Text = validText;
+
+                // Move cursor to the end
+                if (textBoxBase is TextBox textBox)
+                {
+                    textBox.SelectionStart = textBox.Text.Length;
+                }
+                else if (textBoxBase is MaskedTextBox maskedTextBox)
+                {
+                    maskedTextBox.SelectionStart = maskedTextBox.Text.Length;
+                }
+            }
+        }
+
+
+
     }
 }

@@ -20,7 +20,7 @@ namespace SoftwareEngineering_2024.utilities
 
         // Static properties to store user data temporarily
         public static string? EMAIL { get; set; }
-
+        public static int Memberid { get; set; }
 
         // Method to clear the context if needed (e.g., logout)
         public static void ClearContext()
@@ -37,9 +37,9 @@ namespace SoftwareEngineering_2024.utilities
             {
                 throw new Exception("Email is not set.");
             }
-           
-             Console.WriteLine($"The email being processed is: {EMAIL}");
-            
+
+            Console.WriteLine($"The email being processed is: {EMAIL}");
+
 
             const string Retrieve_query = "SELECT member_id FROM members WHERE lower(email) = @email";
 
@@ -74,7 +74,6 @@ namespace SoftwareEngineering_2024.utilities
             }
         }
 
-        public static int Memberid { get; set; }
     }
 }
 
@@ -87,4 +86,3 @@ namespace SoftwareEngineering_2024.utilities
 
 
 
-  

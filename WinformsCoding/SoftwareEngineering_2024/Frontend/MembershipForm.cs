@@ -18,6 +18,8 @@ namespace SoftwareEngineering_2024
     {
 
         private userDAL userDAL = new userDAL();
+        int member_id = UserContext.Memberid;
+
         public MembershipForm()
         {
             InitializeComponent();
@@ -35,62 +37,35 @@ namespace SoftwareEngineering_2024
             Opener.OpenForm(this, typeof(LoginForm));
         }
 
+        
 
-        public void MembershipOption_CheckedChanged(object sender, EventArgs e)
+
+
+    public void MembershipOption_CheckedChanged(object sender, EventArgs e)
         {
-            //if (sender is CheckBox checkedBox && checkedBox.Checked)
-            //{
-            //    // Uncheck all other checkboxes except the one that was just checked
-            //    foreach (Control control in MembershipPanel.Controls)
-            //    {
-            //        if (control is CheckBox checkBox && checkBox != checkedBox)
-            //        {
-            //            checkBox.Checked = false;
-            //        }
-            //    }
-            //}
-
-
-
-            string Type = GetSelectedMem_type();
-
-            if (!string.IsNullOrEmpty(Type)) // Check if the list is not null and contains items
+            if (sender is CheckBox checkedBox && checkedBox.Checked)
             {
-                try
+                // Uncheck all other checkboxes except the one that was just checked
+                foreach (Control control in MembershipPanel.Controls)
                 {
-                    // Use the UserDAL instance to save the interests to the database
-                    bool Registered = userDAL.SaveMem_TypeToDatabase(Type);
-                    MessageBox.Show("Interests saved successfully!");
-                    FormTracker.StepsCompleted[3] = true; //this will count this form if the form is completed then it will store true
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
+                    if (control is CheckBox checkBox && checkBox != checkedBox)
+                    {
+                        checkBox.Checked = false;
+                    }
                 }
             }
-            else
-            {
-                MessageBox.Show("Please select at least one interest.");
-            }
-
         }
 
-
-
-
-
-        private string GetSelectedMem_type()
+        private int GetSelectedMem_type()
         {
-            
 
-            // Check each radio button and add the corresponding interest to the list if it's checked
-            if (partTime_cb.Checked) return ("Part_TIME");
-            if (fullTime_cb.Checked) return("Full_Time");
-            if (Community_cb.Checked) return("Community01");
-            if (Community02_cb.Checked) return ("Community02");
-            
+            if (partTime_cb.Checked) return 1;
+            if (fullTime_cb.Checked) return 2;
+            if (Community_cb.Checked) return 3;
+            if (Community02_cb.Checked) return 4;
 
-            return null;
+
+            return 0;
         }
 
         private void PreviousPageBt_Click(object sender, EventArgs e)
@@ -104,6 +79,27 @@ namespace SoftwareEngineering_2024
         {
             if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
             {
+                int membership_id = GetSelectedMem_type();
+
+                if (membership_id != 0) // Check if the list is not null and contains items
+                {
+                    try
+                    {
+                        // Use the UserDAL instance to save the interests to the database
+                        bool Registered = userDAL.SaveMem_TypeToDatabase(membership_id, member_id);
+                        MessageBox.Show("Membership saved successfully!");
+                        FormTracker.StepsCompleted[3] = true; //this will count this form if the form is completed then it will store true
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select at least one Membership.");
+                }
+
                 Opener.OpenForm(this, typeof(Payment));
             }
 

@@ -37,13 +37,13 @@
             HomeBt = new Button();
             panel1 = new Panel();
             UserEventsLb = new Label();
-            TogetherHallWsLb = new Label();
             AvailiblityBt = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             WsDateDtp = new DateTimePicker();
+            CafeBt = new Button();
+            ArtRoomBt = new Button();
+            LivingRoomBt = new Button();
+            TogetherHallBt = new Button();
+            TechRoomBt = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -150,79 +150,80 @@
             UserEventsLb.TabIndex = 3;
             UserEventsLb.Text = "Workspaces";
             // 
-            // TogetherHallWsLb
-            // 
-            TogetherHallWsLb.AutoSize = true;
-            TogetherHallWsLb.BackColor = Color.Transparent;
-            TogetherHallWsLb.Font = new Font("Stencil", 16.2F);
-            TogetherHallWsLb.Location = new Point(1501, 125);
-            TogetherHallWsLb.Name = "TogetherHallWsLb";
-            TogetherHallWsLb.Size = new Size(232, 33);
-            TogetherHallWsLb.TabIndex = 26;
-            TogetherHallWsLb.Text = "Together Hall";
-            // 
             // AvailiblityBt
             // 
             AvailiblityBt.BackColor = Color.LightCoral;
             AvailiblityBt.Cursor = Cursors.Hand;
-            AvailiblityBt.Location = new Point(858, 441);
+            AvailiblityBt.Location = new Point(817, 349);
             AvailiblityBt.Name = "AvailiblityBt";
-            AvailiblityBt.Size = new Size(250, 52);
+            AvailiblityBt.Size = new Size(358, 52);
             AvailiblityBt.TabIndex = 6;
             AvailiblityBt.Text = "Show Availability";
             AvailiblityBt.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Stencil", 16.2F);
-            label1.Location = new Point(290, 125);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 33);
-            label1.TabIndex = 22;
-            label1.Text = "Cafe";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Stencil", 16.2F);
-            label2.Location = new Point(581, 125);
-            label2.Name = "label2";
-            label2.Size = new Size(197, 33);
-            label2.TabIndex = 23;
-            label2.Text = "Living Room ";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Stencil", 16.2F);
-            label3.Location = new Point(908, 125);
-            label3.Name = "label3";
-            label3.Size = new Size(154, 33);
-            label3.TabIndex = 24;
-            label3.Text = "Art Room";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Stencil", 16.2F);
-            label4.Location = new Point(1207, 125);
-            label4.Name = "label4";
-            label4.Size = new Size(170, 33);
-            label4.TabIndex = 25;
-            label4.Text = "Tech Room";
+            AvailiblityBt.Click += btnCheckAvailability_Click;
             // 
             // WsDateDtp
             // 
             WsDateDtp.CalendarMonthBackground = Color.IndianRed;
-            WsDateDtp.Location = new Point(858, 252);
+            WsDateDtp.Location = new Point(880, 257);
             WsDateDtp.Name = "WsDateDtp";
-            WsDateDtp.Size = new Size(250, 27);
+            WsDateDtp.Size = new Size(228, 27);
             WsDateDtp.TabIndex = 27;
+            // 
+            // CafeBt
+            // 
+            CafeBt.BackColor = Color.LightCoral;
+            CafeBt.Cursor = Cursors.Hand;
+            CafeBt.Location = new Point(282, 123);
+            CafeBt.Name = "CafeBt";
+            CafeBt.Size = new Size(228, 52);
+            CafeBt.TabIndex = 28;
+            CafeBt.Text = "CAFE";
+            CafeBt.UseVisualStyleBackColor = false;
+            // 
+            // ArtRoomBt
+            // 
+            ArtRoomBt.BackColor = Color.LightCoral;
+            ArtRoomBt.Cursor = Cursors.Hand;
+            ArtRoomBt.Location = new Point(1166, 123);
+            ArtRoomBt.Name = "ArtRoomBt";
+            ArtRoomBt.Size = new Size(228, 52);
+            ArtRoomBt.TabIndex = 29;
+            ArtRoomBt.Text = "ART ROOM";
+            ArtRoomBt.UseVisualStyleBackColor = false;
+            // 
+            // LivingRoomBt
+            // 
+            LivingRoomBt.BackColor = Color.LightCoral;
+            LivingRoomBt.Cursor = Cursors.Hand;
+            LivingRoomBt.Location = new Point(591, 123);
+            LivingRoomBt.Name = "LivingRoomBt";
+            LivingRoomBt.Size = new Size(228, 52);
+            LivingRoomBt.TabIndex = 31;
+            LivingRoomBt.Text = "LIVING ROOM";
+            LivingRoomBt.UseVisualStyleBackColor = false;
+            // 
+            // TogetherHallBt
+            // 
+            TogetherHallBt.BackColor = Color.LightCoral;
+            TogetherHallBt.Cursor = Cursors.Hand;
+            TogetherHallBt.Location = new Point(1456, 123);
+            TogetherHallBt.Name = "TogetherHallBt";
+            TogetherHallBt.Size = new Size(228, 52);
+            TogetherHallBt.TabIndex = 32;
+            TogetherHallBt.Text = "TOGETHER HALL";
+            TogetherHallBt.UseVisualStyleBackColor = false;
+            // 
+            // TechRoomBt
+            // 
+            TechRoomBt.BackColor = Color.LightCoral;
+            TechRoomBt.Cursor = Cursors.Hand;
+            TechRoomBt.Location = new Point(880, 123);
+            TechRoomBt.Name = "TechRoomBt";
+            TechRoomBt.Size = new Size(228, 52);
+            TechRoomBt.TabIndex = 33;
+            TechRoomBt.Text = "TECH ROOM";
+            TechRoomBt.UseVisualStyleBackColor = false;
             // 
             // UserWorkspacesForm
             // 
@@ -231,13 +232,13 @@
             BackgroundImage = Properties.Resources.Screenshot_2024_10_25_103648;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1793, 667);
+            Controls.Add(TechRoomBt);
+            Controls.Add(TogetherHallBt);
+            Controls.Add(LivingRoomBt);
+            Controls.Add(ArtRoomBt);
+            Controls.Add(CafeBt);
             Controls.Add(WsDateDtp);
             Controls.Add(AvailiblityBt);
-            Controls.Add(TogetherHallWsLb);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             DoubleBuffered = true;
@@ -267,5 +268,11 @@
         private Label label3;
         private Label label4;
         private DateTimePicker WsDateDtp;
+        private Button CafeBt;
+        private Button ArtRoomBt;
+        private Button button2;
+        private Button LivingRoomBt;
+        private Button TogetherHallBt;
+        private Button TechRoomBt;
     }
 }

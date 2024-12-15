@@ -1,5 +1,7 @@
 ﻿using SoftwareEngineering_2024.DB_connect;
 using SoftwareEngineering_2024.utilities;
+using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel;
 
 namespace SoftwareEngineering_2024
 {
@@ -7,48 +9,42 @@ namespace SoftwareEngineering_2024
     {
         private userDAL userDAL = new userDAL();
         private UserContext userContext = new UserContext();
+        private EmailService emailService = new EmailService();
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public static string Firstname { get;  set; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public static string Lastname { get; set; }
+
+
         public SignUpForm()
         {
             InitializeComponent();
-            /*FbLink.Click += Opener.OpenFacebook;
-            GmapLink.Click += Opener.OpenGoogleMaps;
-            IgLink.Click += Opener.OpenInstagram;*/
             Opener.OpenSocialMediaLinks(FbLink, GmapLink, IgLink);
-            phoneNumber.KeyPress += phoneNumber_KeyPress;
+            phoneNumber.KeyPress += Opener.Number_KeyPress;
             LogInLink.Click += LogInLink_LinkClicked;
-            userDAL = new userDAL();
-
+            phoneNumber.TextChanged += (s, e) => Opener.ValidateNumericTextBox(phoneNumber);
         }
-
 
         private void LogInLink_LinkClicked(object sender, EventArgs e)
         {
             Opener.OpenForm(this, typeof(LoginForm));
         }
 
-
-
-
-
-        private void ProceedIntBt_Click(object sender, EventArgs e)
+        public void ProceedIntBt_Click(object sender, EventArgs e)
         {
-
-            
-
             // Check if all required textboxes are filled
             if (Opener.AreTextBoxesFilledAndCheckboxesChecked(this))
             {
-                Opener.OpenForm(this, typeof(InterestDptForm));
-
                 string str1 = email.Text;
-                string Email = str1.ToLower();  /* TO lower will store always in lowercase of email */
+                string Email = str1.ToLower(); // Store email in lowercase
                 string Password = password.Text;
+                string RePass = rePassTb.Text;
 
-                /* TO lower will store always in UPPERCASE  of first and last name */
                 string str2 = firstName.Text;
-                string Firstname = str2.ToUpper();
+                Firstname = str2.ToUpper(); // Assign to class variable
                 string str3 = lastName.Text;
-                string Lastname = str3.ToUpper();
+                Lastname = str3.ToUpper(); // Assign to class variable
 
                 string Phonenumber = phoneNumber.Text;
                 string Housenumber = houseNumber.Text;
@@ -58,75 +54,44 @@ namespace SoftwareEngineering_2024
                 string Street = street.Text;
                 string Citycode = cityCode.Text;
 
-
-
-                
-
-               
-
-                // Attempt to register the user
-                bool isRegistered = userDAL.RegisterMember(Email, Password, Firstname, Lastname, Phonenumber, Housenumber, Street, City, State, Country, Citycode);
-
-                UserContext.EMAIL = Email; /*  this line is storin email in userContext file in utilitis folder  */
-                userContext.RetrieveMemberID();
-
-                if (isRegistered) {
-
-
-                    FormTracker.StepsCompleted[0] = true; //this will count this form if the form is completed then it will store true
-
+                if (Password != RePass)
+                {
+                    MessageBox.Show("Passwords do not match",
+                        "Registration Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
+                else
+                {
+                    bool isRegistered = userDAL.RegisterMember(Email, Password, Firstname, Lastname, Phonenumber, Housenumber, Street, City, State, Country, Citycode);
 
+                    UserContext.EMAIL = Email; // Store email in UserContext
+                    userContext.RetrieveMemberID();
 
-                // if (isRegistered)
-                // {
-                //     lblStatus.Text = "Registration successful!";
-                // }
-                // else
-                // {
-                //     lblStatus.Text = "Registration failed. User may already exist.";
-                // }
-
-
-                //}
-                // else
-                //  {
-                //     lblStatus.Text = "Please fill in all fields and accept terms.";
-                //  }
-
-
-                
-
+                    if (isRegistered)
+                    {
+                        FormTracker.StepsCompleted[0] = true; // Mark the form as completed
+                        Opener.OpenForm(this, typeof(InterestDptForm));
+                    }
+                }
             }
-
         }
 
-        private void phoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        public void callemail()
         {
-            // Allow control keys (e.g., backspace) and digits
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Reject the input if it is not a digit or control key
-                e.Handled = true;
-            }
-        }
+            string toEmail = UserContext.EMAIL;
+            string subject = "Welcome to CRM!";
 
+            // Personalize the email body with the user's first and last name
+            string body = $"Dear {Firstname} {Lastname},\n\nThank you for registering with us.\n\nBest Regards,\nCRM Team";
+
+            emailService.SendEmail(toEmail, subject, body);
+        }
 
         private void PreviousPageBt_Click(object sender, EventArgs e)
         {
-
             Opener.GoBack(this);
-
-        }
-
-        private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void phoneNumber_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
         }
     }
 }
+
